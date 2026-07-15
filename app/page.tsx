@@ -76,7 +76,7 @@ export default function Home() {
 
       {/* Hero Section */}
 <section
- className="relative min-h-[90vh] flex items-center justify-center text-white"
+  className="relative h-[65vh] md:h-[90vh] flex items-center justify-center text-white"
   style={{
     backgroundImage: "url('/images/hero.jpg')",
     backgroundSize: "cover",
@@ -87,17 +87,17 @@ export default function Home() {
   <div className="absolute inset-0 bg-black/55"></div>
 
   {/* Content */}
-  <div className="relative z-10 text-center px-6 max-w-5xl">
+ <div className="relative z-10 text-center px-4 max-w-5xl">
 
     <Image
-      src="/images/logo.png"
-      alt="NAESS Logo"
-     width={90}
-     height={90}
-      className="mx-auto mb-6"
-    />
+  src="/images/logo.png"
+  alt="NAESS Logo"
+  width={80}
+  height={80}
+  className="mx-auto mb-4 md:w-[120px] md:h-[120px]"
+/>
 
-    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+    <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl">
       National Agricultural Engineering
       <br />
       Students' Society
