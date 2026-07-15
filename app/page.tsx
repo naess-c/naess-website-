@@ -62,11 +62,8 @@ export default function Home() {
         Contact
       </a>
 
-      <a
-        href="#"
-        className="bg-teal-700 text-white px-4 py-2 rounded-lg hover:bg-teal-800 transition"
-      >
-        Join NAESS
+      <a href="/notices" className="hover:text-teal-700 transition">
+        Notices
       </a>
 
     </div>
@@ -262,32 +259,7 @@ export default function Home() {
 
   </div>
 </section>
-      {/* Notice Board */}
-<section className="bg-yellow-50 py-16">
-  <div className="max-w-6xl mx-auto px-6">
-
-    <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">
-      Latest Notices
-    </h2>
-
-    <div className="space-y-4">
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 GIS Training Registration Open
-      </div>
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 Agrineer Journal Article Submission Open
-      </div>
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 Industrial Visit Announcement
-      </div>
-
-    </div>
-
-  </div>
-</section>
+     
 {/* Resources */}
 <section className="py-20 bg-white">
   <div className="max-w-7xl mx-auto px-6">
@@ -346,153 +318,314 @@ export default function Home() {
   </div>
 </section>
       {/* Activities */}
-      <section className="bg-gray-100 py-16">
+<section className="py-20 bg-gradient-to-b from-gray-50 to-white">
 
-        <div className="max-w-6xl mx-auto px-6">
+  <div className="max-w-7xl mx-auto px-6">
 
-          <h2 className="text-3xl font-bold text-center mb-10 text-teal-700">
-            Our Activities
-          </h2>
+    <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
+      What We Do
+    </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
+      NAESS promotes technical excellence, innovation, leadership and
+      professional development among Agricultural Engineering students
+      throughout Nepal.
+    </p>
 
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">
-                Technical Trainings
-              </h3>
+    <div className="grid md:grid-cols-3 gap-8">
 
-              <p>
-                GIS, SolidWorks, IoT, Drone Technology,
-                CAD Design and many other technical trainings.
-              </p>
-            </div>
+      {/* Training */}
+      <div className="group bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
 
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">
-                Workshops & Events
-              </h3>
-
-              <p>
-                Competitions, conferences, seminars,
-                industrial visits and technical programs.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-bold text-xl mb-3">
-                Publications
-              </h3>
-
-              <p>
-                The agrineer.
-                               volume 1,2,3,4,5,6,7,8.
-              </p>
-            </div>
-
-          </div>
-
+        <div className="text-6xl mb-5">
+          🛠️
         </div>
 
-      </section>
+        <h3 className="text-2xl font-bold text-teal-700 mb-4">
+          Technical Trainings
+        </h3>
 
-      
-
-      {/* Achievements */}
-      <section className="py-20 bg-white">
-
-        <div className="max-w-6xl mx-auto px-6">
-
-          <h2 className="text-4xl font-bold text-center text-teal-700 mb-12">
-            Our Achievements & Activities
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-              <div className="text-5xl mb-4">🗺️</div>
-              <h3 className="text-xl font-bold mb-3">
-                IOT Training
-              </h3>
-              <p className="text-gray-600">
-                Successfully organized IOT training programs for students.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-              <div className="text-5xl mb-4">⚙️</div>
-              <h3 className="text-xl font-bold mb-3">
-                SolidWorks Training
-              </h3>
-              <p className="text-gray-600">
-                Conducted CAD and SolidWorks training sessions.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-              <div className="text-5xl mb-4">🏭</div>
-              <h3 className="text-xl font-bold mb-3">
-                valuation of land training
-              </h3>
-              <p className="text-gray-600">
-                successfully organized training on land valuation and related topics.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-              <div className="text-5xl mb-4">🌾</div>
-              <h3 className="text-xl font-bold mb-3">
-                NARC Visits
-              </h3>
-              <p className="text-gray-600">
-                Technical visits to research institutions and NARC centers.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-              <div className="text-5xl mb-4">🎤</div>
-              <h3 className="text-xl font-bold mb-3">
-                Conferences & Seminars
-              </h3>
-              <p className="text-gray-600">
-                Participation in international conferences and seminars.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 rounded-2xl shadow-lg p-8">
-              <div className="text-5xl mb-4">📖</div>
-              <h3 className="text-xl font-bold mb-3">
-                Agrineer Journal
-              </h3>
-              <p className="text-gray-600">
-                Promoting technical writing and student research.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* President Message */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-
-        <h2 className="text-3xl font-bold mb-6 text-teal-700">
-          Message from the President
-        </h2>
-
-        <p className="text-gray-700 leading-8 text-lg">
-          Welcome to the official website of NAESS.
-          Together we aim to strengthen the Agricultural
-          Engineering community of Nepal through innovation,
-          collaboration and professional development. We are committed
-          to providing technical opportunities, research exposure,
-          leadership development and professional networking for all
-          Agricultural Engineering students.
+        <p className="text-gray-600 leading-7">
+          Hands-on training programs in GIS, SolidWorks, AutoCAD,
+          Drone Technology, IoT, Remote Sensing, CAD Design,
+          Agricultural Machinery Design and emerging technologies.
         </p>
 
-      </section>
+      </div>
 
+      {/* Events */}
+      <div className="group bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+
+        <div className="text-6xl mb-5">
+          🎯
+        </div>
+
+        <h3 className="text-2xl font-bold text-teal-700 mb-4">
+          Workshops & Events
+        </h3>
+
+        <p className="text-gray-600 leading-7">
+          Engineering competitions, national conferences,
+          industrial visits, expert talks, technical seminars,
+          exhibitions and professional networking events.
+        </p>
+
+      </div>
+
+      {/* Publications */}
+      <div className="group bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+
+        <div className="text-6xl mb-5">
+          📖
+        </div>
+
+        <h3 className="text-2xl font-bold text-teal-700 mb-4">
+          Publications
+        </h3>
+
+        <p className="text-gray-600 leading-7 mb-4">
+          Publication of the official NAESS journal
+          <span className="font-semibold text-teal-700"> "Agrineer"</span>,
+          featuring student research, innovations and technical articles.
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+
+          {["Vol 1","Vol 2","Vol 3","Vol 4","Vol 5","Vol 6","Vol 7","Vol 8"].map((vol) => (
+            <span
+              key={vol}
+              className="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-medium"
+            >
+              {vol}
+            </span>
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+     {/* Achievements & Activities */}
+<section className="py-24 bg-gradient-to-b from-white to-gray-50">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-4">
+      Our Achievements & Activities
+    </h2>
+
+    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
+      Through technical trainings, industrial visits, publications and professional
+      events, NAESS continues to strengthen the Agricultural Engineering community of Nepal.
+    </p>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* GIS */}
+      <div className="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">📡</div>
+        <h3 className="text-2xl font-bold mb-3 text-blue-600">
+          IoT Training
+        </h3>
+        <p className="text-gray-600 leading-7">
+          Organized practical Internet of Things (IoT) training programs,
+          introducing students to smart agriculture technologies and automation.
+        </p>
+      </div>
+
+      {/* SolidWorks */}
+      <div className="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-green-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">⚙️</div>
+        <h3 className="text-2xl font-bold mb-3 text-green-600">
+          SolidWorks Training
+        </h3>
+        <p className="text-gray-600 leading-7">
+          Conducted CAD and SolidWorks training sessions to enhance
+          engineering design and modeling skills among students.
+        </p>
+      </div>
+
+      {/* Land Valuation */}
+      <div className="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-orange-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🏞️</div>
+        <h3 className="text-2xl font-bold mb-3 text-orange-600">
+          Land Valuation Training
+        </h3>
+        <p className="text-gray-600 leading-7">
+          Successfully organized professional training on land valuation,
+          surveying principles and property assessment techniques.
+        </p>
+      </div>
+
+      {/* NARC */}
+      <div className="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-teal-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🌾</div>
+        <h3 className="text-2xl font-bold mb-3 text-teal-600">
+          Research & NARC Visits
+        </h3>
+        <p className="text-gray-600 leading-7">
+          Organized technical visits to NARC research stations and other
+          institutions to bridge theory and practical learning.
+        </p>
+      </div>
+
+      {/* Conferences */}
+      <div className="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-purple-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🎤</div>
+        <h3 className="text-2xl font-bold mb-3 text-purple-600">
+          Conferences & Seminars
+        </h3>
+        <p className="text-gray-600 leading-7">
+          Active participation in national and international conferences,
+          seminars and technical discussion forums.
+        </p>
+      </div>
+
+      {/* Agrineer */}
+      <div className="bg-white rounded-3xl shadow-lg p-8 border-t-4 border-red-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">📖</div>
+        <h3 className="text-2xl font-bold mb-3 text-red-600">
+          Agrineer Journal
+        </h3>
+        <p className="text-gray-600 leading-7 mb-4">
+          Publishing the official NAESS journal “Agrineer” to promote
+          technical writing, innovation and student research.
+        </p>
+
+        <div className="flex flex-wrap gap-2">
+          {["Vol 1","Vol 2","Vol 3","Vol 4","Vol 5","Vol 6","Vol 7","Vol 8"].map((vol) => (
+            <span
+              key={vol}
+              className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+            >
+              {vol}
+            </span>
+          ))}
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+     {/* President's Message */}
+<section className="py-24 bg-gradient-to-r from-teal-50 to-green-50">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <h2 className="text-4xl font-bold text-center text-teal-700 mb-14">
+      Message from the President
+    </h2>
+
+    <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+      <div className="grid md:grid-cols-3">
+
+        {/* Photo */}
+        <div className="bg-teal-700 flex items-center justify-center p-10">
+
+          <Image
+            src="/committee/dipendra.jpg"
+            alt="President"
+            width={280}
+            height={280}
+            className="rounded-2xl shadow-xl object-cover"
+          />
+
+        </div>
+
+        {/* Message */}
+        <div className="md:col-span-2 p-10 md:p-14">
+
+          <div className="text-6xl text-teal-600 mb-4">
+            "
+          </div>
+
+          <p className="text-gray-700 text-lg leading-8 mb-8">
+            Welcome to the official website of the National Agricultural
+            Engineering Students' Society (NAESS).
+
+            Our mission is to empower Agricultural Engineering students
+            through innovation, technical excellence, leadership,
+            research and professional collaboration.
+
+            Together, we aim to create opportunities for learning,
+            practical exposure, networking and sustainable development,
+            while contributing to the advancement of Agricultural
+            Engineering in Nepal.
+          </p>
+
+          <div className="border-t pt-6">
+
+            <h3 className="text-2xl font-bold text-teal-700">
+              Dipendra Kumar Sah
+            </h3>
+
+            <p className="text-gray-600">
+              President
+            </p>
+
+            <p className="text-gray-500 text-sm">
+              National Agricultural Engineering Students' Society (NAESS)
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* Notice Preview */}
+<section className="bg-yellow-50 py-16">
+
+  <div className="max-w-6xl mx-auto px-6">
+
+    <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">
+      Latest Notices
+    </h2>
+
+    <div className="space-y-4">
+
+      <div className="bg-white p-5 rounded-xl shadow">
+        📢 Application for Technical Manager
+      </div>
+
+      <div className="bg-white p-5 rounded-xl shadow">
+        📢 Educational visit to NARC Tarahara
+      </div>
+
+      <div className="bg-white p-5 rounded-xl shadow">
+        📢 committee handover  Announcement
+      </div>
+
+    </div>
+
+    <div className="text-center mt-8">
+
+      <a
+        href="/notices"
+        className="bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 transition"
+      >
+        View All Notices
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
       {/* Footer */}
       <footer className="bg-teal-800 text-white py-10 text-center">
 
