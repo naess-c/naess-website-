@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* Hero Section */}
 <section
-  className="relative h-[65vh] md:h-[90vh] flex items-center justify-center text-white"
+  className="relative h-[60vh] md:h-[85vh] flex items-center justify-center text-white"
   style={{
     backgroundImage: "url('/images/hero.jpg')",
     backgroundSize: "cover",
@@ -81,64 +81,25 @@ export default function Home() {
   }}
 >
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-black/55"></div>
+  <div className="absolute inset-0 bg-black/60"></div>
 
   {/* Content */}
- <div className="relative z-10 text-center px-4 max-w-5xl">
+  <div className="relative z-10 text-center px-6 max-w-5xl">
 
-    <Image
-  src="/images/logo.png"
-  alt="NAESS Logo"
-  width={80}
-  height={80}
-  className="mx-auto mb-4 md:w-[120px] md:h-[120px]"
-/>
-
-    <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl">
+    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
       National Agricultural Engineering
       <br />
       Students' Society
     </h1>
 
-    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-10 max-w-4xl mx-auto">
+    <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
       Empowering Future Agricultural Engineers of Nepal through
       Innovation, Research, Leadership and Sustainable Development
     </p>
 
-    {/* Quick Highlights */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
-        <div className="text-3xl mb-2">🚜</div>
-        <p className="font-semibold">Mechanization</p>
-      </div>
-
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
-        <div className="text-3xl mb-2">💧</div>
-        <p className="font-semibold">Irrigation</p>
-      </div>
-
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
-        <div className="text-3xl mb-2">☀️</div>
-        <p className="font-semibold">Renewable Energy</p>
-      </div>
-
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
-        <div className="text-3xl mb-2">📦</div>
-        <p className="font-semibold">Postharvest</p>
-      </div>
-
-    </div>
+    <div className="w-32 h-1 bg-teal-500 mx-auto mt-8 rounded-full"></div>
 
   </div>
-
-  {/* Scroll Indicator */}
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div className="text-4xl">
-      ↓
-    </div>
-  </div>
-
 </section>
      {/* Major Fields of Agricultural Engineering */}
 <section className="py-20 bg-gradient-to-b from-white to-gray-50">
