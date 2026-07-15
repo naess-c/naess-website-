@@ -29,8 +29,8 @@ export default function Home() {
 
           <div className="space-x-4 text-sm md:text-base">
             <a href="/" className="hover:text-teal-700">Home</a>
-            <a href="/about" className="hover:text-teal-700">About</a>
-            <a href="/committee" className="hover:text-teal-700">Committee</a>
+           <a href="/organization" className="hover:text-teal-700">Organization</a>
+            <a href="/team" className="hover:text-teal-700">Executive Team</a>
             <a href="/events" className="hover:text-teal-700">Events</a>
             <a href="/gallery" className="hover:text-teal-700">Gallery</a>
             <a href="/notes" className="hover:text-teal-700">Notes</a>
