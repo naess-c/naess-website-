@@ -32,7 +32,7 @@ export default function Home() {
     </div>
 
     {/* Navigation */}
-    <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+    <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium">
 
       <a href="/" className="hover:text-teal-700 transition">
         Home
@@ -76,7 +76,7 @@ export default function Home() {
 
       {/* Hero Section */}
 <section
-  className="relative h-[85vh] flex items-center justify-center text-white"
+ className="relative min-h-[90vh] flex items-center justify-center text-white"
   style={{
     backgroundImage: "url('/images/hero.jpg')",
     backgroundSize: "cover",
@@ -92,41 +92,41 @@ export default function Home() {
     <Image
       src="/images/logo.png"
       alt="NAESS Logo"
-      width={120}
-      height={120}
+     width={90}
+     height={90}
       className="mx-auto mb-6"
     />
 
-    <h1 className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
       National Agricultural Engineering
       <br />
       Students' Society
     </h1>
 
-    <p className="text-xl md:text-2xl text-gray-200 mb-10">
+    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-10 max-w-4xl mx-auto">
       Empowering Future Agricultural Engineers of Nepal through
       Innovation, Research, Leadership and Sustainable Development
     </p>
 
     {/* Quick Highlights */}
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
 
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
         <div className="text-3xl mb-2">🚜</div>
         <p className="font-semibold">Mechanization</p>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
         <div className="text-3xl mb-2">💧</div>
         <p className="font-semibold">Irrigation</p>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
         <div className="text-3xl mb-2">☀️</div>
         <p className="font-semibold">Renewable Energy</p>
       </div>
 
-      <div className="bg-white/10 backdrop-blur-md rounded-xl p-4">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition">
         <div className="text-3xl mb-2">📦</div>
         <p className="font-semibold">Postharvest</p>
       </div>
