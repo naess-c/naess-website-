@@ -6,6 +6,7 @@ export default function CommitteePage() {
       name: "Dipendra Kumar Sah",
       position: "President",
       batch: "Batch 2079",
+      Email: "079bag007@ioepc.edu.np",
       image: "/committee/dipendra.jpg",
     },
     {
@@ -74,22 +75,32 @@ export default function CommitteePage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-teal-700 to-green-700 text-white py-16">
-        <div className="max-w-6xl mx-auto text-center px-6">
-          <h1 className="text-5xl font-bold mb-4">
-            Executive Committee
-          </h1>
+      {/* Executive Committee Hero */}
+<section className="bg-gradient-to-r from-teal-700 to-green-700 text-white py-16">
 
-          <p className="text-xl">
-            National Agricultural Engineering Students' Society
-          </p>
+  <div className="max-w-6xl mx-auto px-6 text-center">
 
-          <p className="mt-2 text-teal-100">
-            5th Executive Committee
-          </p>
-        </div>
-      </section>
+    <h1 className="text-5xl font-bold mb-4">
+      Executive Committee 2083/84
+    </h1>
+
+    <p className="text-xl text-teal-100 mb-10">
+      National Agricultural Engineering Students' Society
+    </p>
+
+    <div className="overflow-hidden rounded-3xl shadow-2xl">
+      <Image
+        src="/committee/group-photo.jpg"
+        alt="NAESS Executive Committee"
+        width={1200}
+        height={700}
+        className="w-full object-cover"
+      />
+    </div>
+
+  </div>
+
+</section>
 
     {/* President Section */}
 {president && (
@@ -120,6 +131,9 @@ export default function CommitteePage() {
           </p>
       <p className="text-white/80 text-sm mt-1">
   {president.batch}
+</p>
+<p className="text-white/80 text-sm mt-1">
+  {president.Email}
 </p>
 
         </div>
