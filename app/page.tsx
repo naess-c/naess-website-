@@ -1,77 +1,217 @@
+
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    
     <main className="min-h-screen bg-white">
 
-      {/* Navbar */}
-<nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100">
-  <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+      {/* Premium Navbar */}
+     <nav
+  className={`sticky top-0 left-0 w-full z-50 transition-all duration-500 ${
+    scrolled
+      ? "bg-white/95 backdrop-blur-md shadow-lg py-2"
+      : "bg-black/30 backdrop-blur-sm py-4"
+  }`}
+>
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
 
-    {/* Logo Section */}
-    <div className="flex items-center gap-3">
+          {/* Logo */}
+<div className="flex items-center gap-3">
 
-      <Image
-        src="/images/logo.png"
-        alt="NAESS Logo"
-        width={42}
-        height={42}
-      />
+  <Image
+    src="/images/logo.png"
+    alt="NAESS Logo"
+    width={scrolled ? 40 : 55}
+    height={scrolled ? 40 : 55}
+    className="transition-all duration-500"
+  />
 
-      <div>
-        <h1 className="font-bold text-teal-700 text-lg leading-tight">
-          NAESS
-        </h1>
+  <div>
+    <h1
+      className={`font-bold transition-all duration-500 ${
+        scrolled
+          ? "text-teal-700 text-lg"
+          : "text-white text-lg"
+      }`}
+    >
+      NAESS
+    </h1>
 
-        <p className="text-[11px] text-gray-600 leading-tight">
-          National Agricultural Engineering Students' Society
-        </p>
-      </div>
-
-    </div>
-
-    {/* Navigation */}
-    <div className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium">
-
-      <a href="/" className="hover:text-teal-700 transition">
-        Home
-      </a>
-
-      <a href="/organization" className="hover:text-teal-700 transition">
-        Organization
-      </a>
-
-      <a href="/team" className="hover:text-teal-700 transition">
-        Executive Team
-      </a>
-
-      <a href="/events" className="hover:text-teal-700 transition">
-        Events
-      </a>
-
-      <a href="/gallery" className="hover:text-teal-700 transition">
-        Gallery
-      </a>
-
-      <a href="/notes" className="hover:text-teal-700 transition">
-        Notes
-      </a>
-
-      <a href="/contact" className="hover:text-teal-700 transition">
-        Contact
-      </a>
-
-      <a href="/notices" className="hover:text-teal-700 transition">
-        Notices
-      </a>
-
-    </div>
-
+    <p
+      className={`hidden md:block text-xs transition-all duration-500 ${
+        scrolled
+          ? "text-gray-600"
+          : "text-white/90"
+      }`}
+    >
+      National Agricultural Engineering Students' Society
+    </p>
   </div>
-</nav>
 
-      {/* Hero Section */}
+</div>
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+
+            <a
+              href="/"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Home
+            </a>
+
+            <a
+              href="/organization"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Organization
+            </a>
+
+            <a
+              href="/team"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Executive Team
+            </a>
+
+            <a
+              href="/events"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Events
+            </a>
+
+            <a
+              href="/gallery"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Gallery
+            </a>
+
+            <a
+              href="/notes"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Resources
+            </a>
+
+            <a
+              href="/notices"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Notices
+            </a>
+
+            <a
+              href="/contact"
+              className={`transition ${
+                scrolled
+                  ? "text-gray-700 hover:text-teal-700"
+                  : "text-white hover:text-teal-200"
+              }`}
+            >
+              Contact
+            </a>
+
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className={`md:hidden text-3xl transition ${
+              scrolled ? "text-teal-700" : "text-white"
+            }`}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            ☰
+          </button>
+
+        </div>
+
+        {/* Mobile Dropdown */}
+        {menuOpen && (
+          <div className="md:hidden bg-white shadow-lg border-t">
+
+            <a href="/" className="block px-6 py-3 hover:bg-gray-100">
+              Home
+            </a>
+
+            <a href="/organization" className="block px-6 py-3 hover:bg-gray-100">
+              Organization
+            </a>
+
+            <a href="/team" className="block px-6 py-3 hover:bg-gray-100">
+              Executive Team
+            </a>
+
+            <a href="/events" className="block px-6 py-3 hover:bg-gray-100">
+              Events
+            </a>
+
+            <a href="/gallery" className="block px-6 py-3 hover:bg-gray-100">
+              Gallery
+            </a>
+
+            <a href="/notes" className="block px-6 py-3 hover:bg-gray-100">
+              Resources
+            </a>
+
+            <a href="/notices" className="block px-6 py-3 hover:bg-gray-100">
+              Notices
+            </a>
+
+            <a href="/contact" className="block px-6 py-3 hover:bg-gray-100">
+              Contact
+            </a>
+
+          </div>
+        )}
+      </nav>
+    
+{/* Hero Section */}
 <section
   className="relative h-[60vh] md:h-[85vh] flex items-center justify-center text-white"
   style={{
@@ -86,18 +226,18 @@ export default function Home() {
   {/* Content */}
   <div className="relative z-10 text-center px-6 max-w-5xl">
 
-    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
       National Agricultural Engineering
       <br />
       Students' Society
     </h1>
 
-    <p className="text-lg sm:text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
+   <p className="text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
       Empowering Future Agricultural Engineers of Nepal through
       Innovation, Research, Leadership and Sustainable Development
     </p>
 
-    <div className="w-32 h-1 bg-teal-500 mx-auto mt-8 rounded-full"></div>
+    <div className="w-40 h-1 bg-gradient-to-r from-teal-400 to-green-400 mx-auto mt-8 rounded-full"></div>
 
   </div>
 </section>

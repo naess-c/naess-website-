@@ -1,12 +1,12 @@
 export default function ThesisPage() {
   const theses = [
     {
-      title: "Design of Multi Crop Seeder",
-      link: "YOUR_DRIVE_LINK",
+      title: "CROP TYPE CLASSIFICATION USING SATELLITE IMAGERY AND ACCURACY ASSESSMENT OF MACHINE LEARNING MODELS",
+      link: "https://drive.google.com/file/d/16s7gRCxnLGEGwhzFxcQ16aJAnV-iKiw8/view?usp=drive_link",
     },
     {
-      title: "Solar Hybrid Dryer",
-      link: "YOUR_DRIVE_LINK",
+      title: "DESIGN DEVELOPMENT AND TESTING OF MULTIPURPOSE SEEDER MACHINE DRIVEN BY MINI TILLER",
+      link: "https://drive.google.com/file/d/1ZmwimBhnujXm3IQ4tFmwOEJX0XJ4nucC/view?usp=drive_link",
     },
   ];
 

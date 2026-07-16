@@ -1,16 +1,24 @@
 export default function AgrineerPage() {
   const journals = [
     {
-      title: "Agrineer Volume 1",
-      link: "YOUR_DRIVE_LINK",
+      title: "Agrineer Volume 8",
+      link: "https://drive.google.com/file/d/15qSrOv0I-9zGkiwasE7Eaogv7AtMF8Uf/view?usp=sharing",
     },
     {
-      title: "Agrineer Volume 2",
-      link: "YOUR_DRIVE_LINK",
+      title: "Agrineer Volume 7",
+      link: "https://drive.google.com/file/d/1-V4Md9KHjWRqFa_KKLX9xBQBum7K8tfp/view?usp=drive_link",
     },
     {
-      title: "Agrineer Volume 3",
-      link: "YOUR_DRIVE_LINK",
+      title: "Agrineer Volume 6",
+      link: "https://drive.google.com/file/d/1ZyzcUbH-FNa7YXOBSxynVt73su822U6X/view?usp=sharing",
+    },
+    {
+      title: "Agrineer Volume 5",
+      link: "https://drive.google.com/file/d/1BRvoLWBVLka5eHu-6dydCZaQozyHePat/view?usp=drive_link",
+    },
+    {
+      title: "Agrineer Volume 4",
+      link: "https://drive.google.com/file/d/1CAnjSNz6MMnwTRkdjnWhp9XmYFxmCEr8/view?usp=drive_link",
     },
   ];
 
