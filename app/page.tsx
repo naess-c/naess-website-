@@ -53,15 +53,15 @@ export default function Home() {
       NAESS
     </h1>
 
-    <p
-      className={`hidden md:block text-xs transition-all duration-500 ${
-        scrolled
-          ? "text-gray-600"
-          : "text-white/90"
-      }`}
-    >
-      National Agricultural Engineering Students' Society
-    </p>
+   <p
+  className={`block text-[10px] md:text-xs transition-all duration-500 ${
+    scrolled
+      ? "text-gray-600"
+      : "text-white/90"
+  }`}
+>
+  National Agricultural Engineering Students' Society
+</p>
   </div>
 
 </div>
