@@ -103,14 +103,14 @@ export default function Home() {
             </a>
 
             <a
-              href="/events"
+              href="/alumni"
               className={`transition ${
                 scrolled
                   ? "text-gray-700 hover:text-teal-700"
                   : "text-white hover:text-teal-200"
               }`}
             >
-              Events
+              Alumni
             </a>
 
             <a
@@ -187,8 +187,8 @@ export default function Home() {
               Executive Team
             </a>
 
-            <a href="/events" className="block px-6 py-3 hover:bg-gray-100">
-              Events
+            <a href="/alumni" className="block px-6 py-3 hover:bg-gray-100">
+              Alumni
             </a>
 
             <a href="/gallery" className="block px-6 py-3 hover:bg-gray-100">
@@ -240,6 +240,38 @@ export default function Home() {
     <div className="w-40 h-1 bg-gradient-to-r from-teal-400 to-green-400 mx-auto mt-8 rounded-full"></div>
 
   </div>
+</section>
+
+<section className="py-20 bg-gradient-to-r from-teal-700 to-green-700 text-white">
+
+  <div className="max-w-6xl mx-auto px-6">
+
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+      <div className="text-center">
+        <h3 className="text-5xl font-bold">2060</h3>
+        <p>Established</p>
+      </div>
+
+      <div className="text-center">
+        <h3 className="text-5xl font-bold">2080</h3>
+        <p>National Society</p>
+      </div>
+
+      <div className="text-center">
+        <h3 className="text-5xl font-bold">8</h3>
+        <p>Agrineer Volumes</p>
+      </div>
+
+      <div className="text-center">
+        <h3 className="text-5xl font-bold">2</h3>
+        <p>AgriMech Events</p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
      {/* Major Fields of Agricultural Engineering */}
 <section className="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -728,22 +760,176 @@ export default function Home() {
 
 </section>
       {/* Footer */}
-      <footer className="bg-teal-800 text-white py-10 text-center">
+<footer className="bg-gray-900 text-gray-300">
 
-        <h3 className="font-bold text-xl">
-          National Agricultural Engineering Students' Society
+  <div className="max-w-7xl mx-auto px-6 py-14">
+
+    <div className="grid md:grid-cols-4 gap-10">
+
+      {/* NAESS Info */}
+      <div>
+
+        <div className="flex items-center gap-3 mb-4">
+
+          <a href="/">
+  <Image
+    src="/images/logo.png"
+    alt="NAESS Logo"
+    width={50}
+    height={50}
+  />
+</a>
+
+          <div>
+            <h3 className="text-xl font-bold text-white">
+              NAESS
+            </h3>
+
+            <p className="text-xs text-gray-400">
+              National Agricultural Engineering Students' Society
+            </p>
+          </div>
+
+        </div>
+
+        <p className="text-sm leading-7">
+          Empowering Agricultural Engineering students through
+          innovation, research, leadership, and professional
+          development.
+        </p>
+
+      </div>
+
+      {/* Quick Links */}
+      <div>
+
+        <h3 className="text-lg font-semibold text-white mb-4">
+          Quick Links
         </h3>
 
-        <p className="mt-2">
-          Purwanchal Campus, Dharan, Nepal
-        </p>
+        <ul className="space-y-3">
 
-        <p className="mt-2">
-          Established: 2060 B.S. | Renamed National Society: 2080 B.S.
-        </p>
+          <li>
+            <a href="/" className="hover:text-teal-400">
+              Home
+            </a>
+          </li>
 
-      </footer>
+          <li>
+            <a href="/organization" className="hover:text-teal-400">
+              Organization
+            </a>
+          </li>
 
+          <li>
+            <a href="/team" className="hover:text-teal-400">
+              Executive Team
+            </a>
+          </li>
+
+          <li>
+            <a href="/gallery" className="hover:text-teal-400">
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="/contact" className="hover:text-teal-400">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+     {/* Resources */}
+<div>
+
+  <h3 className="text-lg font-semibold text-white mb-4">
+    Resources
+  </h3>
+
+  <ul className="space-y-3">
+
+    <li>
+      <a href="/syllabus" className="hover:text-teal-400 transition">
+        Syllabus
+      </a>
+    </li>
+
+    <li>
+      <a href="/thesis" className="hover:text-teal-400 transition">
+        Thesis Repository
+      </a>
+    </li>
+
+    <li>
+      <a href="/agrineer" className="hover:text-teal-400 transition">
+        Agrineer Journal
+      </a>
+    </li>
+
+    <li>
+      <a href="/notices" className="hover:text-teal-400 transition">
+        Notices
+      </a>
+    </li>
+
+  </ul>
+
+</div>
+      {/* Contact */}
+      <div>
+
+        <h3 className="text-lg font-semibold text-white mb-4">
+          Contact Us
+        </h3>
+
+        <div className="space-y-3 text-sm">
+
+          <p>
+            📍 Department of Agricultural Engineering
+            <br />
+            Purwanchal Campus, Dharan, Nepal
+          </p>
+
+          <p>
+            📧 naess@ioepc.edu.np
+          </p>
+
+          <a
+            href="https://www.facebook.com/profile.php?id=61572261099146"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block hover:text-teal-400"
+          >
+            📘 Facebook Page
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* Bottom Footer */}
+    <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
+
+      <p>
+        © {new Date().getFullYear()} National Agricultural Engineering
+        Students' Society (NAESS). All Rights Reserved.
+      </p>
+
+      <p className="mt-2">
+        Established: 2060 B.S. | National Society Since: 2080 B.S.
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
     </main>
   );
 }
