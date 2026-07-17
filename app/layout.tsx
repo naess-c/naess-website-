@@ -14,30 +14,92 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NAESS Nepal | National Agricultural Engineering Students' Society",
+  metadataBase: new URL("https://naessnepal.org"),
+
+  title: {
+    default: "NAESS Nepal | National Agricultural Engineering Students' Society",
+    template: "%s | NAESS Nepal",
+  },
+
   description:
-    "Official website of the National Agricultural Engineering Students' Society (NAESS), Nepal. Explore events, publications, notices, resources, and opportunities for Agricultural Engineering students.",
+    "Official website of the National Agricultural Engineering Students' Society (NAESS), Nepal. Explore events, publications, notices, resources, training programs, and opportunities for Agricultural Engineering students.",
+
   keywords: [
     "NAESS",
-    "naess nepal",
-    "Naess",
-    "naes",
-    "Naess Ioe",
-    "naess purwanchal campus",
-    "naess nepal purwanchal campus",
-    "naess ioe",
-    "Naess Nepal",
-    "National Agricultural Engineering Students' Society",
-    "Agricultural Engineering Students' Society",
-    "Agricultural Engineering Students",
-    "Agricultural Engineering",
-    "Agricultural Engineering Nepal",
     "NAESS Nepal",
+    "National Agricultural Engineering Students' Society",
+    "Agricultural Engineering Nepal",
     "Agricultural Engineering Students",
     "Purwanchal Campus",
+    "IOE Purwanchal Campus",
     "Agrineer",
     "Agricultural Engineering Society",
+    "Agricultural Engineering Education Nepal",
+    "Agricultural Mechanization Nepal",
+    "Agricultural Technology Nepal",
   ],
+
+  authors: [
+    {
+      name: "National Agricultural Engineering Students' Society",
+    },
+  ],
+
+  creator: "NAESS Nepal",
+  publisher: "NAESS Nepal",
+
+  alternates: {
+    canonical: "https://naessnepal.org",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  openGraph: {
+    title:
+      "NAESS Nepal | National Agricultural Engineering Students' Society",
+    description:
+      "Official website of the National Agricultural Engineering Students' Society (NAESS), Nepal.",
+    url: "https://naessnepal.org",
+    siteName: "NAESS Nepal",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NAESS Nepal",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "NAESS Nepal | National Agricultural Engineering Students' Society",
+    description:
+      "Official website of the National Agricultural Engineering Students' Society (NAESS), Nepal.",
+    images: ["/og-image.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  category: "Education",
 };
 
 export default function RootLayout({
@@ -50,20 +112,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-   <body className="bg-white text-gray-900">
-  {children}
-</body>
-<html
-  lang="en"
-  className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
->
-  <body className="bg-white text-gray-900">
-    {children}
-  </body>
-
-  <GoogleAnalytics gaId="G-5G4FRGFYN8" />
-</html>
+      <body className="bg-white text-gray-900">
+        {children}
+        <GoogleAnalytics gaId="G-5G4FRGFYN8" />
+      </body>
     </html>
   );
 }
-
