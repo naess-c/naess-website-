@@ -103,9 +103,7 @@ export default function AgrineerPage() {
                 )}
 
               </div>
-              <div className="absolute bottom-3 left-3 bg-black/70 text-white px-3 py-1 rounded-lg text-sm font-medium">
-  {journal.volume}
-</div>
+              
 
               {/* Content */}
               <div className="p-5">
