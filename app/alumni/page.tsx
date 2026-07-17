@@ -3,25 +3,100 @@ import Image from "next/image";
 export default function AlumniPage() {
   const alumni = [
     {
-      name: "Er. Alumni Name",
+      name: "Dr. Er. Jeet B Chand",
       position: "Senior Agricultural Engineer",
-      organization: "Department of Agriculture",
-      batch: "2070 Batch",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
       image: "/alumni/alumni1.jpg",
     },
     {
-      name: "Er. Alumni Name",
-      position: "Research Officer",
-      organization: "NARC",
-      batch: "2072 Batch",
+      name: "Er. Aditya Dhakal",
+      position: "Asst. Campus Chief (Planning & Resources Management)",
+      organization: "Purwanchal Campus",
+      batch: "2065 Batch",
       image: "/alumni/alumni2.jpg",
     },
     {
-      name: "Er. Alumni Name",
-      position: "Project Engineer",
-      organization: "HELVETAS Nepal",
-      batch: "2074 Batch",
+      name: "Er. Tirtha Raj Karki",
+      position: "Assistant Campus Chief (Administration)",
+      organization: "Purwanchal Campus",
+      batch: "2070 Batch",
       image: "/alumni/alumni3.jpg",
+    },
+    {
+      name: "Er. Yam Kumar Rai",
+      position: "Head of Department (Agricultural Engineering)",
+      organization: "Purwanchal Campus",
+      batch: "2058 Batch",
+      image: "/alumni/alumni4.jpg",
+    },
+    {
+      name: "Er. Suman Thapa",
+      position: "Deputy Head of Department (Agricultural Engineering)",
+      organization: "Purwanchal Campus",
+      batch: "2074 Batch",
+      image: "/alumni/alumni5.jpg",
+    },
+    {
+      name: "Er. Samir Sakhya",
+      position: "professor",
+      organization: "purwanchal campus",
+      batch: "2058 Batch",
+      image: "/alumni/alumni6.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
+    },{
+      name: "Dr. Er. Jeet B Chand",
+      position: "Senior Agricultural Engineer",
+      organization: "Government of Nepal",
+      batch: "2058 Batch",
+      image: "/alumni/alumni1.jpg",
     },
   ];
 
@@ -57,41 +132,44 @@ export default function AlumniPage() {
             research, industry, government and development sectors.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-            {alumni.map((person, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 p-6 text-center"
-              >
+          {alumni.map((person, index) => (
+  <div
+    key={index}
+    className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-5 text-center hover:-translate-y-1"
+  >
 
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  width={140}
-                  height={140}
-                  className="rounded-full mx-auto border-4 border-teal-100"
-                />
+    {/* Alumni Photo */}
+    <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-teal-100">
+      <Image
+        src={person.image}
+        alt={person.name}
+        width={128}
+        height={128}
+        className="w-full h-full object-cover"
+      />
+    </div>
 
-                <h3 className="text-xl font-bold mt-5">
-                  {person.name}
-                </h3>
+    {/* Alumni Info */}
+    <h3 className="text-lg font-bold mt-5 text-gray-800">
+      {person.name}
+    </h3>
 
-                <p className="text-teal-700 font-medium">
-                  {person.position}
-                </p>
+    <p className="text-teal-700 font-semibold mt-2">
+      {person.position}
+    </p>
 
-                <p className="text-gray-500 text-sm mt-1">
-                  {person.organization}
-                </p>
+    <p className="text-gray-500 text-sm mt-1">
+      {person.organization}
+    </p>
 
-                <p className="text-gray-400 text-sm mt-2">
-                  {person.batch}
-                </p>
+    <p className="text-gray-400 text-sm mt-2">
+      {person.batch}
+    </p>
 
-              </div>
-            ))}
-
+  </div>
+))}
           </div>
 
         </div>
