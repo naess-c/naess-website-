@@ -44,11 +44,11 @@ export default function AlumniPage() {
       batch: "2058 Batch",
       image: "/alumni/alumni6.jpg",
     },{
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
+      name: "Er. Dipendra P Kurmi",
+      position: "Agricultural Engineer",
+      organization: "Namp piu salyan/rukum west",
+      batch: "2075 Batch",
+      image: "/alumni/alumni7.jpeg",
     },{
       name: "Dr. Er. Jeet B Chand",
       position: "Senior Agricultural Engineer",
