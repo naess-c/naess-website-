@@ -273,125 +273,7 @@ export default function Home() {
   </div>
 
 </section>
-     {/* Major Fields of Agricultural Engineering */}
-<section className="py-20 bg-gradient-to-b from-white to-gray-50">
-  <div className="max-w-7xl mx-auto px-6">
-
-    <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
-      Major Fields of Agricultural Engineering
-    </h2>
-
-    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
-      Agricultural Engineering integrates engineering principles with agriculture
-      to improve productivity, sustainability, mechanization, food processing,
-      water management and rural development.
-    </p>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-      {/* 1 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🚜</div>
-        <h3 className="text-xl font-bold mb-3">
-          Farm Power & Machinery
-        </h3>
-        <p className="text-gray-600">
-          Agricultural machinery, mechanization systems and precision farming technologies.
-        </p>
-      </div>
-
-      {/* 2 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🏗️</div>
-        <h3 className="text-xl font-bold mb-3">
-          Agricultural Infrastructure
-        </h3>
-        <p className="text-gray-600">
-          Design of farm buildings, greenhouses, storage structures and rural infrastructure.
-        </p>
-      </div>
-
-      {/* 3 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">☀️</div>
-        <h3 className="text-xl font-bold mb-3">
-          Rural & Renewable Energy
-        </h3>
-        <p className="text-gray-600">
-          Solar energy, biogas, biomass and sustainable energy technologies.
-        </p>
-      </div>
-
-      {/* 4 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">💧</div>
-        <h3 className="text-xl font-bold mb-3">
-          Irrigation Engineering
-        </h3>
-        <p className="text-gray-600">
-          Planning, design and management of irrigation and drainage systems.
-        </p>
-      </div>
-
-      {/* 5 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🌱</div>
-        <h3 className="text-xl font-bold mb-3">
-          Soil Conservation & Watershed Management
-        </h3>
-        <p className="text-gray-600">
-          Conservation of soil and water resources through watershed planning.
-        </p>
-      </div>
-
-      {/* 6 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">📦</div>
-        <h3 className="text-xl font-bold mb-3">
-          Postharvest Engineering
-        </h3>
-        <p className="text-gray-600">
-          Harvesting, drying, storage and processing technologies.
-        </p>
-      </div>
-
-      {/* 7 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🥛</div>
-        <h3 className="text-xl font-bold mb-3">
-          Dairy & Food Engineering
-        </h3>
-        <p className="text-gray-600">
-          Dairy processing, food preservation and food engineering systems.
-        </p>
-      </div>
-
-      {/* 8 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🌾</div>
-        <h3 className="text-xl font-bold mb-3">
-          Precision Agriculture
-        </h3>
-        <p className="text-gray-600">
-          Smart farming technologies using sensors, drones and automation.
-        </p>
-      </div>
-
-      {/* 9 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">❄️</div>
-        <h3 className="text-xl font-bold mb-3">
-          Cold Storage & Processing
-        </h3>
-        <p className="text-gray-600">
-          Cold chain management, storage systems and agro-processing technologies.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+    
      
 {/* Resources */}
 <section className="py-20 bg-white">
@@ -648,6 +530,165 @@ export default function Home() {
   </div>
 
 </section>
+{/* Notice Preview */}
+<section className="bg-yellow-50 py-16">
+
+  <div className="max-w-6xl mx-auto px-6">
+
+    <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">
+      Latest Notices
+    </h2>
+
+    <div className="space-y-4">
+
+      <div className="bg-white p-5 rounded-xl shadow">
+        📢 Application for Technical Manager
+      </div>
+
+      <div className="bg-white p-5 rounded-xl shadow">
+        📢 Educational visit to NARC Tarahara
+      </div>
+
+      <div className="bg-white p-5 rounded-xl shadow">
+        📢 committee handover  Announcement
+      </div>
+
+    </div>
+
+    <div className="text-center mt-8">
+
+      <a
+        href="/notices"
+        className="bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 transition"
+      >
+        View All Notices
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+ {/* Major Fields of Agricultural Engineering */}
+<section className="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div className="max-w-7xl mx-auto px-6">
+
+    <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
+      Major Fields of Agricultural Engineering
+    </h2>
+
+    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
+      Agricultural Engineering integrates engineering principles with agriculture
+      to improve productivity, sustainability, mechanization, food processing,
+      water management and rural development.
+    </p>
+
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+      {/* 1 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🚜</div>
+        <h3 className="text-xl font-bold mb-3">
+          Farm Power & Machinery
+        </h3>
+        <p className="text-gray-600">
+          Agricultural machinery, mechanization systems and precision farming technologies.
+        </p>
+      </div>
+
+      {/* 2 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🏗️</div>
+        <h3 className="text-xl font-bold mb-3">
+          Agricultural Infrastructure
+        </h3>
+        <p className="text-gray-600">
+          Design of farm buildings, greenhouses, storage structures and rural infrastructure.
+        </p>
+      </div>
+
+      {/* 3 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">☀️</div>
+        <h3 className="text-xl font-bold mb-3">
+          Rural & Renewable Energy
+        </h3>
+        <p className="text-gray-600">
+          Solar energy, biogas, biomass and sustainable energy technologies.
+        </p>
+      </div>
+
+      {/* 4 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">💧</div>
+        <h3 className="text-xl font-bold mb-3">
+          Irrigation Engineering
+        </h3>
+        <p className="text-gray-600">
+          Planning, design and management of irrigation and drainage systems.
+        </p>
+      </div>
+
+      {/* 5 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🌱</div>
+        <h3 className="text-xl font-bold mb-3">
+          Soil Conservation & Watershed Management
+        </h3>
+        <p className="text-gray-600">
+          Conservation of soil and water resources through watershed planning.
+        </p>
+      </div>
+
+      {/* 6 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">📦</div>
+        <h3 className="text-xl font-bold mb-3">
+          Postharvest Engineering
+        </h3>
+        <p className="text-gray-600">
+          Harvesting, drying, storage and processing technologies.
+        </p>
+      </div>
+
+      {/* 7 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🥛</div>
+        <h3 className="text-xl font-bold mb-3">
+          Dairy & Food Engineering
+        </h3>
+        <p className="text-gray-600">
+          Dairy processing, food preservation and food engineering systems.
+        </p>
+      </div>
+
+      {/* 8 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">🌾</div>
+        <h3 className="text-xl font-bold mb-3">
+          Precision Agriculture
+        </h3>
+        <p className="text-gray-600">
+          Smart farming technologies using sensors, drones and automation.
+        </p>
+      </div>
+
+      {/* 9 */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <div className="text-5xl mb-4">❄️</div>
+        <h3 className="text-xl font-bold mb-3">
+          Cold Storage & Processing
+        </h3>
+        <p className="text-gray-600">
+          Cold chain management, storage systems and agro-processing technologies.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
      {/* President's Message */}
 <section className="py-24 bg-gradient-to-r from-teal-50 to-green-50">
 
@@ -720,51 +761,13 @@ export default function Home() {
   </div>
 
 </section>
-{/* Notice Preview */}
-<section className="bg-yellow-50 py-16">
 
-  <div className="max-w-6xl mx-auto px-6">
-
-    <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">
-      Latest Notices
-    </h2>
-
-    <div className="space-y-4">
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 Application for Technical Manager
-      </div>
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 Educational visit to NARC Tarahara
-      </div>
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 committee handover  Announcement
-      </div>
-
-    </div>
-
-    <div className="text-center mt-8">
-
-      <a
-        href="/notices"
-        className="bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 transition"
-      >
-        View All Notices
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
       {/* Footer */}
 <footer className="bg-gray-900 text-gray-300">
 
   <div className="max-w-7xl mx-auto px-6 py-14">
 
-    <div className="grid md:grid-cols-4 gap-10">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
       {/* NAESS Info */}
       <div>
