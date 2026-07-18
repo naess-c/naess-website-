@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "NAESS Nepal | National Agricultural Engineering Students' Society",
+      "NAESS | National Agricultural Engineering Students' Society",
     description:
       "Official website of the National Agricultural Engineering Students' Society (NAESS), Nepal.",
     url: "https://www.naessnepal.org.np",
