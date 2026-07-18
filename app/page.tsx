@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -18,8 +17,36 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "National Agricultural Engineering Students' Society",
+    alternateName: "NAESS",
+    url: "https://www.naessnepal.org.np",
+    logo: "https://www.naessnepal.org.np/images/logo.png",
+    email: "naess@ioepc.edu.np",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Department of Agricultural Engineering, Purwanchal Campus",
+      addressLocality: "Dharan",
+      addressCountry: "NP",
+    },
+    sameAs: [
+      "https://www.facebook.com/profile.php?id=61572261099146",
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-white">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+    
+      
+        {/* ...rest of your file stays exactly the same from here... */}
 
       {/* Premium Navbar */}
      <nav
