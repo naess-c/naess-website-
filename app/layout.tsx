@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://naessnepal.org"),
+  metadataBase: new URL("https://www.naessnepal.org.np"),
 
   title: {
     default: "NAESS Nepal | National Agricultural Engineering Students' Society",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   publisher: "NAESS Nepal",
 
   alternates: {
-    canonical: "https://naessnepal.org",
+    canonical: "https://www.naessnepal.org.np",
   },
 
   robots: {
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
       "NAESS Nepal | National Agricultural Engineering Students' Society",
     description:
       "Official website of the National Agricultural Engineering Students' Society (NAESS), Nepal.",
-    url: "https://naessnepal.org",
+    url: "https://www.naessnepal.org.np",
     siteName: "NAESS Nepal",
     locale: "en_US",
     type: "website",
@@ -113,7 +113,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="bg-white text-gray-900">
-        
         {children}
         <GoogleAnalytics gaId="G-5G4FRGFYN8" />
       </body>

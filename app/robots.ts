@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://naessnepal.org.np/sitemap.xml",
+    sitemap: "https://www.naessnepal.org.np/sitemap.xml",
   };
 }
