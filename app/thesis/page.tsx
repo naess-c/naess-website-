@@ -73,7 +73,7 @@ export default function ThesisPage() {
     </p>
 
     <a
-      href="YOUR_GOOGLE_FORM_LINK"
+      href="https://forms.gle/9DvpCuNjpHD1nbV38"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-block bg-green-700 text-white px-8 py-3 rounded-xl hover:bg-green-800 transition"

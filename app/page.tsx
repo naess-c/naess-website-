@@ -1,11 +1,156 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+function FadeInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+function ScaleInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        visible
+          ? "opacity-100 scale-100 translate-y-0"
+          : "opacity-0 scale-90 translate-y-8"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLHeadingElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const duration = 1500;
+          const startTime = performance.now();
+
+          const animate = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(easeOut * target));
+            
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(target);
+            }
+          };
+
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target, hasAnimated]);
+
+  return (
+    <h3 ref={ref} className="text-2xl md:text-5xl font-bold mb-2">
+      {count}
+      {suffix}
+    </h3>
+  );
+}
+
+function TypewriterText({ text, delay = 0, speed = 50 }: { text: string; delay?: number; speed?: number }) {
+  const [displayedText, setDisplayedText] = useState("");
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const startTimeout = setTimeout(() => {
+      setStarted(true);
+    }, delay);
+
+    return () => clearTimeout(startTimeout);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    let index = 0;
+    const interval = setInterval(() => {
+      index++;
+      setDisplayedText(text.slice(0, index));
+
+      if (index >= text.length) {
+        clearInterval(interval);
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [started, text, speed]);
+
+  return <span>{displayedText}</span>;
+}
+
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [showAllFields, setShowAllFields] = useState(false);
+  const pathname = usePathname();
+
+const isActive = (path: string) => pathname === path;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +160,10 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   const jsonLd = {
@@ -43,343 +192,165 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-
     
       
         {/* ...rest of your file stays exactly the same from here... */}
 
-      {/* Premium Navbar */}
-     <nav
-  className={`sticky top-0 left-0 w-full z-50 transition-all duration-500 ${
-    scrolled
-      ? "bg-white/95 backdrop-blur-md shadow-lg py-2"
-      : "bg-black/30 backdrop-blur-sm py-4"
-  }`}
->
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-
-          {/* Logo */}
-<div className="flex items-center gap-3">
-
-  <Image
-    src="/images/logo.png"
-    alt="NAESS Logo"
-    width={scrolled ? 40 : 55}
-    height={scrolled ? 40 : 55}
-    className="transition-all duration-500"
-  />
-
-  <div>
-    <h1
-      className={`font-bold transition-all duration-500 ${
-        scrolled
-          ? "text-teal-700 text-lg"
-          : "text-white text-lg"
-      }`}
-    >
-      NAESS
-    </h1>
-
-   <p
-  className={`block text-[10px] md:text-xs transition-all duration-500 ${
-    scrolled
-      ? "text-gray-600"
-      : "text-white/90"
-  }`}
->
-  National Agricultural Engineering Students' Society
-</p>
-  </div>
-
-</div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-
-            <a
-              href="/"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Home
-            </a>
-
-            <a
-              href="/organization"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Organization
-            </a>
-
-            <a
-              href="/team"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Executive Team
-            </a>
-
-            <a
-              href="/alumni"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Alumni
-            </a>
-
-            <a
-              href="/gallery"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Gallery
-            </a>
-
-            <a
-              href="/notes"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Resources
-            </a>
-
-            <a
-              href="/notices"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Notices
-            </a>
-
-            <a
-              href="/contact"
-              className={`transition ${
-                scrolled
-                  ? "text-gray-700 hover:text-teal-700"
-                  : "text-white hover:text-teal-200"
-              }`}
-            >
-              Contact
-            </a>
-
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className={`md:hidden text-3xl transition ${
-              scrolled ? "text-teal-700" : "text-white"
-            }`}
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
-
-        </div>
-
-        {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div className="md:hidden bg-white shadow-lg border-t">
-
-            <a href="/" className="block px-6 py-3 hover:bg-gray-100">
-              Home
-            </a>
-
-            <a href="/organization" className="block px-6 py-3 hover:bg-gray-100">
-              Organization
-            </a>
-
-            <a href="/team" className="block px-6 py-3 hover:bg-gray-100">
-              Executive Team
-            </a>
-
-            <a href="/alumni" className="block px-6 py-3 hover:bg-gray-100">
-              Alumni
-            </a>
-
-            <a href="/gallery" className="block px-6 py-3 hover:bg-gray-100">
-              Gallery
-            </a>
-
-            <a href="/notes" className="block px-6 py-3 hover:bg-gray-100">
-              Resources
-            </a>
-
-            <a href="/notices" className="block px-6 py-3 hover:bg-gray-100">
-              Notices
-            </a>
-
-            <a href="/contact" className="block px-6 py-3 hover:bg-gray-100">
-              Contact
-            </a>
-
-          </div>
-        )}
-      </nav>
-    
+      
 {/* Hero Section */}
-<section
-  className="relative h-[60vh] md:h-[85vh] flex items-center justify-center text-white"
-  style={{
-    backgroundImage: "url('/images/hero.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
+<section className="relative h-[60vh] md:h-[85vh] flex items-center justify-center text-white overflow-hidden">
+
+  {/* Background Image with Ken Burns zoom */}
+  <div
+    className="absolute inset-0 animate-kenburns"
+    style={{
+      backgroundImage: "url('/images/hero.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  ></div>
+
   {/* Dark Overlay */}
   <div className="absolute inset-0 bg-black/60"></div>
 
   {/* Content */}
   <div className="relative z-10 text-center px-6 max-w-5xl">
 
-    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-      National Agricultural Engineering
-      <br />
-      Students' Society
+    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg min-h-[3em] md:min-h-[2.2em]">
+      {mounted && (
+        <>
+          <TypewriterText text="National Agricultural Engineering" delay={200} speed={35} />
+          <br />
+          <TypewriterText text="Students' Society" delay={1800} speed={35} />
+        </>
+      )}
     </h1>
 
-   <p className="text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
+    <p
+      className={`text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md ${
+        mounted ? "animate-fade-up" : "opacity-0"
+      }`}
+      style={{ animationDelay: "3s" }}
+    >
       Empowering Future Agricultural Engineers of Nepal through
       Innovation, Research, Leadership and Sustainable Development
     </p>
 
-    <div className="w-40 h-1 bg-gradient-to-r from-teal-400 to-green-400 mx-auto mt-8 rounded-full"></div>
+    <div
+      className={`w-40 h-1 bg-gradient-to-r from-teal-400 to-green-400 mx-auto mt-8 rounded-full ${
+        mounted ? "animate-fade-up" : "opacity-0"
+      }`}
+      style={{ animationDelay: "3.3s" }}
+    ></div>
 
   </div>
 </section>
 {/* Statistics Section */}
-
 <section className="py-20 bg-gradient-to-r from-teal-700 to-green-700 text-white">
-
   <div className="max-w-7xl mx-auto px-4">
-
     <div className="grid grid-cols-5 gap-4">
-
       <div className="text-center">
-        <h3 className="text-2xl md:text-5xl font-bold mb-2">
-          2060
-        </h3>
+        <AnimatedCounter target={2060} />
         <p className="text-xs md:text-base text-teal-100">
           Established
         </p>
       </div>
-
       <div className="text-center border-l border-white/20">
-        <h3 className="text-2xl md:text-5xl font-bold mb-2">
-          2080
-        </h3>
+        <AnimatedCounter target={2080} />
         <p className="text-xs md:text-base text-teal-100">
           National Society
         </p>
       </div>
-
       <div className="text-center border-l border-white/20">
-        <h3 className="text-2xl md:text-5xl font-bold mb-2">
-          8
-        </h3>
+        <AnimatedCounter target={8} />
         <p className="text-xs md:text-base text-teal-100">
           Agrineer Volumes
         </p>
       </div>
-
       <div className="text-center border-l border-white/20">
-        <h3 className="text-2xl md:text-5xl font-bold mb-2">
-          15+
-        </h3>
+        <AnimatedCounter target={30} suffix="+" />
         <p className="text-xs md:text-base text-teal-100">
           Technical Trainings
         </p>
       </div>
-
       <div className="text-center border-l border-white/20">
-        <h3 className="text-2xl md:text-5xl font-bold mb-2">
-          2
-        </h3>
+        <AnimatedCounter target={2} suffix="+" />
         <p className="text-xs md:text-base text-teal-100">
           AgriMech Events
         </p>
       </div>
-
     </div>
-
   </div>
-
 </section>
     
-     
 {/* Resources */}
 <section className="py-20 bg-white">
   <div className="max-w-7xl mx-auto px-6">
 
-    <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
-      Academic Resources
-    </h2>
+    <FadeInCard delay={0}>
+      <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
+        Academic Resources
+      </h2>
+    </FadeInCard>
 
-    <p className="text-center text-gray-600 mb-12">
-      Access syllabi, research theses and Agrineer publications.
-    </p>
+    <FadeInCard delay={150}>
+      <p className="text-center text-gray-600 mb-12">
+        Access syllabi, research theses and Agrineer publications.
+      </p>
+    </FadeInCard>
 
     <div className="grid md:grid-cols-3 gap-8">
 
-      <a
-        href="/syllabus"
-        className="bg-teal-700 text-white p-10 rounded-2xl shadow-lg hover:scale-105 transition text-center"
-      >
-        <div className="text-5xl mb-4">📚</div>
-        <h3 className="text-2xl font-bold mb-2">
-          Syllabus
-        </h3>
-        <p>
-          Complete Agricultural Engineering curriculum and course structure.
-        </p>
-      </a>
+      <FadeInCard delay={300}>
+        
+         <a href="/syllabus"
+          className="group bg-teal-700 text-white p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-teal-700/40 hover:-translate-y-3 hover:scale-105 transition-all duration-300 text-center block"
+        >
+          <div className="text-5xl mb-4 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300">
+            📚
+          </div>
+          <h3 className="text-2xl font-bold mb-2">
+            Syllabus
+          </h3>
+          <p className="text-teal-50">
+            Complete Agricultural Engineering curriculum and course structure.
+          </p>
+        </a>
+      </FadeInCard>
 
-      <a
-        href="/thesis"
-        className="bg-green-700 text-white p-10 rounded-2xl shadow-lg hover:scale-105 transition text-center"
-      >
-        <div className="text-5xl mb-4">🎓</div>
-        <h3 className="text-2xl font-bold mb-2">
-          Thesis Repository
-        </h3>
-        <p>
-          Final year projects, research reports and thesis documents.
-        </p>
-      </a>
+      <FadeInCard delay={450}>
+        
+          <a href="/thesis"
+          className="group bg-green-700 text-white p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-green-700/40 hover:-translate-y-3 hover:scale-105 transition-all duration-300 text-center block"
+        >
+          <div className="text-5xl mb-4 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300">
+            🎓
+          </div>
+          <h3 className="text-2xl font-bold mb-2">
+            Thesis Repository
+          </h3>
+          <p className="text-green-50">
+            Final year projects, research reports and thesis documents.
+          </p>
+        </a>
+      </FadeInCard>
 
-      <a
-        href="/agrineer"
-        className="bg-blue-700 text-white p-10 rounded-2xl shadow-lg hover:scale-105 transition text-center"
-      >
-        <div className="text-5xl mb-4">📖</div>
-        <h3 className="text-2xl font-bold mb-2">
-          Agrineer Journal
-        </h3>
-        <p>
-          Access published editions of the Agrineer Journal.
-        </p>
-      </a>
+      <FadeInCard delay={600}>
+        
+         <a href="/agrineer"
+          className="group bg-blue-700 text-white p-10 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-700/40 hover:-translate-y-3 hover:scale-105 transition-all duration-300 text-center block"
+        >
+          <div className="text-5xl mb-4 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300">
+            📖
+          </div>
+          <h3 className="text-2xl font-bold mb-2">
+            Agrineer Journal
+          </h3>
+          <p className="text-blue-50">
+            Access published editions of the Agrineer Journal.
+          </p>
+        </a>
+      </FadeInCard>
 
     </div>
 
@@ -390,13 +361,17 @@ export default function Home() {
 
   <div className="max-w-7xl mx-auto px-6">
 
-    <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-4">
-      Recent Events & Trainings
-    </h2>
+    <FadeInCard delay={0}>
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-4">
+        Recent Events & Trainings
+      </h2>
+    </FadeInCard>
 
-    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
-      Explore the latest activities, technical trainings, workshops and events organized by NAESS.
-    </p>
+    <FadeInCard delay={150}>
+      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
+        Explore the latest activities, technical trainings, workshops and events organized by NAESS.
+      </p>
+    </FadeInCard>
 
     {(() => {
       const activities = [
@@ -442,38 +417,37 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
 
             {activities.slice(0, 6).map((event, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300"
-              >
+              <FadeInCard key={index} delay={300 + index * 150}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300">
 
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-44 object-cover"
-                />
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="w-full h-44 object-cover"
+                  />
 
-                <div className="p-5">
+                  <div className="p-5">
 
-                  <p className="text-sm text-gray-500 mb-2">
-                    {event.date}
-                  </p>
+                    <p className="text-sm text-gray-500 mb-2">
+                      {event.date}
+                    </p>
 
-                  <h3 className="font-bold text-lg text-teal-700">
-                    {event.title}
-                  </h3>
+                    <h3 className="font-bold text-lg text-teal-700">
+                      {event.title}
+                    </h3>
+
+                  </div>
 
                 </div>
-
-              </div>
+              </FadeInCard>
             ))}
 
           </div>
 
           <div className="text-center mt-12">
 
-            <a
-              href="/activities"
+            
+              <a href="/activities"
               className="inline-block bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 transition"
             >
               View All Activities
@@ -492,91 +466,114 @@ export default function Home() {
 
   <div className="max-w-7xl mx-auto px-6">
 
-    <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-4">
-      How NAESS Supports Future Agricultural Engineers
-    </h2>
+    <FadeInCard delay={0}>
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-4">
+        How NAESS Supports Future Agricultural Engineers
+      </h2>
+    </FadeInCard>
 
-    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
-      NAESS empowers Agricultural Engineering students through technical
-      capacity building, knowledge sharing, research promotion and
-      professional networking.
-    </p>
+    <FadeInCard delay={150}>
+      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
+        NAESS empowers Agricultural Engineering students through technical
+        capacity building, knowledge sharing, research promotion and
+        professional networking.
+      </p>
+    </FadeInCard>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       {/* Technical Trainings */}
-      <div className="bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-blue-500">
+      <ScaleInCard delay={300}>
+        <div className="group relative bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-3 transition-all duration-500 overflow-hidden">
 
-        <div className="text-5xl mb-5">⚙️</div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-        <h3 className="text-2xl font-bold text-blue-600 mb-3">
-          Technical Trainings
-        </h3>
+          <div className="text-5xl mb-5 group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-500">
+            ⚙️
+          </div>
 
-        <p className="text-gray-600 leading-7 mb-5">
-          Organizing practical trainings in GIS, SolidWorks, AutoCAD,
-          IoT, Remote Sensing, Drone Technology and Agricultural
-          Machinery Design.
-        </p>
+          <h3 className="text-2xl font-bold text-blue-600 mb-3">
+            Technical Trainings
+          </h3>
 
-        <div className="text-sm text-gray-500">
-          ✓ Skill Development <br />
-          ✓ Industry-Oriented Learning
+          <p className="text-gray-600 leading-7 mb-5">
+            Organizing practical trainings in GIS, SolidWorks, AutoCAD,
+            IoT, Remote Sensing, Drone Technology and Agricultural
+            Machinery Design.
+          </p>
+
+          <div className="text-sm text-gray-500">
+            ✓ Skill Development <br />
+            ✓ Industry-Oriented Learning
+          </div>
+
         </div>
-
-      </div>
+      </ScaleInCard>
 
       {/* Events */}
-      <div className="bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-green-500">
+      <ScaleInCard delay={450}>
+        <div className="group relative bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-3 transition-all duration-500 overflow-hidden">
 
-        <div className="text-5xl mb-5">🎤</div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-green-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-        <h3 className="text-2xl font-bold text-green-600 mb-3">
-          Workshops & Events
-        </h3>
+          <div className="text-5xl mb-5 group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-500">
+            🎤
+          </div>
 
-        <p className="text-gray-600 leading-7 mb-5">
-          Conducting seminars, conferences, industrial visits,
-          competitions and networking events connecting students
-          with professionals and researchers.
-        </p>
+          <h3 className="text-2xl font-bold text-green-600 mb-3">
+            Workshops & Events
+          </h3>
 
-        <div className="text-sm text-gray-500">
-          ✓ National Events <br />
-          ✓ Technical Exposure
+          <p className="text-gray-600 leading-7 mb-5">
+            Conducting seminars, conferences, industrial visits,
+            competitions and networking events connecting students
+            with professionals and researchers.
+          </p>
+
+          <div className="text-sm text-gray-500">
+            ✓ National Events <br />
+            ✓ Technical Exposure
+          </div>
+
         </div>
-
-      </div>
+      </ScaleInCard>
 
       {/* Publications */}
-      <div className="bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border-t-4 border-red-500">
+      <ScaleInCard delay={600}>
+        <div className="group relative bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl hover:shadow-red-500/20 hover:-translate-y-3 transition-all duration-500 overflow-hidden">
 
-        <div className="text-5xl mb-5">📚</div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 to-red-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
-        <h3 className="text-2xl font-bold text-red-600 mb-3">
-          Research & Publications
-        </h3>
+          <div className="text-5xl mb-5 group-hover:scale-125 group-hover:-rotate-12 transition-transform duration-500">
+            📚
+          </div>
 
-        <p className="text-gray-600 leading-7 mb-5">
-          Publishing the official Agrineer Journal and promoting
-          student research, innovation, technical writing and
-          academic excellence.
-        </p>
+          <h3 className="text-2xl font-bold text-red-600 mb-3">
+            Research & Publications
+          </h3>
 
-        <div className="flex flex-wrap gap-2">
+          <p className="text-gray-600 leading-7 mb-5">
+            Publishing the official Agrineer Journal and promoting
+            student research, innovation, technical writing and
+            academic excellence.
+          </p>
 
-          {["Vol 1","Vol 2","Vol 3","Vol 4","Vol 5","Vol 6","Vol 7","Vol 8"].map((vol) => (
-            <span
-              key={vol}
-              className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
-            >
-              {vol}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-2">
+
+            {["Vol 1","Vol 2","Vol 3","Vol 4","Vol 5","Vol 6","Vol 7","Vol 8"].map((vol, i) => (
+              <span
+                key={vol}
+                className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 hover:bg-red-600 hover:text-white hover:scale-110"
+                style={{ transitionDelay: `${i * 30}ms` }}
+              >
+                {vol}
+              </span>
+            ))}
+
+          </div>
 
         </div>
-
-      </div>
+      </ScaleInCard>
 
     </div>
 
@@ -589,36 +586,65 @@ export default function Home() {
 
   <div className="max-w-6xl mx-auto px-6">
 
-    <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">
-      Latest Notices
-    </h2>
+    <FadeInCard delay={0}>
+      <h2 className="text-4xl font-bold text-center text-teal-700 mb-10">
+        Latest Notices
+      </h2>
+    </FadeInCard>
 
-    <div className="space-y-4">
+    {(() => {
+      const notices = [
+        {
+          title: "Application for Technical Manager",
+          date: "Aasadh 25, 2083",
+        },
+        {
+          title: "Educational visit to NARC Tarahara",
+          date: "Aasadh 14, 2083",
+        },
+        {
+          title: "Committee handover Announcement",
+          date: "Aasadh 13, 2083",
+        },
+      ];
 
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 Application for Technical Manager
+      return (
+        <div className="space-y-4">
+          {notices.map((notice, index) => (
+            <FadeInCard key={index} delay={200 + index * 150}>
+              <div className="group bg-white p-5 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-4">
+
+                <div className="flex items-center gap-3">
+                  <span className="relative flex h-3 w-3 flex-shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-teal-600"></span>
+                  </span>
+                  <span className="text-gray-800 group-hover:text-teal-700 transition-colors">
+                    📢 {notice.title}
+                  </span>
+                </div>
+
+                <span className="text-sm text-gray-500 whitespace-nowrap flex-shrink-0">
+                  {notice.date}
+                </span>
+
+              </div>
+            </FadeInCard>
+          ))}
+        </div>
+      );
+    })()}
+
+    <FadeInCard delay={650}>
+      <div className="text-center mt-8">
+        
+          <a href="/notices"
+          className="inline-block bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 hover:scale-105 transition-all duration-300"
+        >
+          View All Notices
+        </a>
       </div>
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 Educational visit to NARC Tarahara
-      </div>
-
-      <div className="bg-white p-5 rounded-xl shadow">
-        📢 committee handover  Announcement
-      </div>
-
-    </div>
-
-    <div className="text-center mt-8">
-
-      <a
-        href="/notices"
-        className="bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 transition"
-      >
-        View All Notices
-      </a>
-
-    </div>
+    </FadeInCard>
 
   </div>
 
@@ -627,200 +653,149 @@ export default function Home() {
 <section className="py-20 bg-gradient-to-b from-white to-gray-50">
   <div className="max-w-7xl mx-auto px-6">
 
-    <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
-      Major Fields of Agricultural Engineering
-    </h2>
+    <FadeInCard delay={0}>
+      <h2 className="text-4xl font-bold text-center text-teal-700 mb-4">
+        Major Fields of Agricultural Engineering
+      </h2>
+    </FadeInCard>
 
-    <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
-      Agricultural Engineering integrates engineering principles with agriculture
-      to improve productivity, sustainability, mechanization, food processing,
-      water management and rural development.
-    </p>
+    <FadeInCard delay={150}>
+      <p className="text-center text-gray-600 max-w-3xl mx-auto mb-14">
+        Agricultural Engineering integrates engineering principles with agriculture
+        to improve productivity, sustainability, mechanization, food processing,
+        water management and rural development.
+      </p>
+    </FadeInCard>
 
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+    {(() => {
+      const fields = [
+        { icon: "🚜", title: "Farm Power & Machinery", desc: "Agricultural machinery, mechanization systems and precision farming technologies." },
+        { icon: "🏗️", title: "Agricultural Infrastructure", desc: "Design of farm buildings, greenhouses, storage structures and rural infrastructure." },
+        { icon: "☀️", title: "Rural & Renewable Energy", desc: "Solar energy, biogas, biomass and sustainable energy technologies." },
+        { icon: "💧", title: "Irrigation Engineering", desc: "Planning, design and management of irrigation and drainage systems." },
+        { icon: "🌱", title: "Soil Conservation & Watershed Management", desc: "Conservation of soil and water resources through watershed planning." },
+        { icon: "📦", title: "Postharvest Engineering", desc: "Harvesting, drying, storage and processing technologies." },
+        { icon: "🥛", title: "Dairy & Food Engineering", desc: "Dairy processing, food preservation and food engineering systems." },
+        { icon: "🌾", title: "Precision Agriculture", desc: "Smart farming technologies using sensors, drones and automation." },
+        { icon: "❄️", title: "Cold Storage & Processing", desc: "Cold chain management, storage systems and agro-processing technologies." },
+      ];
 
-      {/* 1 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🚜</div>
-        <h3 className="text-xl font-bold mb-3">
-          Farm Power & Machinery
-        </h3>
-        <p className="text-gray-600">
-          Agricultural machinery, mechanization systems and precision farming technologies.
-        </p>
-      </div>
+      const visibleFields = showAllFields ? fields : fields.slice(0, 6);
 
-      {/* 2 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🏗️</div>
-        <h3 className="text-xl font-bold mb-3">
-          Agricultural Infrastructure
-        </h3>
-        <p className="text-gray-600">
-          Design of farm buildings, greenhouses, storage structures and rural infrastructure.
-        </p>
-      </div>
+      return (
+        <>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {visibleFields.map((field, index) => (
+              <ScaleInCard key={field.title} delay={index * 100}>
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                  <div className="text-5xl mb-4">{field.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">
+                    {field.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {field.desc}
+                  </p>
+                </div>
+              </ScaleInCard>
+            ))}
+          </div>
 
-      {/* 3 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">☀️</div>
-        <h3 className="text-xl font-bold mb-3">
-          Rural & Renewable Energy
-        </h3>
-        <p className="text-gray-600">
-          Solar energy, biogas, biomass and sustainable energy technologies.
-        </p>
-      </div>
-
-      {/* 4 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">💧</div>
-        <h3 className="text-xl font-bold mb-3">
-          Irrigation Engineering
-        </h3>
-        <p className="text-gray-600">
-          Planning, design and management of irrigation and drainage systems.
-        </p>
-      </div>
-
-      {/* 5 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🌱</div>
-        <h3 className="text-xl font-bold mb-3">
-          Soil Conservation & Watershed Management
-        </h3>
-        <p className="text-gray-600">
-          Conservation of soil and water resources through watershed planning.
-        </p>
-      </div>
-
-      {/* 6 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">📦</div>
-        <h3 className="text-xl font-bold mb-3">
-          Postharvest Engineering
-        </h3>
-        <p className="text-gray-600">
-          Harvesting, drying, storage and processing technologies.
-        </p>
-      </div>
-
-      {/* 7 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🥛</div>
-        <h3 className="text-xl font-bold mb-3">
-          Dairy & Food Engineering
-        </h3>
-        <p className="text-gray-600">
-          Dairy processing, food preservation and food engineering systems.
-        </p>
-      </div>
-
-      {/* 8 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">🌾</div>
-        <h3 className="text-xl font-bold mb-3">
-          Precision Agriculture
-        </h3>
-        <p className="text-gray-600">
-          Smart farming technologies using sensors, drones and automation.
-        </p>
-      </div>
-
-      {/* 9 */}
-      <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-        <div className="text-5xl mb-4">❄️</div>
-        <h3 className="text-xl font-bold mb-3">
-          Cold Storage & Processing
-        </h3>
-        <p className="text-gray-600">
-          Cold chain management, storage systems and agro-processing technologies.
-        </p>
-      </div>
-
-    </div>
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setShowAllFields(!showAllFields)}
+              className="bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 hover:scale-105 transition-all duration-300"
+            >
+              {showAllFields ? "Show Less" : "Show More Fields"}
+            </button>
+          </div>
+        </>
+      );
+    })()}
 
   </div>
 </section>
 
-     {/* President's Message */}
+    {/* President's Message */}
 <section className="py-24 bg-gray-50">
 
   <div className="max-w-7xl mx-auto px-6">
 
-    <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-16">
-      Message from the President
-    </h2>
+    <FadeInCard delay={0}>
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-16">
+        Message from the President
+      </h2>
+    </FadeInCard>
 
-    <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10">
+    <ScaleInCard delay={200}>
+      <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10 hover:shadow-2xl transition-shadow duration-500">
 
-      <div className="flex flex-row items-start gap-6 md:gap-10">
+        <div className="flex flex-row items-start gap-6 md:gap-10">
 
-        {/* President Photo */}
-        <div className="flex-shrink-0">
+          {/* President Photo */}
+          <div className="flex-shrink-0">
 
-          <Image
-            src="/committee/dipendra.jpg"
-            alt="Dipendra Kumar Sah"
-            width={180}
-            height={220}
-            className="rounded-2xl object-cover shadow-lg w-28 h-36 md:w-44 md:h-56"
-          />
+            <Image
+              src="/committee/dipendra.jpg"
+              alt="Dipendra Kumar Sah"
+              width={180}
+              height={220}
+              className="rounded-2xl object-cover shadow-lg w-28 h-36 md:w-44 md:h-56 hover:scale-105 transition-transform duration-500"
+            />
 
-        </div>
-
-        {/* Message */}
-        <div className="flex-1">
-
-          <div className="text-5xl text-teal-600 leading-none mb-3">
-            "
           </div>
 
-          <p className="text-gray-700 leading-7 md:leading-8 text-sm md:text-lg">
-            Welcome to the official website of the National Agricultural
-            Engineering Students' Society (NAESS).
+          {/* Message */}
+          <div className="flex-1">
 
-            <br /><br />
+            <div className="text-5xl text-teal-600 leading-none mb-3">
+              "
+            </div>
 
-            NAESS is dedicated to strengthening the academic, technical
-            and professional capabilities of Agricultural Engineering
-            students across Nepal through trainings, research,
-            publications, networking and leadership development.
+            <p className="text-gray-700 leading-7 md:leading-8 text-sm md:text-lg">
+              Welcome to the official website of the National Agricultural
+              Engineering Students' Society (NAESS).
 
-            <br /><br />
+              <br /><br />
 
-            Together, we strive to create opportunities for innovation,
-            practical learning and collaboration while contributing to
-            the advancement of Agricultural Engineering and sustainable
-            development in Nepal.
-          </p>
+              NAESS is dedicated to strengthening the academic, technical
+              and professional capabilities of Agricultural Engineering
+              students across Nepal through trainings, research,
+              publications, networking and leadership development.
 
-          <div className="mt-8 border-t pt-5">
+              <br /><br />
 
-            <h3 className="text-xl md:text-2xl font-bold text-teal-700">
-              Dipendra Kumar Sah
-            </h3>
-
-            <p className="text-gray-600 font-medium">
-              President
+              Together, we strive to create opportunities for innovation,
+              practical learning and collaboration while contributing to
+              the advancement of Agricultural Engineering and sustainable
+              development in Nepal.
             </p>
 
-            <p className="text-gray-500 text-sm">
-              National Agricultural Engineering Students' Society (NAESS)
-            </p>
+            <div className="mt-8 border-t pt-5">
+
+              <h3 className="text-xl md:text-2xl font-bold text-teal-700">
+                Dipendra Kumar Sah
+              </h3>
+
+              <p className="text-gray-600 font-medium">
+                President
+              </p>
+
+              <p className="text-gray-500 text-sm">
+                National Agricultural Engineering Students' Society (NAESS)
+              </p>
+
+            </div>
 
           </div>
 
         </div>
 
       </div>
-
-    </div>
+    </ScaleInCard>
 
   </div>
 
 </section>
-
       {/* Footer */}
 <footer className="bg-gray-900 text-gray-300">
 
@@ -834,13 +809,13 @@ export default function Home() {
         <div className="flex items-center gap-3 mb-4">
 
           <a href="/">
-  <Image
-    src="/images/logo.png"
-    alt="NAESS Logo"
-    width={50}
-    height={50}
-  />
-</a>
+            <Image
+              src="/images/logo.png"
+              alt="NAESS Logo"
+              width={50}
+              height={50}
+            />
+          </a>
 
           <div>
             <h3 className="text-xl font-bold text-white">
@@ -872,31 +847,37 @@ export default function Home() {
         <ul className="space-y-3">
 
           <li>
-            <a href="/" className="hover:text-teal-400">
+            <a href="/" className="hover:text-teal-400 transition">
               Home
             </a>
           </li>
 
           <li>
-            <a href="/organization" className="hover:text-teal-400">
+            <a href="/organization" className="hover:text-teal-400 transition">
               Organization
             </a>
           </li>
 
           <li>
-            <a href="/team" className="hover:text-teal-400">
+            <a href="/team" className="hover:text-teal-400 transition">
               Executive Team
             </a>
           </li>
 
           <li>
-            <a href="/gallery" className="hover:text-teal-400">
+            <a href="/alumni" className="hover:text-teal-400 transition">
+              Alumni
+            </a>
+          </li>
+
+          <li>
+            <a href="/gallery" className="hover:text-teal-400 transition">
               Gallery
             </a>
           </li>
 
           <li>
-            <a href="/contact" className="hover:text-teal-400">
+            <a href="/contact" className="hover:text-teal-400 transition">
               Contact
             </a>
           </li>
@@ -905,42 +886,49 @@ export default function Home() {
 
       </div>
 
-     {/* Resources */}
-<div>
+      {/* Resources */}
+      <div>
 
-  <h3 className="text-lg font-semibold text-white mb-4">
-    Resources
-  </h3>
+        <h3 className="text-lg font-semibold text-white mb-4">
+          Resources
+        </h3>
 
-  <ul className="space-y-3">
+        <ul className="space-y-3">
 
-    <li>
-      <a href="/syllabus" className="hover:text-teal-400 transition">
-        Syllabus
-      </a>
-    </li>
+          <li>
+            <a href="/syllabus" className="hover:text-teal-400 transition">
+              Syllabus
+            </a>
+          </li>
 
-    <li>
-      <a href="/thesis" className="hover:text-teal-400 transition">
-        Thesis Repository
-      </a>
-    </li>
+          <li>
+            <a href="/thesis" className="hover:text-teal-400 transition">
+              Thesis Repository
+            </a>
+          </li>
 
-    <li>
-      <a href="/agrineer" className="hover:text-teal-400 transition">
-        Agrineer Journal
-      </a>
-    </li>
+          <li>
+            <a href="/agrineer" className="hover:text-teal-400 transition">
+              Agrineer Journal
+            </a>
+          </li>
 
-    <li>
-      <a href="/notices" className="hover:text-teal-400 transition">
-        Notices
-      </a>
-    </li>
+          <li>
+            <a href="/activities" className="hover:text-teal-400 transition">
+              Activities
+            </a>
+          </li>
 
-  </ul>
+          <li>
+            <a href="/notices" className="hover:text-teal-400 transition">
+              Notices
+            </a>
+          </li>
 
-</div>
+        </ul>
+
+      </div>
+
       {/* Contact */}
       <div>
 
@@ -960,11 +948,11 @@ export default function Home() {
             📧 naess@ioepc.edu.np
           </p>
 
-          <a
-            href="https://www.facebook.com/profile.php?id=61572261099146"
+          
+           <a href="https://www.facebook.com/profile.php?id=61572261099146"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block hover:text-teal-400"
+            className="inline-block hover:text-teal-400 transition"
           >
             📘 Facebook Page
           </a>
