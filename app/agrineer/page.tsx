@@ -1,4 +1,71 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+
+function FadeInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function ScaleInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        visible
+          ? "opacity-100 scale-100 translate-y-0"
+          : "opacity-0 scale-90 translate-y-8"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function AgrineerPage() {
   const journals = [
@@ -55,104 +122,106 @@ export default function AgrineerPage() {
       </section>
 
       {/* About Section */}
-      <section className="max-w-5xl mx-auto px-6 py-16 text-center">
+      <FadeInCard delay={0}>
+        <section className="max-w-5xl mx-auto px-6 py-16 text-center">
 
-        <h2 className="text-3xl font-bold text-teal-700 mb-6">
-          About Agrineer
-        </h2>
+          <h2 className="text-3xl font-bold text-teal-700 mb-6">
+            About Agrineer
+          </h2>
 
-        <p className="text-gray-600 leading-8">
-          Agrineer is the official publication of NAESS. It serves as a platform
-          for students, researchers and professionals to share technical articles,
-          research findings, innovations and experiences related to Agricultural
-          Engineering and sustainable agricultural development.
-        </p>
+          <p className="text-gray-600 leading-8">
+            Agrineer is the official publication of NAESS. It serves as a platform
+            for students, researchers and professionals to share technical articles,
+            research findings, innovations and experiences related to Agricultural
+            Engineering and sustainable agricultural development.
+          </p>
 
-      </section>
+        </section>
+      </FadeInCard>
 
       {/* Journal Archive */}
       <section className="max-w-7xl mx-auto px-6 pb-20">
 
-        <h2 className="text-4xl font-bold text-center text-teal-700 mb-12">
-          Journal Archive
-        </h2>
+        <FadeInCard delay={0}>
+          <h2 className="text-4xl font-bold text-center text-teal-700 mb-12">
+            Journal Archive
+          </h2>
+        </FadeInCard>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
           {journals.map((journal, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-            >
+            <ScaleInCard key={index} delay={index * 120}>
+              <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 [perspective:1000px]">
 
-              {/* Cover */}
-              <div className="relative h-72">
+                {/* Cover */}
+                <div className="relative h-72 overflow-hidden [transform-style:preserve-3d] group-hover:[transform:rotateY(-6deg)] transition-transform duration-500">
 
-                <Image
-                  src={journal.cover}
-                  alt={journal.volume}
-                  fill
-                  className="object-cover"
+                  <Image
+                    src={journal.cover}
+                    alt={journal.volume}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+
+                  {journal.volume === "Volume 8" && (
+                    <div className="absolute top-3 right-3 bg-red-600 text-white text-xs px-3 py-1 rounded-full font-semibold animate-pulse">
+                      Latest
+                    </div>
+                  )}
+
+                </div>
+
+                {/* Content */}
+                <div className="p-5">
+
+                  <h3 className="text-xl font-bold text-center">
+                    {journal.volume}
+                  </h3>
+
+                  <p className="text-center text-gray-500 mt-1">
+                    {journal.year}
+                  </p>
+
                   
-                />
+                   <a href={journal.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-5 bg-teal-700 text-white text-center py-3 rounded-xl hover:bg-teal-800 hover:scale-105 transition-all duration-300"
+                  >
+                    View Journal
+                  </a>
 
-                {journal.volume === "Volume 8" && (
-                  <div className="absolute top-3 right-3 bg-red-600 text-white text-xs px-3 py-1 rounded-full font-semibold">
-                    Latest
-                  </div>
-                )}
-
-              </div>
-              
-
-              {/* Content */}
-              <div className="p-5">
-
-                <h3 className="text-xl font-bold text-center">
-                  {journal.volume}
-                </h3>
-
-                <p className="text-center text-gray-500 mt-1">
-                  {journal.year}
-                </p>
-
-                <a
-                  href={journal.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block mt-5 bg-teal-700 text-white text-center py-3 rounded-xl hover:bg-teal-800 transition"
-                >
-                  View Journal
-                </a>
+                </div>
 
               </div>
-
-            </div>
+            </ScaleInCard>
           ))}
 
         </div>
 
       </section>
-      
 
       {/* Footer Message */}
-      <section className="bg-white py-16">
+      <FadeInCard delay={0}>
+        <section className="bg-white py-16">
 
-        <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto px-6 text-center">
 
-          <h2 className="text-3xl font-bold text-teal-700 mb-4">
-            Contribute to Agrineer
-          </h2>
+            <h2 className="text-3xl font-bold text-teal-700 mb-4">
+              Contribute to Agrineer
+            </h2>
 
-          <p className="text-gray-600 leading-8">
-            NAESS welcomes technical articles, research papers, project reports,
-            innovations and experiences from students, researchers and professionals
-            in Agricultural Engineering for future volumes of Agrineer.
-          </p>
+            <p className="text-gray-600 leading-8">
+              NAESS welcomes technical articles, research papers, project reports,
+              innovations and experiences from students, researchers and professionals
+              in Agricultural Engineering for future volumes of Agrineer.
+            </p>
 
-        </div>
+          </div>
 
-      </section>
+        </section>
+      </FadeInCard>
 
     </main>
   );
