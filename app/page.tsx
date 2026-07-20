@@ -34,6 +34,7 @@ function FadeInCard({ children, delay = 0 }: { children: React.ReactNode; delay?
     </div>
   );
 }
+
 function ScaleInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -151,6 +152,33 @@ export default function Home() {
   const pathname = usePathname();
 
 const isActive = (path: string) => pathname === path;
+const [naessText, setNaessText] = useState("");
+
+useEffect(() => {
+  const word = "NAESS";
+  let index = 0;
+  let deleting = false;
+
+  const interval = setInterval(() => {
+    if (!deleting) {
+      setNaessText(word.slice(0, index + 1));
+      index++;
+
+      if (index === word.length) {
+        deleting = true;
+      }
+    } else {
+      setNaessText(word.slice(0, index - 1));
+      index--;
+
+      if (index === 0) {
+        deleting = false;
+      }
+    }
+  }, 600);
+
+  return () => clearInterval(interval);
+}, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -216,15 +244,27 @@ const isActive = (path: string) => pathname === path;
   {/* Content */}
   <div className="relative z-10 text-center px-6 max-w-5xl">
 
-    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg min-h-[3em] md:min-h-[2.2em]">
-      {mounted && (
-        <>
-          <TypewriterText text="National Agricultural Engineering" delay={200} speed={35} />
-          <br />
-          <TypewriterText text="Students' Society" delay={1800} speed={35} />
-        </>
-      )}
-    </h1>
+    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+
+  National Agricultural Engineering 
+  <br />
+  
+students' Society
+</h1>
+
+<div
+  className={`mt-4 ${
+    mounted ? "animate-fade-up" : "opacity-0"
+  }`}
+  style={{ animationDelay: "1s" }}
+>
+  <div className="mt-6">
+  <h2 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-widest text-teal-300 drop-shadow-2xl min-h-[1.2em]">
+    {naessText}
+    <span className="animate-pulse">|</span>
+  </h2>
+</div>
+</div>
 
     <p
       className={`text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md ${
@@ -597,14 +637,17 @@ const isActive = (path: string) => pathname === path;
         {
           title: "Application for Technical Manager",
           date: "Aasadh 25, 2083",
+          link: "https://drive.google.com/file/d/199O7BsXP36fc5wjaIV9kK_VVa0sn515d/view?usp=drive_link",
         },
         {
           title: "Educational visit to NARC Tarahara",
           date: "Aasadh 14, 2083",
+          link: "https://drive.google.com/file/d/1ppKyPeBD7DTGY3FpDlxydO4F6KfE1wKy/view?usp=drive_link",
         },
         {
           title: "Committee handover Announcement",
           date: "Aasadh 13, 2083",
+          link: "https://drive.google.com/file/d/1SQNl9-RwI4qX5VluTqj4jFYNrDBqzFMM/view?usp=drive_link",
         },
       ];
 
@@ -612,8 +655,12 @@ const isActive = (path: string) => pathname === path;
         <div className="space-y-4">
           {notices.map((notice, index) => (
             <FadeInCard key={index} delay={200 + index * 150}>
-              <div className="group bg-white p-5 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-4">
-
+              
+               <a href={notice.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-white p-5 rounded-xl shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-between gap-4"
+              >
                 <div className="flex items-center gap-3">
                   <span className="relative flex h-3 w-3 flex-shrink-0">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
@@ -627,8 +674,7 @@ const isActive = (path: string) => pathname === path;
                 <span className="text-sm text-gray-500 whitespace-nowrap flex-shrink-0">
                   {notice.date}
                 </span>
-
-              </div>
+              </a>
             </FadeInCard>
           ))}
         </div>
@@ -638,7 +684,7 @@ const isActive = (path: string) => pathname === path;
     <FadeInCard delay={650}>
       <div className="text-center mt-8">
         
-          <a href="/notices"
+        <a  href="/notices"
           className="inline-block bg-teal-700 text-white px-8 py-3 rounded-xl hover:bg-teal-800 hover:scale-105 transition-all duration-300"
         >
           View All Notices

@@ -49,14 +49,14 @@ export default function AlumniPage() {
       name: "Er. Aditya Dhakal",
       position: "Asst. Campus Chief (Planning & Resources Management)",
       organization: "Purwanchal Campus",
-      batch: "2065 Batch",
+      batch: "",
       image: "/alumni/alumni2.jpg",
     },
     {
       name: "Er. Tirtha Raj Karki",
       position: "Assistant Campus Chief (Administration)",
       organization: "Purwanchal Campus",
-      batch: "2070 Batch",
+      batch: "",
       image: "/alumni/alumni3.jpg",
     },
     {
@@ -70,14 +70,14 @@ export default function AlumniPage() {
       name: "Er. Suman Thapa",
       position: "Deputy Head of Department (Agricultural Engineering)",
       organization: "Purwanchal Campus",
-      batch: "2074 Batch",
+      batch: "",
       image: "/alumni/alumni5.jpg",
     },
     {
       name: "Er. Samir Sakhya",
       position: "professor",
       organization: "purwanchal campus",
-      batch: "2058 Batch",
+      batch: "",
       image: "/alumni/alumni6.jpg",
     },
     {
@@ -87,55 +87,7 @@ export default function AlumniPage() {
       batch: "2075 Batch",
       image: "/alumni/alumni7.jpeg",
     },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
-    {
-      name: "Dr. Er. Jeet B Chand",
-      position: "Senior Agricultural Engineer",
-      organization: "Government of Nepal",
-      batch: "2058 Batch",
-      image: "/alumni/alumni1.jpg",
-    },
+   
   ];
 
   return (

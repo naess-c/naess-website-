@@ -116,6 +116,19 @@ export default function GalleryPage() {
       src: "/gallery/agrineer2.jpg",
       title: "Agrineer Volume 8 Release",
     },
+    {
+      src: "/gallery/method.jpg",
+      title: "Engineering research methods training",
+    },
+     {
+      src: "/gallery/method1.jpg",
+      title: "Engineering research methods training",
+    },
+     {
+      src: "/gallery/method2.jpg",
+      title: "Engineering research methods training",
+    },
+    
      {
       src: "/gallery/conference.jpg",
       title: "International Conference 2026",
@@ -141,10 +154,6 @@ export default function GalleryPage() {
       title: "IoT Workshop",
     },
      {
-      src: "/gallery/land.jpg",
-      title: "Land Valuation Training",
-    },
-    {
       src: "/gallery/land1.jpg",
       title: "Land Valuation Training",
     },
@@ -164,6 +173,7 @@ export default function GalleryPage() {
       src: "/gallery/land5.jpg",
       title: "Land Valuation Training",
     },
+   
     {
       src: "/gallery/desk.jpg",
       title: "Admission Help Desk 2082",
@@ -293,13 +303,13 @@ export default function GalleryPage() {
             <ScaleInCard key={index} delay={(index % 6) * 120}>
               <div className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className="overflow-hidden">
-                  <Image
-                    src={image.src}
-                    alt={image.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+                 <Image
+  src={image.src}
+  alt={image.title}
+  width={600}
+  height={400}
+  className="w-full h-64 object-cover object-center"
+/>
                 </div>
 
                 <div className="p-4">
