@@ -36,15 +36,8 @@ function ScaleInCard({ children, delay = 0 }: { children: React.ReactNode; delay
 }
 
 export default function LicenseQuestionsPage() {
-  const modelQuestions = [
-    {
-      title: "Model Question",
-      year: "Practice",
-      link: "https://drive.google.com/file/d/1DQkKpl-iekCyQ2QQp_lIgD7hdhA-Gopz/view?usp=drive_link",
-    },
-  ];
-
   const chapters = [
+    { title: "Model Question", link: "/mcq/model" },
     { title: "Basic Civil Engineering", link: "/mcq/chapter-1" },
     { title: "Soil Mechanics and Foundation Engineering", link: "/mcq/chapter-2" },
     { title: "Basic Water Resources Engineering", link: "/mcq/chapter-3" },
@@ -75,74 +68,38 @@ export default function LicenseQuestionsPage() {
         </div>
       </section>
 
-      {/* Model Question */}
+      {/* All MCQs (Model Question + Chapters) */}
       <section className="max-w-6xl mx-auto px-6 py-16">
 
-        <h2 className="text-3xl font-bold text-teal-700 mb-8">
-          Model Question
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {modelQuestions.map((question, index) => (
-            <ScaleInCard key={index} delay={index * 100}>
-              
-               <a href={question.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-8"
-              >
-                <div className="text-5xl mb-4">📝</div>
-
-                <span className="inline-block bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">
-                  {question.year}
-                </span>
-
-                <h3 className="text-2xl font-bold text-teal-700">
-                  {question.title}
-                </h3>
-
-              </a>
-            </ScaleInCard>
-          ))}
-
-        </div>
-
-      </section>
-
-      {/* Chapter-wise MCQs */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-
         <h2 className="text-3xl font-bold text-teal-700 mb-3">
-          Chapter-wise MCQs
+          Practice MCQs
         </h2>
 
         <p className="text-gray-600 mb-8">
-          Practice questions organized by chapter for NEC license preparation.
+          Model question and chapter-wise practice sets for NEC license preparation.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {chapters.map((chapter, index) => (
-            <ScaleInCard key={index} delay={(index % 6) * 100}>
-              
-               <a href={chapter.link}
-                className="group flex items-center gap-4 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6"
-              >
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-2xl font-bold text-green-700 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-                  {index + 1}
-                </div>
+            
+             <a key={index}
+             href={chapter.link}
+              className="group flex items-center gap-4 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6"
+            >
+              <div className="flex-shrink-0 w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-2xl font-bold text-green-700 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
+                {index === 0 ? "📝" : index}
+              </div>
 
-                <div>
-                  <h3 className="text-lg font-bold text-gray-800 group-hover:text-teal-700 transition-colors">
-                    {chapter.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 mt-1">
-                    MCQ Practice Set
-                  </p>
-                </div>
-              </a>
-            </ScaleInCard>
+              <div>
+                <h3 className="text-lg font-bold text-gray-800 group-hover:text-teal-700 transition-colors">
+                  {chapter.title}
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">
+                  MCQ Practice Set
+                </p>
+              </div>
+            </a>
           ))}
 
         </div>
@@ -152,3 +109,5 @@ export default function LicenseQuestionsPage() {
     </main>
   );
 }
+
+   

@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState } from "react";
 
 type Question = {
@@ -8,6 +9,7 @@ type Question = {
   correctIndex: number;
   explanation: string;
 };
+
 
 export default function Quiz({
   chapterTitle,
@@ -66,6 +68,7 @@ export default function Quiz({
   ).length;
   const skippedCount = answers.filter((a) => a === "skipped").length;
   const attemptedCount = correctCount + wrongCount;
+  
 
   // Final summary screen
   if (finished) {

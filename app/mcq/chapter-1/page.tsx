@@ -610,7 +610,7 @@ export default function Chapter1Page() {
   return (
   <main className="min-h-screen bg-gray-50 py-8 px-6 pb-32">
     <h1 className="text-2xl md:text-3xl font-bold text-center text-teal-700 mb-1">
-      Chapter 1
+      Basic Civil Engineering
     </h1>
     <p className="text-center text-gray-500 text-sm mb-6">
       Answer all questions to see instant feedback and explanations.
