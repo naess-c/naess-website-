@@ -1,7 +1,7 @@
 export default function CareerPage() {
   const government = [
     "Department of Water Resources and Irrigation (DWRI)",
-    "Prime Minister Agriculture Modernization Project (PMAMP)",
+    "National Agriculture Modernization Project (NAMP)",
     "Agriculture Knowledge Center (AKC)",
     "Nepal Agricultural Research Council (NARC)",
     "Ministry of Agriculture and Livestock Development",

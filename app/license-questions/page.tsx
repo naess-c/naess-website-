@@ -36,8 +36,11 @@ function ScaleInCard({ children, delay = 0 }: { children: React.ReactNode; delay
 }
 
 export default function LicenseQuestionsPage() {
-  const chapters = [
+  const modelSets = [
     { title: "Model Question", link: "/mcq/model" },
+  ];
+
+  const chapters = [
     { title: "Basic Civil Engineering", link: "/mcq/chapter-1" },
     { title: "Soil Mechanics and Foundation Engineering", link: "/mcq/chapter-2" },
     { title: "Basic Water Resources Engineering", link: "/mcq/chapter-3" },
@@ -68,27 +71,54 @@ export default function LicenseQuestionsPage() {
         </div>
       </section>
 
-      {/* All MCQs (Model Question + Chapters) */}
+      {/* Model Sets */}
       <section className="max-w-6xl mx-auto px-6 py-16">
 
+        <h2 className="text-3xl font-bold text-teal-700 mb-8">
+          Model Sets
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {modelSets.map((item, index) => (
+            
+            <a  key={index}
+              href={item.link}
+              className="bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-8"
+            >
+              <div className="text-5xl mb-4">📝</div>
+
+              <h3 className="text-2xl font-bold text-teal-700">
+                {item.title}
+              </h3>
+            </a>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* Chapter-wise MCQs */}
+      <section className="max-w-6xl mx-auto px-6 pb-20">
+
         <h2 className="text-3xl font-bold text-teal-700 mb-3">
-          Practice MCQs
+          Chapter-wise MCQs
         </h2>
 
         <p className="text-gray-600 mb-8">
-          Model question and chapter-wise practice sets for NEC license preparation.
+          Practice questions organized by chapter for NEC license preparation.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {chapters.map((chapter, index) => (
             
-             <a key={index}
-             href={chapter.link}
+            <a  key={index}
+              href={chapter.link}
               className="group flex items-center gap-4 bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6"
             >
               <div className="flex-shrink-0 w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-2xl font-bold text-green-700 group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-                {index === 0 ? "📝" : index}
+                {index + 1}
               </div>
 
               <div>
@@ -110,4 +140,5 @@ export default function LicenseQuestionsPage() {
   );
 }
 
+    
    

@@ -45,9 +45,11 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="NAESS Logo"
-            width={scrolled ? 40 : 55}
-            height={scrolled ? 40 : 55}
-            className="transition-all duration-500"
+            width={55}
+            height={55}
+            className={`transition-transform duration-500 origin-left ${
+              scrolled ? "scale-[0.73]" : "scale-100"
+            }`}
           />
           <div>
             <h1
@@ -108,7 +110,7 @@ export default function Navbar() {
         <div className="md:hidden bg-white shadow-lg border-t">
           {links.map((link) => (
             
-            <a  key={link.href}
+              <a key={link.href}
               href={link.href}
               className={`block px-6 py-3 hover:bg-gray-100 ${
                 isActive(link.href) ? "text-teal-700 font-semibold bg-gray-50" : ""

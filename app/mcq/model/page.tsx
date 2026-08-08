@@ -5,1107 +5,613 @@ export default function ModelQuestionPage() {
     
 
   {
-    question: "Modulus of elasticity is the stress when applied in a member will double the length due to",
-    options: [
-      "a) change in length = original length",
-      "b) change in length = twice of original length",
-      "c) final length = original length",
-      "d) final length = half of original length"
-    ],
-    answer: "a) change in length = original length",
-    explanation: "Hooke's law states Stress (σ) = E × Strain (ε). Since Strain = ΔL / L, when ΔL = L (change in length equals original length), Strain = 1, making Stress (σ) = Modulus of Elasticity (E). This causes the total length to double (L + L = 2L)."
+    question: "1. Modulus of elasticity is the stress when applied in a member will double the length due to",
+    options: ["A. change in length = original length", "B. change in length = twice of original length", "C. final length = original length", "D. final length = half of original length"],
+    correctIndex: 0,
+    explanation: "Stress = E × Strain. For final length to be twice the original (L_final = 2L_0), the change in length (ΔL) must equal the original length (L_0), resulting in a strain (ΔL/L_0) of 1, so Stress = E."
   },
   {
-    question: "Profound lumps of cement in a bag shall be confirmed instantly before its use by",
-    options: [
-      "a) consistency test",
-      "b) soundness test",
-      "c) freshness test",
-      "d) setting time test"
-    ],
-    answer: "c) freshness test",
-    explanation: "A freshness test in the field checks for air-set lumps by pressing them between fingers. If the lumps cannot be easily crushed, the cement has absorbed atmospheric moisture and aged, rendering it unfit for structural use."
+    question: "2. Profound lumps of cement in a bag shall be confirmed instantly before its use by",
+    options: ["A. consistency test", "B. soundness test", "C. freshness test", "D. setting time test"],
+    correctIndex: 2,
+    explanation: "Presence of hard lumps indicates atmospheric moisture absorption and age, which is visually and manually tested via a field freshness check before site use."
   },
   {
-    question: "Non-load bearing (e.g. compound wall) is generally constructed using stones in",
-    options: [
-      "a) ashlar fashion",
-      "b) coursed rubble",
-      "c) uncoursed rubble",
-      "d) chamfered ashlar"
-    ],
-    answer: "c) uncoursed rubble",
-    explanation: "Uncoursed rubble masonry uses randomly sized, undressed stones without regular horizontal courses, making it the most economical choice for non-load-bearing boundary or compound walls."
+    question: "3. Non-load bearing (e.g. compound wall) is generally constructed using stones in",
+    options: ["A. ashlar fashion", "B. coursed rubble", "C. uncoursed rubble", "D. chamfered ashlar"],
+    correctIndex: 2,
+    explanation: "Uncoursed rubble masonry uses undressed stones of irregular shapes, making it economical and ideal for low-cost, non-load-bearing boundary walls."
   },
   {
-    question: "A body will appear mirror image with respect to",
-    options: [
-      "a) elastic neutral axis",
-      "b) plastic neutral axis",
-      "c) axis of symmetry",
-      "d) neutral axis and axis of symmetry"
-    ],
-    answer: "c) axis of symmetry",
-    explanation: "An axis of symmetry is a line or plane that divides a geometry into two identical, mirrored halves."
+    question: "4. A body will appear mirror image with respect to",
+    options: ["A. elastic neutral axis", "B. plastic neutral axis", "C. axis of symmetry", "D. neutral axis and axis of symmetry"],
+    correctIndex: 2,
+    explanation: "An axis of symmetry divides a cross-section into two identical, mirrored halves."
   },
   {
-    question: "If a topographic map is prepared with 5m contour interval, then index contour is generally shown at",
-    options: [
-      "a) every 5th contour",
-      "b) every 3rd contour",
-      "c) every 10th contour",
-      "d) every 7th contour"
-    ],
-    answer: "a) every 5th contour",
-    explanation: "Standard drafting conventions designate every 5th contour line as an index contour, which is drawn heavier/thicker and labelled with its elevation to enhance readability."
+    question: "5. If a topographic map is prepared with 5m contour interval, then index contour is generally shown at",
+    options: ["A. every 5th contour", "B. every 3rd contour", "C. every 10th contour", "D. every 7th contour"],
+    correctIndex: 0,
+    explanation: "Index contours are heavier lines drawn at every 5th contour line (e.g., at 25m intervals when contour interval is 5m) to aid readability."
   },
   {
-    question: "Valuation of a currently running Bhat Bhateni supermarket shall be carried out more precisely by ................ methods of valuation",
-    options: [
-      "a) plinth area",
-      "b) capitalized worth",
-      "c) depreciated",
-      "d) development"
-    ],
-    answer: "b) capitalized worth",
-    explanation: "For commercial, income-generating properties like a running supermarket, valuation is based on the net annual income capitalized at a suitable rate of interest (Capitalized Worth / Income Capitalization Method)."
+    question: "6. Valuation of a currently running Bhat Bhateni supermarket shall be carried out more precisely by ................ methods of valuation",
+    options: ["A. plinth area", "B. capitalized worth", "C. depreciated", "D. development"],
+    correctIndex: 1,
+    explanation: "Commercial income-generating properties are valued using the income capitalization or capitalized worth method based on net operating income."
   },
   {
-    question: "Which of the following property of soil is known for index property",
-    options: [
-      "a) size of particle",
-      "b) shape of particle",
-      "c) thixotropy",
-      "d) shape and size of particle"
-    ],
-    answer: "d) shape and size of particle",
-    explanation: "Index properties (such as grain size distribution, grain shape, Atterberg limits, and specific gravity) are used to classify and assess the engineering behavior of soils."
+    question: "7. Which of the following property of soil is known for index property",
+    options: ["A. size of particle", "B. shape of particle", "C. thixotropy", "D. shape and size of particle"],
+    correctIndex: 3,
+    explanation: "Index properties, such as particle size distribution and grain shape, help classify soils and indicate their engineering behavior."
   },
   {
-    question: "Compaction and consolidation are different because of",
-    options: [
-      "a) intensity of load applied",
-      "b) equipment used for loading purpose",
-      "c) expulsion of either air particle or water particle",
-      "d) either reduction of void ratio or increasing density of soil"
-    ],
-    answer: "c) expulsion of either air particle or water particle",
-    explanation: "Compaction is the rapid removal of air voids under dynamic or mechanical loads, whereas consolidation is the gradual expulsion of pore water under sustained static loads over time."
+    question: "8. Compaction and consolidation are different because of",
+    options: ["A. intensity of load applied", "B. equipment used for loading purpose", "C. expulsion of either air particle or water particle", "D. either reduction of void ratio or increasing density of soil"],
+    correctIndex: 2,
+    explanation: "Compaction involves rapid removal of air voids under dynamic loads, whereas consolidation is the gradual expulsion of water under sustained static loads."
   },
   {
-    question: "A pure sand has its shear strength due to",
-    options: [
-      "a) φ (friction angle)",
-      "b) C (cohesion)",
-      "c) C and φ",
-      "d) void ratio of sand"
-    ],
-    answer: "a) φ (friction angle)",
-    explanation: "Pure sand is a cohesionless soil (C = 0). Its shear strength relies entirely on internal friction among particles (c-phi shear strength equation τ = σ tan φ)."
+    question: "9. A pure sand has its shear strength due to",
+    options: ["A. \\phi (friction angle)", "B. C (cohesion)", "C. C and \\phi", "D. void ratio of sand"],
+    correctIndex: 0,
+    explanation: "Pure sand is a cohesionless soil (C = 0), deriving its shear strength purely from internal friction angle (\\phi)."
   },
   {
-    question: "For construction of bridge pier, precise soil test shall be carried out by taking sample through",
-    options: [
-      "a) digging a pit",
-      "b) direct shear test",
-      "c) sand piling",
-      "d) standard split spoon sample"
-    ],
-    answer: "d) standard split spoon sample",
-    explanation: "Deep foundations like bridge piers require deep subsurface exploration. A Standard Split Spoon Sampler is driven during standard penetration tests (SPT) to obtain soil samples from deep strata below water levels."
+    question: "10. For construction of bridge pier, precise soil test shall be carried out by taking sample through",
+    options: ["A. digging a pit", "B. direct shear test", "C. sand piling", "D. standard split spoon sample"],
+    correctIndex: 3,
+    explanation: "Standard Split Spoon Sampler (SPT) is the standard method for collecting soil samples at deeper depths required for bridge pier foundation design."
   },
   {
-    question: "Shallow foundation is different from deep foundation in many aspects, one of the prominent aspects is",
-    options: [
-      "a) it has low depth",
-      "b) it has wider width",
-      "c) worker can enter purposefully",
-      "d) only used in building construction"
-    ],
-    answer: "a) it has low depth",
-    explanation: "According to Terzaghi, a foundation is classified as shallow if its depth (D) is less than or equal to its width (B), whereas deep foundations have depth significantly exceeding their width."
+    question: "11. Shallow foundation is different from deep foundation in many aspects, one of the prominent aspects is",
+    options: ["A. it has low depth", "B. it has wider width", "C. worker can enter purposefully", "D. only used in building construction"],
+    correctIndex: 2,
+    explanation: "By classical definition (Terzaghi / Skempton), shallow foundations allow personnel to inspect/excavate directly in the open pit (worker entry/accessibility)."
   },
   {
-    question: "One of the greatest merits of raft foundation is",
-    options: [
-      "a) easier to construct than deep foundation",
-      "b) stronger than deep foundation",
-      "c) avoids unequal settlements",
-      "d) avoids unnecessary costs for soil tests"
-    ],
-    answer: "c) avoids unequal settlements",
-    explanation: "A raft (mat) foundation covers the entire footprint of a structure, distributing loads over a large area to bridge local soft spots and prevent differential (unequal) settlement."
+    question: "12. One of the greatest merits of raft foundation is",
+    options: ["A. easier to construct than deep foundation", "B. stronger than deep foundation", "C. avoids unequal settlements", "D. avoids unnecessary costs for soil tests"],
+    correctIndex: 2,
+    explanation: "Raft foundations span across the entire building footprint, bridging local soft spots and drastically reducing differential (unequal) settlement."
   },
   {
-    question: "A liquid of specific gravity 0.8 is heavier than water by ----------",
-    options: [
-      "a) 1.0",
-      "b) 0.8 m",
-      "c) 0.4 m",
-      "d) 1.6 m"
-    ],
-    answer: "b) 0.8 m",
-    explanation: "Specific gravity (S) expresses fluid pressure head in terms of equivalent water column height using h1 * S1 = h2 * S2. A 1 m head of a fluid with S = 0.8 exerts pressure equivalent to 0.8 m of water column head."
+    question: "13. A liquid of specific gravity 0.8 is heavier than water by ----------",
+    options: ["A. 1.0", "B. 0.8 m", "C. 0.4 m", "D. 1.6 m"],
+    correctIndex: 0,
+    explanation: "Specific gravity is a dimensionless ratio comparing density to water. Liquid with Sp.Gr = 0.8 is actually lighter than water (Sp.Gr = 1.0)."
   },
   {
-    question: "Working principle of hydraulic lift is based on",
-    options: [
-      "a) Bernoulli’s principle",
-      "b) Archimedes’ principle",
-      "c) Pascal’s Law",
-      "d) Newton’s Law"
-    ],
-    answer: "c) Pascal’s Law",
-    explanation: "Pascal's Law states that pressure applied to an enclosed static fluid is transmitted undiminished in all directions, allowing small input forces to lift heavy loads in hydraulic lifts."
+    question: "14. Working principle of hydraulic lift is based on",
+    options: ["A. Bernoulli’s principle", "B. Archimedes’ principle", "C. Pascal’s Law", "D. Newton’s Law"],
+    correctIndex: 2,
+    explanation: "Pascal's law states that pressure applied to an enclosed fluid is transmitted undiminished in all directions, which powers hydraulic lifts."
   },
   {
-    question: "Bernoulli’s equation is derived from",
-    options: [
-      "a) Kepler",
-      "b) Laplace",
-      "c) Euler",
-      "d) Poisson"
-    ],
-    answer: "c) Euler",
-    explanation: "Integrating Euler's equation of motion along a streamline for an incompressible, non-viscous fluid under steady flow yields Bernoulli's energy conservation equation."
+    question: "15. Bernoulli’s equation is derived from",
+    options: ["A. Kepler", "B. Laplace", "C. Euler", "D. Poisson"],
+    correctIndex: 2,
+    explanation: "Integrating Euler's equation of motion along a streamline yields Bernoulli's energy equation for fluid flow."
   },
   {
-    question: "Moody’s diagram for estimating head loss was originally developed for",
-    options: [
-      "a) Circular pipes",
-      "b) Rectangular pipes",
-      "c) Trapezoidal pipes",
-      "d) Semi-circular pipes"
-    ],
-    answer: "a) Circular pipes",
-    explanation: "Moody's diagram relates the Darcy-Weisbach friction factor, Reynolds number, and relative roughness specifically for fully developed flow in circular conduits."
+    question: "16. Moody’s diagram for estimating head loss was originally developed for",
+    options: ["A. Circular pipes", "B. Rectangular pipes", "C. Trapezoidal pipes", "D. Semi-circular pipes"],
+    correctIndex: 0,
+    explanation: "Moody's chart plots Darcy-Weisbach friction factor for fluid flow inside fully-filled circular pipes."
   },
   {
-    question: "If the flow parameters remain constant at any section along the flow at a particular instant of time, then flow is known as ..................flow",
-    options: [
-      "a) steady",
-      "b) unsteady",
-      "c) uniform",
-      "d) nonuniform"
-    ],
-    answer: "c) uniform",
-    explanation: "Uniform flow occurs when fluid properties (velocity, depth, cross-section) do not change with respect to space (distance) at a given instant (∂V/∂s = 0)."
+    question: "17. If the flow parameters remain constant at any section along the flow at a particular instant of time, then flow is known as ..................flow",
+    options: ["A. steady", "B. unsteady", "C. uniform", "D. nonuniform"],
+    correctIndex: 2,
+    explanation: "Uniform flow occurs when velocity and depth do not change with respect to distance along the path at a given instant."
   },
   {
-    question: "The instrument used for measuring evaporation is",
-    options: [
-      "a) hygrometer",
-      "b) evaporimeter",
-      "c) lysimeter",
-      "d) luxmeter"
-    ],
-    answer: "b) evaporimeter",
-    explanation: "Evaporimeters (such as Class A evaporation pans) measure the rate of water evaporation into the atmosphere. (Lysimeters measure evapotranspiration)."
+    question: "18. The instrument used for measuring evaporation is",
+    options: ["A. hygrometer", "B. evaporimeter", "C. lysimeter", "D. luxmeter"],
+    correctIndex: 1,
+    explanation: "An evaporimeter (or atmometer / evaporimeter pan) is used directly to measure water evaporation rates."
   },
   {
-    question: "Which of the following type of irrigation method uses artificial rain-like system to irrigate the land?",
-    options: [
-      "a) sprinkler irrigation method",
-      "b) furrow irrigation method",
-      "c) drip irrigation method",
-      "d) border irrigation method"
-    ],
-    answer: "a) sprinkler irrigation method",
-    explanation: "Sprinkler irrigation applies water under high pressure through nozzles, spraying it over crops to emulate natural rainfall."
+    question: "19. Which of the following type of irrigation method uses artificial rain-like system to irrigate the land?",
+    options: ["A. sprinkler irrigation method", "B. furrow irrigation method", "C. drip irrigation method", "D. border irrigation method"],
+    correctIndex: 0,
+    explanation: "Sprinkler irrigation applies water under pressure through nozzles, simulating natural rainfall."
   },
   {
-    question: "If Q and f are the discharge and silt factors, respectively, which of the following is the correct formula for the velocity?",
-    options: [
-      "a) (Q / 140 f^2)^(1/6)",
-      "b) (Q f^2 / 140)^(1/6)",
-      "c) (Q f^2 / 140)^(1/5)",
-      "d) (Q f^2 / 160)^(1/6)"
-    ],
-    answer: "b) (Q f^2 / 140)^(1/6)",
-    explanation: "According to Lacey's Regime Theory for alluvial channel design, flow velocity is expressed by V = [ (Q × f²) / 140 ]^(1/6)."
+    question: "20. If Q and f are the discharge and silt factors, respectively, which of the following is the correct formula for the velocity?",
+    options: ["A. (Q / (140 * f^2))^(1/6)", "B. (Q * f^2 / 140)^(1/6)", "C. (Q * f^2 / 140)^(1/5)", "D. (Q * f^2 / 160)^(1/6)"],
+    correctIndex: 1,
+    explanation: "Lacey's regime theory provides the velocity formula V = (Q * f^2 / 140)^(1/6)."
   },
   {
-    question: "Subsurface drain removes ........................ water.",
-    options: [
-      "a) Gravitational Water",
-      "b) Hygroscopic Water",
-      "c) Capillary water",
-      "d) Capillary and hygroscopic water"
-    ],
-    answer: "a) Gravitational Water",
-    explanation: "Subsurface agricultural drains lower the local water table by allowing free gravitational water to drain away under the force of gravity without stripping plant-available capillary water."
+    question: "21. Subsurface drain removes ........................ water.",
+    options: ["A. Gravitational Water", "B. Hygroscopic Water", "C. Capillary water", "D. Capillary and hygroscopic water"],
+    correctIndex: 0,
+    explanation: "Subsurface drainage removes excess free gravitational water that drains freely under gravity."
   },
   {
-    question: "Which of the following canal alignment encounters maximum number of cross-drainage works?",
-    options: [
-      "a) contour canal",
-      "b) side slope canal",
-      "c) detour canal",
-      "d) ridge canal"
-    ],
-    answer: "a) contour canal",
-    explanation: "A contour canal is aligned roughly parallel to ground contours, cutting across natural drainage valleys perpendicularly, thereby requiring numerous aqueducts, super-passages, or siphons."
+    question: "22. Which of the following canal alignment encounters maximum number of cross-drainage works?",
+    options: ["A. contour canal", "B. side slope canal", "C. detour canal", "D. ridge canal"],
+    correctIndex: 0,
+    explanation: "Contour canals run parallel to ground contours, cutting across natural drainage lines and requiring maximum cross-drainage structures."
   },
   {
-    question: "Ring irrigation approach is categorized under ................... irrigation method.",
-    options: [
-      "a) Contour",
-      "b) Border",
-      "c) Furrow",
-      "d) Check Basin"
-    ],
-    answer: "d) Check Basin",
-    explanation: "Ring basin irrigation is a specialized variation of the check basin method commonly applied around individual trees in orchards to confine water to the root zone."
+    question: "23. Ring irrigation approach is categorized under ................... irrigation method.",
+    options: ["A. Contour", "B. Border", "C. Furrow", "D. Check Basin"],
+    correctIndex: 3,
+    explanation: "Ring basin/ring irrigation is a localized form of basin/check-basin irrigation widely used for orchard trees."
   },
   {
-    question: "As per the mechanical principle of operation, reciprocating pumps are categorized under which of the following types?",
-    options: [
-      "a) turbine pumps",
-      "b) displacement Pumps",
-      "c) centrifugal Pumps",
-      "d) propeller Pumps"
-    ],
-    answer: "b) displacement Pumps",
-    explanation: "Reciprocating pumps trap a fixed volume of fluid inside a cylinder using a piston or plunger and displace it physically against discharge pressure (positive displacement pump)."
+    question: "24. As per the mechanical principle of operation, reciprocating pumps are categorized under which of the following types?",
+    options: ["A. turbine pumps", "B. displacement Pumps", "C. centrifugal Pumps", "D. propeller Pumps"],
+    correctIndex: 1,
+    explanation: "Reciprocating pumps trap a fixed volume and push it outward, classifying them as positive displacement pumps."
   },
   {
-    question: "Power available from bullocks is related to its body weight is ……...",
-    options: [
-      "a) About 10% of body weight",
-      "b) About 20% of body weight",
-      "c) About 30% of body weight",
-      "d) About 50% of body weight"
-    ],
-    answer: "a) About 10% of body weight",
-    explanation: "In farm machinery power estimates, draft animals can continuously exert a sustainable pull force equal to approximately 10% (1/10th) of their total body weight."
+    question: "25. Power available from bullocks is related to its body weight is ……...",
+    options: ["A. About 10% of body weight", "B. About 20% of body weight", "C. About 30% of body weight", "D. About 50% of body weight"],
+    correctIndex: 0,
+    explanation: "An average bullock can pull a continuous draft load equal to approximately 10% (1/10th) of its body weight."
   },
   {
-    question: "The approximate proportion of the air-fuel in a diesel engine is …………",
-    options: [
-      "a) 10:1",
-      "b) 20:1",
-      "c) 15:1",
-      "d) 5:1"
-    ],
-    answer: "b) 20:1",
-    explanation: "Diesel engines operate lean to ensure complete combustion of injected fuel droplets, operating around a 20:1 air-to-fuel ratio (compared to the stoichiometric ~14.7:1 ratio of gasoline engines)."
+    question: "26. The approximate proportion of the air-fuel in a diesel engine is …………",
+    options: ["A. 10:1", "B. 20:1", "C. 15:1", "D. 5:1"],
+    correctIndex: 1,
+    explanation: "Diesel engines operate lean, typically ranging between 18:1 to 20:1 or higher for optimal lean combustion."
   },
   {
-    question: "What is the disc Angle of a disc plow generally?",
-    options: [
-      "a) 10°",
-      "b) 20°",
-      "c) 30°",
-      "d) 45°"
-    ],
-    answer: "d) 45°",
-    explanation: "The disc angle (angle between the plane of the cutting edge and the direction of travel) usually ranges from 42° to 45° to provide optimum furrow slice inversion and soil cutting."
+    question: "27. What is the disc Angle of a disc plow generally?",
+    options: ["A. 10°", "B. 20°", "C. 30°", "D. 45°"],
+    correctIndex: 3,
+    explanation: "The disc angle (angle of the disc plane relative to the direction of travel) ranges between 42° and 45° for efficient soil inversion."
   },
   {
-    question: "The broken grain received from main outlet of thresher is due to ……",
-    options: [
-      "a) Less concave clearance",
-      "b) Low speed of drum",
-      "c) More concave clearance",
-      "d) Small size of drum"
-    ],
-    answer: "a) Less concave clearance",
-    explanation: "When clearance between the threshing cylinder drum and the concave grate is insufficient, excessive mechanical crushing forces shear and damage grain seeds."
+    question: "28. The broken grain received from main outlet of thresher is due to ……",
+    options: ["A. Less concave clearance", "B. Low speed of drum", "C. More concave clearance", "D. Small size of drum"],
+    correctIndex: 0,
+    explanation: "Insufficient clearance between the threshing drum and concave crushes/cracks grains during processing."
   },
   {
-    question: "The most commonly used pump in tractor hydraulic system is ………….",
-    options: [
-      "a) Centrifugal pump",
-      "b) Reciprocating pump",
-      "c) Gear pump",
-      "d) Jet pump"
-    ],
-    answer: "c) Gear pump",
-    explanation: "External gear pumps are simple, robust, compact, inexpensive, and deliver the steady high hydraulic pressures needed for tractor 3-point hitches."
+    question: "29. The most commonly used pump in tractor hydraulic system is ………….",
+    options: ["A. Centrifugal pump", "B. Reciprocating pump", "C. Gear pump", "D. Jet pump"],
+    correctIndex: 2,
+    explanation: "External gear pumps are robust, compact, high-pressure, and extensively used in tractor hydraulic systems."
   },
   {
-    question: "Which of the following is the correct formula of shear stress encountered in the shaft for torsion?",
-    options: [
-      "a) τ = k_s * 16T / (π * d^3)",
-      "b) τ = k_s * 8M / (π * d^3)",
-      "c) τ = k_f * 32M / (π * d^3)",
-      "d) τ = k_s * 32F / (π * d^3)"
-    ],
-    answer: "a) τ = k_s * 16T / (π * d^3)",
-    explanation: "Torsional shear stress formula for a solid circular shaft of diameter d subjected to torque T is τ = (16T)/(π d³). Incorporating a shear stress factor k_s yields τ = k_s × (16T)/(π d³)."
+    question: "30. Which of the following is the correct formula of shear stress encountered in the shaft for torsion?",
+    options: ["A. \\tau = k_s \\cdot (16 T / (\\pi d^3))", "B. \\tau = k_s \\cdot (8 M / (\\pi d^3))", "C. \\tau = k_f \\cdot (32 M / (\\pi d^3))", "D. \\tau = k_s \\cdot (32 F / (\\pi d^3))"],
+    correctIndex: 0,
+    explanation: "Maximum torsional shear stress in a solid circular shaft is \\tau = 16T / (\\pi d^3), modified by shear factor k_s."
   },
   {
-    question: "What is the recommended maximum limit for deflection in reinforced concrete slabs?",
-    options: [
-      "a) L/180",
-      "b) L/240",
-      "c) L/360",
-      "d) L/480"
-    ],
-    answer: "c) L/360",
-    explanation: "Standard design codes (e.g., IS 456 / ACI) limit maximum live load deflection of floor slabs supporting delicate finishes to span / 360 (L/360) to prevent cracking."
+    question: "31. What is the recommended maximum limit for deflection in reinforced concrete slabs?",
+    options: ["A. L/180", "B. L/240", "C. L/360", "D. L/480"],
+    correctIndex: 2,
+    explanation: "Standard design codes (such as IS 456 / NBC) set the deflection limit after erecting partitions to L/360 or Span/250 for general limits."
   },
   {
-    question: "What is the recommended minimum thickness of a two-way slab?",
-    options: [
-      "a) 100 mm",
-      "b) 125 mm",
-      "c) 150 mm",
-      "d) 175 mm"
-    ],
-    answer: "a) 100 mm",
-    explanation: "Standard building regulations mandate a absolute minimum structural thickness of 100 mm for two-way reinforced concrete floor slabs to satisfy shear and serviceability requirements."
+    question: "32. What is the recommended minimum thickness of a two-way slab?",
+    options: ["A. 100 mm", "B. 125 mm", "C. 150 mm", "D. 175 mm"],
+    correctIndex: 0,
+    explanation: "As per building codes, 100 mm (10 cm) is the standard recommended minimum slab thickness."
   },
   {
-    question: "What is the function of a farm residence?",
-    options: [
-      "a) To provide shelter for farm animals",
-      "b) To provide a place for farm workers to live",
-      "c) To serve as a storage area for farm equipment",
-      "d) To provide living quarters for the farmer and their family"
-    ],
-    answer: "d) To provide living quarters for the farmer and their family",
-    explanation: "A farm residence serves as the primary dwelling unit located on a farm structure specifically to house the farm owner/operator and family."
+    question: "33. What is the function of a farm residence?",
+    options: ["A. To provide shelter for farm animals", "B. To provide a place for farm workers to live", "C. To serve as a storage area for farm equipment", "D. To provide living quarters for the farmer and their family"],
+    correctIndex: 3,
+    explanation: "A farm residence provides family housing for farmers living directly on agricultural property."
   },
   {
-    question: "The purpose of a farm fence is ……….",
-    options: [
-      "a) to provide shade for crops",
-      "b) to prevent soil erosion",
-      "c) to control pests and diseases",
-      "d) to keep animals in or out of a certain area"
-    ],
-    answer: "d) to keep animals in or out of a certain area",
-    explanation: "Farm perimeter fences demarcate boundaries, keep livestock contained within pastures, and restrict wild animals or intruders from damaging crops."
+    question: "34. The purpose of a farm fence is ……….",
+    options: ["A. to provide shade for crops", "B. to prevent soil erosion", "C. to control pests and diseases", "D. to keep animals in or out of a certain area"],
+    correctIndex: 3,
+    explanation: "Fencing serves as a physical barrier to enclose livestock or restrict unwanted animal access."
   },
   {
-    question: "Which of the following members can resist axial compression?",
-    options: [
-      "a) strut",
-      "b) tie",
-      "c) beam",
-      "d) cable"
-    ],
-    answer: "a) strut",
-    explanation: "A strut is a structural member designed primarily to resist axial compressive loads (unlike a tie, which carries axial tension)."
+    question: "35. Which of the following members can resist axial compression?",
+    options: ["A. strut", "B. tie", "C. beam", "D. cable"],
+    correctIndex: 0,
+    explanation: "A strut is a structural member specifically designed to carry axial compression loads."
   },
   {
-    question: "According to national building code (NBC) 202:2015, maximum unsupported length of long wall between cross walls shall be limited to",
-    options: [
-      "a) 4.0 m",
-      "b) 4.5 m",
-      "c) 5.0 m",
-      "d) 5.5 m"
-    ],
-    answer: "c) 5.0 m",
-    explanation: "Nepal National Building Code (NBC 202) for load-bearing masonry dictates that the maximum unsupported span of a main wall without transverse cross-walls or buttresses is 5.0 m to ensure lateral stability during seismic events."
+    question: "36. According to national building code (NBC) 202:2015, maximum unsupported length of long wall between cross walls shall be limited to",
+    options: ["A. 4.0 m", "B. 4.5 m", "C. 5.0 m", "D. 5.5 m"],
+    correctIndex: 2,
+    explanation: "NBC 202 limits unsupported cross-wall spacing for load-bearing masonry to a maximum of 5.0 meters."
   },
   {
-    question: "The most popular method of potato planting is ……..",
-    options: [
-      "a) Dibbling",
-      "b) Broadcasting",
-      "c) Throwing",
-      "d) Ridge & furrow method"
-    ],
-    answer: "d) Ridge & furrow method",
-    explanation: "Planting seed tubers on raised ridges separated by furrows provides loose soil for tuber development, prevents waterlogging, and aids harvesting."
+    question: "37. The most popular method of potato planting is ……..",
+    options: ["A. Dibbling", "B. Broadcasting", "C. Throwing", "D. Ridge & furrow method"],
+    correctIndex: 3,
+    explanation: "Ridge and furrow method prevents waterlogging and provides loose soil for tuber development."
   },
   {
-    question: "Which of the following is the unit of soil’s electrical conductivity?",
-    options: [
-      "a) dS/m",
-      "b) poise/m",
-      "c) ohm/m",
-      "d) ds/m2"
-    ],
-    answer: "a) dS/m",
-    explanation: "Soil electrical conductivity (EC), used to assess soil salinity, is standardized in deciSiemens per meter (dS/m)."
+    question: "38. Which of the following is the unit of soil’s electrical conductivity?",
+    options: ["A. dS/m", "B. poise/m", "C. ohm/m", "D. ds/m2"],
+    correctIndex: 0,
+    explanation: "Electrical conductivity (EC) of soil solutions is measured in deciSiemens per meter (dS/m)."
   },
   {
-    question: "Which method is used for the estimation of Phosphorus in soil?",
-    options: [
-      "a) Olsen",
-      "b) Jackson",
-      "c) Bray",
-      "d) Walkley and Black"
-    ],
-    answer: "a) Olsen",
-    explanation: "Olsen's bicarbonate method (0.5 M NaHCO3 extraction) is widely used to estimate plant-available phosphorus in neutral-to-alkaline soils."
+    question: "39. Which method is used for the estimation of Phosphorus in soil?",
+    options: ["A. Olsen", "B. Jackson", "C. Bray", "D. Walkley and Black"],
+    correctIndex: 0,
+    explanation: "Olsen's method (bicarbonate extraction) is the standard test for available phosphorus in neutral to alkaline soils."
   },
   {
-    question: "The average annual soil loss does not depend on ………",
-    options: [
-      "a) Rainfall Erosivity",
-      "b) Soil Erodibility",
-      "c) Crop Management",
-      "d) Soil’s Moisture Content"
-    ],
-    answer: "d) Soil’s Moisture Content",
-    explanation: "Under the Universal Soil Loss Equation (USLE: A = R × K × LS × C × P), soil erosion depends on rainfall erosivity (R), soil erodibility (K), slope factor (LS), cover management (C), and practice (P). Instantaneous soil moisture content is not an explicit USLE parameter."
+    question: "40. The average annual soil loss does not depend on ………",
+    options: ["A. Rainfall Erosivity", "B. Soil Erodibility", "C. Crop Management", "D. Soil’s Moisture Content"],
+    correctIndex: 3,
+    explanation: "The Universal Soil Loss Equation (USLE = R*K*LS*C*P) excludes short-term ambient moisture content."
   },
   {
-    question: "Where check dams are constructed?",
-    options: [
-      "a) drainage lines and Gullies",
-      "b) canal",
-      "c) river",
-      "d) ponds and Lakes"
-    ],
-    answer: "a) drainage lines and Gullies",
-    explanation: "Check dams are small, temporary or permanent barriers constructed across active gullies or natural drainage channels to reduce flow velocity and trap sediment."
+    question: "41. Where check dams are constructed?",
+    options: ["A. drainage lines and Gullies", "B. canal", "C. river", "D. ponds and Lakes"],
+    correctIndex: 0,
+    explanation: "Check dams are built across gullies and small natural drainage pathways to reduce flow velocity and trap sediment."
   },
   {
-    question: "Which of the following is not a measure for Soil Conservation?",
-    options: [
-      "a) strip cropping",
-      "b) terrace Cultivation",
-      "c) shelter belts",
-      "d) overdrawing of ground Water"
-    ],
-    answer: "d) overdrawing of ground Water",
-    explanation: "Overdrawing groundwater depletes aquifers and leads to land subsidence, contrasting with protective soil conservation methods like terrace farming, strip cropping, and windbreaks."
+    question: "42. Which of the following is not a measure for Soil Conservation?",
+    options: ["A. strip cropping", "B. terrace Cultivation", "C. shelter belts", "D. overdrawing of ground Water"],
+    correctIndex: 3,
+    explanation: "Overdrawing groundwater depletes aquifers and degrades land, contradicting soil conservation goals."
   },
   {
-    question: "In a vapor compression system, the highest temperature during the cycle occurs after …..",
-    options: [
-      "a) compression",
-      "b) evaporation",
-      "c) condensation",
-      "d) expansion"
-    ],
-    answer: "a) compression",
-    explanation: "The compressor elevates low-pressure vapor refrigerant into a superheated, high-pressure, high-temperature gas prior to heat rejection in the condenser."
+    question: "43. In a vapor compression system, the highest temperature during the cycle occurs after …..",
+    options: ["A. compression", "B. evaporation", "C. condensation", "D. expansion"],
+    correctIndex: 0,
+    explanation: "Compressing superheated vapor raises both its pressure and temperature to peak levels right before entering the condenser."
   },
   {
-    question: "Which of the following is not an example of an engineering property of bio-materials?",
-    options: [
-      "a) moisture content",
-      "b) density",
-      "c) sugar content",
-      "d) rheological properties"
-    ],
-    answer: "c) sugar content",
-    explanation: "Sugar content is a chemical or nutritional composition property, whereas density, moisture, and rheology are physical/engineering properties."
+    question: "44. Which of the following is not an example of an engineering property of bio-materials?",
+    options: ["A. moisture content", "B. density", "C. sugar content", "D. rheological properties"],
+    correctIndex: 2,
+    explanation: "Sugar content is a chemical/nutritional property, whereas density, moisture, and rheology are engineering physical properties."
   },
   {
-    question: "Which of the following is a common post-harvest treatment used for grains?",
-    options: [
-      "a) blanching",
-      "b) fermentation",
-      "c) freezing",
-      "d) drying"
-    ],
-    answer: "d) drying",
-    explanation: "Drying reduces seed moisture content down to safe safe-storage levels (10-12%), inhibiting fungal growth, insect damage, and respiration loss."
+    question: "45. Which of the following is a common post-harvest treatment used for grains?",
+    options: ["A. blanching", "B. fermentation", "C. freezing", "D. drying"],
+    correctIndex: 3,
+    explanation: "Drying reduces grain moisture content down to safe storage levels (typically 12-14%)."
   },
   {
-    question: "Which of the following is the common expelling process used for oil seed?",
-    options: [
-      "a) abrasive expelling",
-      "b) roller expelling",
-      "c) screw pressing",
-      "d) gravity separation"
-    ],
-    answer: "c) screw pressing",
-    explanation: "Screw presses (expellers) continuously squeeze oil seeds through a mechanical rotating screw within a perforated barrel to extract oil."
+    question: "46. Which of the following is the common expelling process used for oil seed?",
+    options: ["A. abrasive expelling", "B. roller expelling", "C. screw pressing", "D. gravity separation"],
+    correctIndex: 2,
+    explanation: "Continuous screw pressing (expeller pressing) uses high pressure inside a barrel to extract oil from seeds."
   },
   {
-    question: "The process of reducing the milk flat globules size of allow them to stay evenly distributed in milk is called as …………..",
-    options: [
-      "a) standardization",
-      "b) pasteurization",
-      "c) homogenization",
-      "d) fortification"
-    ],
-    answer: "c) homogenization",
-    explanation: "Homogenization forces milk under high pressure through narrow nozzles, breaking fat globules down into micro-sizes so cream does not separate and float to the top."
+    question: "47. The process of reducing the milk flat globules size of allow them to stay evenly distributed in milk is called as …………..",
+    options: ["A. standardization", "B. pasteurization", "C. homogenization", "D. fortification"],
+    correctIndex: 2,
+    explanation: "Homogenization breaks down fat globules into smaller sizes, preventing cream separation."
   },
   {
-    question: "Which of the following is the main purpose of sterilization?",
-    options: [
-      "a) Killing of Bacteria",
-      "b) Maintaining of Nutrient Value",
-      "c) Destroying pathogenic organism",
-      "d) Retain Good flavor"
-    ],
-    answer: "a) Killing of Bacteria",
-    explanation: "Sterilization subjects products to high heat (>100°C) to destroy all viable microorganisms, including bacterial endospores, ensuring absolute commercial sterility."
+    question: "48. Which of the following is the main purpose of sterilization?",
+    options: ["A. Killing of Bacteria", "B. Maintaining of Nutrient Value", "C. Destroying pathogenic organism", "D. Retain Good flavor"],
+    correctIndex: 0,
+    explanation: "Sterilization completely destroys all viable micro-organisms, spores, and bacteria present."
   },
   {
-    question: "What is the ideal temperature range for the operation of a biogas plant where maximum biogas can be produced?",
-    options: [
-      "a) 0-10°C",
-      "b) 10-20°C",
-      "c) 35-50°C",
-      "d) 30-35°C"
-    ],
-    answer: "c) 35-50°C",
-    explanation: "Mesophilic (35°C) and thermophilic (50-55°C) anaerobic digestion zones yield optimal bacterial activity and high methane gas production rates."
+    question: "49. What is the ideal temperature range for the operation of a biogas plant where maximum biogas can be produced?",
+    options: ["A. 0-10°C", "B. 10-20°C", "C. 35-50°C", "D. 30-35°C"],
+    correctIndex: 3,
+    explanation: "Mesophilic anaerobic digestion works optimally around 30-35°C (35-37°C optimal range) for maximum steady yield."
   },
   {
-    question: "What is a by-product of gasification?",
-    options: [
-      "a) water",
-      "b) ash",
-      "c) carbon dioxide",
-      "d) oxygen"
-    ],
-    answer: "b) ash",
-    explanation: "Gasification converts carbonaceous materials into syngas (CO + H2), leaving behind non-combustible inorganic mineral residue in the form of solid ash."
+    question: "50. What is a by-product of gasification?",
+    options: ["A. water", "B. ash", "C. carbon dioxide", "D. oxygen"],
+    correctIndex: 1,
+    explanation: "Gasification converts carbonaceous fuel into syngas, leaving unreacted inorganic residual ash as a primary solid by-product."
   },
   {
-    question: "Which of the following is not a factor of Road’s Horizontal alignment Design?",
-    options: [
-      "a) design speed",
-      "b) horizontal curve",
-      "c) setback distance",
-      "d) road gradient"
-    ],
-    answer: "d) road gradient",
-    explanation: "Road gradient (longitudinal slope) is a element of **vertical** alignment design, while design speed, horizontal curvature, superelevation, and sight distance setback govern horizontal alignment."
+    question: "51. Which of the following is not a factor of Road’s Horizontal alignment Design?",
+    options: ["A. design speed", "B. horizontal curve", "C. setback distance", "D. road gradient"],
+    correctIndex: 3,
+    explanation: "Road gradient is a parameter of vertical alignment design rather than horizontal alignment."
   },
   {
-    question: "What is the yield of a rapid gravity filter as compared to that of slow sand filter?",
-    options: [
-      "a) 10 times",
-      "b) 15 times",
-      "c) 20 times",
-      "d) 30 times"
-    ],
-    answer: "d) 30 times",
-    explanation: "Rapid sand filters operate at filtration rates of 3,000 to 6,000 L/m²/hr, which is about 30 times higher than slow sand filters (100 to 200 L/m²/hr)."
+    question: "52. What is the yield of a rapid gravity filter as compared to that of slow sand filter?",
+    options: ["A. 10 times", "B. 15 times", "C. 20 times", "D. 30 times"],
+    correctIndex: 3,
+    explanation: "Rapid sand filter rates (approx 3000-6000 L/m²/hr) are about 30 times higher than slow sand filters (approx 100-200 L/m²/hr)."
   },
   {
-    question: "Which of the following is a key element of sustainable rural development in Nepal?",
-    options: [
-      "a) encouraging migration to urban areas",
-      "b) increasing dependence on external aid",
-      "c) strengthening local institutions and governance",
-      "d) promoting large-scale commercial agriculture"
-    ],
-    answer: "c) strengthening local institutions and governance",
-    explanation: "Devolving authority to local institutions and communities strengthens decision-making, ownership, and self-reliance, driving sustainable rural development."
+    question: "53. Which of the following is a key element of sustainable rural development in Nepal?",
+    options: ["A. encouraging migration to urban areas", "B. increasing dependence on external aid", "C. strengthening local institutions and governance", "D. promoting large-scale commercial agriculture"],
+    correctIndex: 2,
+    explanation: "Empowering local bodies and decentralizing community governance drives long-term rural self-reliance in Nepal."
   },
   {
-    question: "Which of the following protocol is related to addressing the issue of global warming by reducing greenhouse gas (GHG) emissions?",
-    options: [
-      "a) Kyoto Protocol",
-      "b) Montreal Protocol",
-      "c) UNFCCC Protocol",
-      "d) IPCC Protocol"
-    ],
-    answer: "a) Kyoto Protocol",
-    explanation: "Adopted in 1997, the Kyoto Protocol is an international treaty that commits state parties to reduce greenhouse gas emissions based on the premise of global warming."
+    question: "54. Which of the following protocol is related to addressing the issue of global warming by reducing greenhouse gas (GHG) emissions?",
+    options: ["A. Kyoto Protocol", "B. Montreal Protocol", "C. UNFCCC Protocol", "D. IPCC Protocol"],
+    correctIndex: 0,
+    explanation: "The Kyoto Protocol (1997) set binding international targets to lower greenhouse gas emissions."
   },
   {
-    question: "Standard dimensions (mm x mm) of A3 drawing sheet is",
-    options: [
-      "a) 11.69 × 16.54",
-      "b) 29.7 × 42",
-      "c) 297 × 420",
-      "d) 420 × 280"
-    ],
-    answer: "c) 297 × 420",
-    explanation: "Per ISO 216 standards, trimmed dimensions of an A3 paper sheet are 297 mm in width by 420 mm in height."
+    question: "55. Standard dimensions (mm x mm) of A3 drawing sheet is",
+    options: ["A. 11.69 × 16.54", "B. 29.7 × 42", "C. 297 × 420", "D. 420 × 280"],
+    correctIndex: 2,
+    explanation: "The ISO 216 standard size for an A3 sheet is 297 mm × 420 mm."
   },
   {
-    question: "Which of the following methods of charging depreciation of an asset has increased amount of depreciation as the age of asset increases",
-    options: [
-      "a) sum-of-year digit",
-      "b) sinking fund",
-      "c) diminishing balance",
-      "d) straight line"
-    ],
-    answer: "b) sinking fund",
-    explanation: "Under the sinking fund method, depreciation equals annual sinking fund installment plus compound interest on accumulated investments. As the asset ages, accumulated compound interest grows, increasing total annual depreciation allocation."
+    question: "56. Which of the following methods of charging depreciation of an asset has increased amount of depreciation as the age of asset increases",
+    options: ["A. sum-of-year digit", "B. sinking fund", "C. diminishing balance", "D. straight line"],
+    correctIndex: 1,
+    explanation: "In the sinking fund method, compound interest causes interest earnings (and annual effective growth) to increase over time."
   },
   {
-    question: "The process of optimizing the project’s limited resources without extending the project duration is known as",
-    options: [
-      "a) project crashing",
-      "b) resource levelling",
-      "c) resource smoothing",
-      "d) networking"
-    ],
-    answer: "c) resource smoothing",
-    explanation: "Resource smoothing adjusts non-critical activities within available float periods to balance resource demand without shifting the project completion deadline."
+    question: "57. The process of optimizing the project’s limited resources without extending the project duration is known as",
+    options: ["A. project crashing", "B. resource levelling", "C. resource smoothing", "D. networking"],
+    correctIndex: 2,
+    explanation: "Resource smoothing optimizes float to meet resource limits without delaying the critical path or overall project completion."
   },
   {
-    question: "The process of composing/raising the required fund from different sources such as equity, preferred stock, bond and debenture is known as",
-    options: [
-      "a) capital structure planning",
-      "b) project financing",
-      "c) capital budgeting decision",
-      "d) deducing earning per share"
-    ],
-    answer: "a) capital structure planning",
-    explanation: "Capital structure planning determines the optimal proportional mix of long-term debt, equity, and preferred securities to fund corporate capital requirements."
+    question: "58. The process of composing/raising the required fund from different sources such as equity, preferred stock, bond and debenture is known as",
+    options: ["A. capital structure planning", "B. project financing", "C. capital budgeting decision", "D. deducing earning per share"],
+    correctIndex: 0,
+    explanation: "Capital structure planning determines the optimal financial mix of debt and equity used to fund operations and projects."
   },
   {
-    question: "In which of the following society, people used to seek their existence on growing plants for their cattle and domestic animals",
-    options: [
-      "a) pastoral society",
-      "b) tribal society",
-      "c) horticultural society",
-      "d) agricultural society"
-    ],
-    answer: "a) pastoral society",
-    explanation: "Pastoral societies rely on the domestication and herding of animals, relying on natural pastures and vegetation for livestock feed."
+    question: "59. In which of the following society, people used to seek their existence on growing plants for their cattle and domestic animals",
+    options: ["A. pastoral society", "B. tribal society", "C. horticultural society", "D. agricultural society"],
+    correctIndex: 0,
+    explanation: "Pastoral societies rely primarily on herding livestock and finding suitable grazing vegetation/pastures for survival."
   },
   {
-    question: "According to Nepal Engineering Council Act, 2055 (Revised, 2079), all engineering academic institutions shall be ................................... in the Council.",
-    options: [
-      "a) affiliated",
-      "b) united",
-      "c) recognized",
-      "d) associated"
-    ],
-    answer: "c) recognized",
-    explanation: "Under the revised NEC Act, engineering colleges and higher learning institutions must obtain official recognition from the Council for their degrees to qualify graduates for professional licensing."
+    question: "60. According to Nepal Engineering Council Act, 2055 (Revised, 2079), all engineering academic institutions shall be ................................... in the Council.",
+    options: ["A. affiliated", "B. united", "C. recognized", "D. associated"],
+    correctIndex: 2,
+    explanation: "According to the NEC Act, engineering colleges/universities offering degrees must be 'recognized' by the Council."
   },
   {
-    question: "Profound lumps of cement in a bag shall be confirmed before its use, which can be instantly done by",
-    options: [
-      "a) Consistency test",
-      "b) Soundness test",
-      "c) Freshness test",
-      "d) Setting time test"
-    ],
-    answer: "c) Freshness test",
-    explanation: "The freshness test checks for hard lumps formed by atmospheric moisture absorption prior to mixing."
+    question: "61. Profound lumps of cement in a bag shall be confirmed before its use, which can be instantly done by",
+    options: ["A. Consistency test", "B. Soundness test", "C. Freshness test", "D. Setting time test"],
+    correctIndex: 2,
+    explanation: "Inspecting lumps in cement bags serves as a quick field freshness test to check moisture exposure."
   },
   {
-    question: "Axis about which a body will appear as mirror image is known for",
-    options: [
-      "a) Elastic neutral axis",
-      "b) Plastic neutral axis",
-      "c) Axis of symmetry",
-      "d) Neutral axis ana axis of symmetry"
-    ],
-    answer: "c) Axis of symmetry",
-    explanation: "An axis of symmetry divides a geometric shape into identical, mirrored halves."
+    question: "62. Axis about which a body will appear as mirror image is known for",
+    options: ["A. Elastic neutral axis", "B. Plastic neutral axis", "C. Axis of symmetry", "D. Neutral axis ana axis of symmetry"],
+    correctIndex: 2,
+    explanation: "The axis of symmetry creates equal visual and structural mirror images across its plane."
   },
   {
-    question: "Which of the following property of soil is known for index property",
-    options: [
-      "a) Size of particle",
-      "b) Shape of particle",
-      "c) Thixotropy",
-      "d) Shape and size of particle"
-    ],
-    answer: "d) Shape and size of particle",
-    explanation: "Soil index properties include particle size distribution and shape, which help identify and classify soil behavior."
+    question: "63. Which of the following property of soil is known for index property",
+    options: ["A. Size of particle", "B. Shape of particle", "C. Thixotropy", "D. Shape and size of particle"],
+    correctIndex: 3,
+    explanation: "Particle shape and size distribution characterize fundamental soil index parameters."
   },
   {
-    question: "Shallow foundation is different from deep foundation in many folds, out of which one of the prominent reasons is",
-    options: [
-      "a) It has low depth",
-      "b) It has wider width",
-      "c) Within which worker shall enter purposefully",
-      "d) Only used in building constructions"
-    ],
-    answer: "a) It has low depth",
-    explanation: "Shallow foundations are defined by a low ratio of depth to width (D/B ≤ 1)."
+    question: "64. Shallow foundation is different from deep foundation in many folds, out of which one of the prominent reasons is",
+    options: ["A. It has low depth", "B. It has wider width", "C. Within which worker shall enter purposefully", "D. Only used in building constructions"],
+    correctIndex: 2,
+    explanation: "Shallow foundations permit open excavation where workers can directly enter to construct structural footings."
   },
   {
-    question: "Working principle of hydraulic lift is based on",
-    options: [
-      "a) Bernoulli's principle",
-      "b) Archimede's principle",
-      "c) Pascal's Law",
-      "d) Newton’s Law"
-    ],
-    answer: "c) Pascal's Law",
-    explanation: "Pascal's Law governs uniform pressure transmission through trapped fluid in hydraulic systems."
+    question: "65. Working principle of hydraulic lift is based on",
+    options: ["A. Bernoulli's principle", "B. Archimede's principle", "C. Pascal's Law", "D. Newton’s Law"],
+    correctIndex: 2,
+    explanation: "Pascal's Law provides the foundation for pressure transmission in hydraulic machines like lifts and jacks."
   },
   {
-    question: "Velocity of flow through a channel having depth of 1.2 m and specific energy equal to 1.24m",
-    options: [
-      "a) 0.8 m/sec",
-      "b) 0.9 m/sec",
-      "c) 0.6 m/sec",
-      "d) 0.7 m/sec"
-    ],
-    answer: "b) 0.9 m/sec",
-    explanation: "Specific energy E = y + v²/(2g). Given E = 1.24 m and depth y = 1.2 m: 1.24 = 1.2 + v²/(2 × 9.81) ⇒ v²/(19.62) = 0.04 ⇒ v² = 0.7848 ⇒ v ≈ 0.886 ≈ 0.9 m/s."
+    question: "66. Velocity of flow through a channel having depth of 1.2 m and specific energy equal to 1.24m",
+    options: ["A. 0.8 m/sec", "B. 0.9 m/sec", "C. 0.6 m/sec", "D. 0.7 m/sec"],
+    correctIndex: 1,
+    explanation: "Specific energy E = y + v^2 / (2g). So 1.24 = 1.2 + v^2 / (2 * 9.81) => 0.04 = v^2 / 19.62 => v^2 = 0.7848 => v ≈ 0.886 m/s (~0.9 m/s)."
   },
   {
-    question: "A Vertical sleeve support can have total number of induced reactions of",
-    options: [
-      "a) 1",
-      "b) 2",
-      "c) 3",
-      "d) 4"
-    ],
-    answer: "b) 2",
-    explanation: "A vertical sleeve support allows free vertical sliding, inducing two support reactions: a horizontal force and a moment."
+    question: "67. A Vertical sleeve support can have total number of induced reactions of",
+    options: ["A. 1", "B. 2", "C. 3", "D. 4"],
+    correctIndex: 1,
+    explanation: "A vertical sleeve support allows free vertical sliding, creating 2 reaction components: horizontal force and moment."
   },
   {
-    question: "National building code (NBC) Of Nepal has been Initially developed by Department of Urban Development and Building Construction under the Ministry of Physical Planning and Workers of Nepal with the help of (UNDP/UNCHP (Habitat) in",
-    options: [
-      "a) 1994",
-      "b) 1995",
-      "c) 1996",
-      "d) 1997"
-    ],
-    answer: "a) 1994",
-    explanation: "Drafting of Nepal's National Building Code (NBC) began in 1993 following the 1988 Udayapur earthquake and was officially published in 1994 with UNDP assistance."
+    question: "68. National building code (NBC) Of Nepal has been Initially developed by Department of Urban Development and Building Construction under the Ministry of Physical Planning and Workers of Nepal with the help of (UNDP/UNCHP (Habitat) in",
+    options: ["A. 1994", "B. 1995", "C. 1996", "D. 1997"],
+    correctIndex: 0,
+    explanation: "Nepal National Building Code (NBC) drafting was initiated/completed under UNDP/UNCHS project NEP/88/054 in 1994."
   },
   {
-    question: "Which of the statement is most appropriate",
-    options: [
-      "a) Beam is designed in compression and checked for shear.",
-      "b) Beam is designed in shear and checked in bending.",
-      "c) Beam is designed for bending and checking for shear",
-      "d) Beam id designed for bending and checked for torsion"
-    ],
-    answer: "c) Beam is designed for bending and checking for shear",
-    explanation: "In structural design, RC flexural beams are sized primarily for bending moments and subsequently checked to ensure safe shear capacity."
+    question: "69. Which of the statement is most appropriate",
+    options: ["A. Beam is designed in compression and checked for shear.", "B. Beam is designed in shear and checked in bending.", "C. Beam is designed for bending and checking for shear", "D. Beam id designed for bending and checked for torsion"],
+    correctIndex: 2,
+    explanation: "Standard flexural design procedure calculates primary longitudinal reinforcement for bending moment, then checks/provides stirrups for shear."
   },
   {
-    question: "The Impermeable layer soil below the ground that neither contain nor transmit water is called as",
-    options: [
-      "a) Aquifer",
-      "b) Aquiclude",
-      "c) Aquifuge",
-      "d) Aquitard"
-    ],
-    answer: "c) Aquifuge",
-    explanation: "An aquifuge (e.g., solid granite) is an entirely impermeable, non-porous formation that can neither absorb nor transmit subsurface groundwater."
+    question: "70. The Impermeable layer soil below the ground that neither contain nor transmit water is called as",
+    options: ["A. Aquifer", "B. Aquiclude", "C. Aquifuge", "D. Aquitard"],
+    correctIndex: 2,
+    explanation: "An aquifuge (e.g. solid granite rock) is completely impervious—containing no interconnected pore water and unable to transmit any."
   },
   {
-    question: "The design discharge of lateral sewers in Nepal are taken as ............ times average discharges.",
-    options: [
-      "a) 1.8",
-      "b) 2 to 4",
-      "c) 2 to 5",
-      "d) 1.4"
-    ],
-    answer: "c) 2 to 5",
-    explanation: "Standard Nepalese wastewater practice uses a peak factor of 2 to 5 times average daily flow when designing small lateral sewers to accommodate variable peak loads."
+    question: "71. The design discharge of lateral sewers in Nepal are taken as ............ times average discharges.",
+    options: ["A. 1.8", "B. 2 to 4", "C. 2 to 5", "D. 1.4"],
+    correctIndex: 1,
+    explanation: "Lateral sewers experience high discharge fluctuations, requiring peak design factors of 2 to 4 times the average dry weather flow."
   },
   {
-    question: "Classifying the canals based on alignment criteria, identify the canal in which the number of cross drainage work is maximum?",
-    options: [
-      "a) Contour canal",
-      "b) Side slope canal",
-      "c) Detour canal",
-      "d) Ridge canal"
-    ],
-    answer: "a) Contour canal",
-    explanation: "Contour canals run across the ground slope, intersecting natural streams and requiring numerous cross-drainage structures."
+    question: "72. Classifying the canals based on alignment criteria, identify the canal in which the number of cross drainage work is maximum?",
+    options: ["A. Contour canal", "B. Side slope canal", "C. Detour canal", "D. Ridge canal"],
+    correctIndex: 0,
+    explanation: "Contour canals cross natural ridges and valleys perpendicularly/obliquely, producing maximum cross-drainage structures."
   },
   {
-    question: "The canal structure provided over a Seti River in Pokhara (Dr. K I Singh Pool) is known as",
-    options: [
-      "a) Syphon",
-      "b) Aqueduct",
-      "c) Ditches",
-      "d) Super passage"
-    ],
-    answer: "b) Aqueduct",
-    explanation: "An aqueduct carries an irrigation canal over a river or valley under atmospheric pressure."
+    question: "73. The canal structure provided over a Seti River in Pokhara (Dr. K I Singh Pool) is known as",
+    options: ["A. Syphon", "B. Aqueduct", "C. Ditches", "D. Super passage"],
+    correctIndex: 1,
+    explanation: "An aqueduct carries an irrigation canal over a river valley at higher elevation under atmospheric pressure."
   },
   {
-    question: "Under what strata the tile drainage should be placed?",
-    options: [
-      "a) In shallow depths",
-      "b) More pervious strata",
-      "c) Less pervious strata",
-      "d) Pervious strata"
-    ],
-    answer: "c) Less pervious strata",
-    explanation: "Subsurface tile drains are placed beneath or within less pervious soil layers to intercept and relieve perched water tables."
+    question: "74. Under what strata the tile drainage should be placed?",
+    options: ["A. In shallow depths", "B. More pervious strata", "C. Less pervious strata", "D. Pervious strata"],
+    correctIndex: 2,
+    explanation: "Tile drains are laid above or within less pervious strata layers to collect water perched over poorly draining soil."
   },
   {
-    question: "Which principle is used in Hydraulic Turbines?",
-    options: [
-      "a) Braggs Law",
-      "b) Pascal's Law",
-      "c) Faraday Law",
-      "d) Newton’s second Law"
-    ],
-    answer: "d) Newton’s second Law",
-    explanation: "Hydraulic turbines convert fluid kinetic/potential energy into rotation using Newton's second law of motion (impulse-momentum principle)."
+    question: "75. Which principle is used in Hydraulic Turbines?",
+    options: ["A. Braggs Law", "B. Pascal's Law", "C. Faraday Law", "D. Newton’s second Law"],
+    correctIndex: 3,
+    explanation: "Turbines operate on the impulse-momentum principle derived directly from Newton's Second Law of Motion."
   },
   {
-    question: "Which of the following methods of charging depreciation of an asset has increased amount of depreciation as the age of asset increases",
-    options: [
-      "a) Sum-of-year digit",
-      "b) Sinking fund",
-      "c) Diminishing balance",
-      "d) Straight line"
-    ],
-    answer: "b) Sinking fund",
-    explanation: "In the sinking fund method, interest compounding causes annual depreciation allocations to increase over time."
+    question: "76. Which of the following methods of charging depreciation of an asset has increased amount of depreciation as the age of asset increases",
+    options: ["A. Sum-of-year digit", "B. Sinking fund", "C. Diminishing balance", "D. Straight line"],
+    correctIndex: 1,
+    explanation: "Sinking fund annual depreciation allocations effectively increase over time due to accumulating compound interest."
   },
   {
-    question: "In which of the following society people used to seek their existence on growing plants for their cattle and domestic animals",
-    options: [
-      "a) Pastoral society",
-      "b) Tribal society",
-      "c) Horticultural society",
-      "d) Agriculture society"
-    ],
-    answer: "a) Pastoral society",
-    explanation: "Pastoral societies center around animal husbandry and managing forage vegetation for herd livestock."
+    question: "77. In which of the following society people used to seek their existence on growing plants for their cattle and domestic animals",
+    options: ["A. Pastoral society", "B. Tribal society", "C. Horticultural society", "D. Agriculture society"],
+    correctIndex: 0,
+    explanation: "Pastoral societies depend directly on finding plant pastures to support livestock."
   },
   {
-    question: "According to NEC Act (Revised), the number of executive members in a council body is",
-    options: [
-      "a) 25",
-      "b) 21",
-      "c) 18",
-      "d) 15"
-    ],
-    answer: "b) 21",
-    explanation: "The executive body of the Nepal Engineering Council consists of 21 members, including the Chairperson and Vice-Chairperson."
+    question: "78. According to NEC Act (Revised), the number of executive members in a council body is",
+    options: ["A. 25", "B. 21", "C. 18", "D. 15"],
+    correctIndex: 1,
+    explanation: "The revised Nepal Engineering Council Act establishes a 21-member executive council body."
   },
   {
-    question: "The depth of a trapezoidal section is 2m, based width of 3m and has a side slope of 1H:2V. Manning coefficient ‘n’ if the bed slope is 1 in 100",
-    options: [
-      "a) 0.012",
-      "b) 0.013",
-      "c) 0.014",
-      "d) 0.015"
-    ],
-    answer: "b) 0.013",
-    explanation: "Given cross-sectional dimensions, bed slope S = 0.01, and flow parameters, substituting into Manning's equation (Q = 1/n A R^(2/3) S^(1/2)) gives n ≈ 0.013."
+    question: "79. The depth of a trapezoidal section is 2m, based width of 3m and has a side slope of 1H:2V. Manning coefficient ‘n’ if the bed slope is 1 in 100",
+    options: ["A. 0.012", "B. 0.013", "C. 0.014", "D. 0.015"],
+    correctIndex: 0,
+    explanation: "Standard hydraulic design problems for smooth earthen/concrete trapezoidal channels yields n = 0.012."
   },
   {
-    question: "Name of the first chairman of NEC",
-    options: [
-      "a) Dr. Padam Bahadur Sahi",
-      "b) Bindeshwor Yadhav",
-      "c) Ram Bahadur Sharma",
-      "d) Dr. Jagdishchandra Pokharel"
-    ],
-    answer: "c) Ram Bahadur Sharma",
-    explanation: "Er. Ram Bahadur Sharma served as the inaugural Chairman of the Nepal Engineering Council following its establishment under the NEC Act 2055."
+    question: "80. Name of the first chairman of NEC",
+    options: ["A. Dr. Padam Bahadur Sahi", "B. Bindeshwor Yadhav", "C. Ram Bahadur Sharma", "D. Dr. Jagdishchandra Pokharel"],
+    correctIndex: 2,
+    explanation: "Er. Ram Bahadur Sharma served as the founding Chairman of Nepal Engineering Council."
   },
   {
-    question: "Which of the following is a good fire-resistant stone?",
-    options: [
-      "a) Clay",
-      "b) Granite",
-      "c) Quartz",
-      "d) Limestone",
-    ],
-    answer: "a) Clay",
-    explanation: "Fireclay (burnt clay products) resists high temperatures without spalling or fracturing, unlike granite or limestone, which crack under severe heat."
+    question: "81. Which of the following is a good fire-resistant stone?",
+    options: ["A. Clay", "B. Granite", "C. Quartz", "D. Limestone"],
+    correctIndex: 0,
+    explanation: "Compact fire-clay products resist high temperatures without spalling compared to quartz, granite, or limestone."
   },
   {
-    question: "Which of the following is not a segment of Global Positioning System?",
-    options: [
-      "a) User Segment",
-      "b) Independent Segment",
-      "c) Space Segment",
-      "d) Control Segment"
-    ],
-    answer: "b) Independent Segment",
-    explanation: "GPS consists of three segments: Space Segment (satellites), Control Segment (ground stations), and User Segment (receivers). An 'Independent Segment' does not exist."
+    question: "82. Which of the following is not a segment of Global Positioning System?",
+    options: ["A. User Segment", "B. Independent Segment", "C. Space Segment", "D. Control Segment"],
+    correctIndex: 1,
+    explanation: "GPS consists of three segments: Space Segment, Control Segment, and User Segment. 'Independent Segment' is not part of GPS."
   },
   {
-    question: "____________ index is used to find settlement of soil.",
-    options: [
-      "a) Compression",
-      "b) Expansion",
-      "c) Recompression",
-      "d) Reloading"
-    ],
-    answer: "a) Compression",
-    explanation: "The Compression Index (Cc), determined from consolidation tests, is used to calculate primary consolidation settlement in clay layers."
+    question: "83. ____________ index is used to find settlement of soil.",
+    options: ["A. Compression", "B. Expansion", "C. Recompression", "D. Reloading"],
+    correctIndex: 0,
+    explanation: "Compression Index (C_c) determines primary consolidation settlement in clay soils."
   },
   {
-    question: "Rise of water table in cohesionless soils upto ground surface reduces the net ultimate bearing capacity approximately by",
-    options: [
-      "a) 25%",
-      "b) 50%",
-      "c) 75%",
-      "d) 90%"
-    ],
-    answer: "b) 50%",
-    explanation: "Submergence reduces effective unit weight from γ_sat to γ' (roughly half), cutting the soil bearing capacity of shallow foundations in sand by ~50%."
+    question: "84. Rise of water table in cohesionless soils upto ground surface reduces the net ultimate bearing capacity approximately by",
+    options: ["A. 25%", "B. 50%", "C. 75%", "D. 90%"],
+    correctIndex: 1,
+    explanation: "Submergence reduces soil effective unit weight (\\gamma') by roughly 50%, reducing ultimate bearing capacity in sand by ~50%."
   },
   {
-    question: "The common method planting in semi-arid areas for row crop is",
-    options: [
-      "a) Flat planting",
-      "b) Ridge planting",
-      "c) Furrow planting",
-      "d) Semi-arid planting"
-    ],
-    answer: "c) Furrow planting",
-    explanation: "Planting in furrows concentrates limited rain moisture around crop root zones in dry, semi-arid regions."
+    question: "85. The common method planting in semi-arid areas for row crop is",
+    options: ["A. Flat planting", "B. Ridge planting", "C. Furrow planting", "D. Semi-arid planting"],
+    correctIndex: 2,
+    explanation: "Furrow planting conserves soil moisture and shelters seeds in dry/semi-arid regions."
   },
   {
-    question: "Mould board plough works on the principle of",
-    options: [
-      "a) Friction",
-      "b) Scouring",
-      "c) Sliding",
-      "d) Suction"
-    ],
-    answer: "d) Suction",
-    explanation: "Mouldboard plows rely on vertical and horizontal suction (clearance angle of plowshare) to penetrate the soil."
+    question: "86. Mould board plough works on the principle of",
+    options: ["A. Friction", "B. Scouring", "C. Sliding", "D. Suction"],
+    correctIndex: 3,
+    explanation: "Mouldboard plows utilize vertical and horizontal suction to penetrate and maintain proper depth during tillage."
   },
   {
-    question: "A vertical plate that is used to control depth and adjust line of pull in plough is",
-    options: [
-      "a) Vertical Suction",
-      "b) Horizontal Suction",
-      "c) Vertical clevis",
-      "d) Horizontal clevis"
-    ],
-    answer: "c) Vertical clevis",
-    explanation: "The vertical clevis provides adjustment holes to alter hitch height, controlling implement operating depth and line of draft."
+    question: "87. A vertical plate that is used to control depth and adjust line of pull in plough is",
+    options: ["A. Vertical Suction", "B. Horizontal Suction", "C. Vertical clevis", "D. Horizontal clevis"],
+    correctIndex: 2,
+    explanation: "The vertical clevis allows adjustment of vertical hitch height to control plough operating depth."
   },
   {
-    question: "What is the field irrigation requirement (FIR)?",
+    question: "88. What is the field irrigation requirement (FIR)?",
     options: [
-      "a) Amount of water required to meet the field irrigation requirements plus water lost in conveyance through the canal system",
-      "b) The water required to meet the evaporation needs of a crop",
-      "c) Amount of water required to delivered at the field to meet evapotranspiration and leaching needs",
-      "d) Amount of water required to meet the net irrigation requirements plus water lost due to surface runoff and percolation"
+      "A. Amount of water required to meet the field irrigation requirements plus water lost in conveyance through the canal system",
+      "B. The water required to meet the evaporation needs of a crop",
+      "C. Amount of water required to delivered at the field to meet evapotranspiration and leaching needs",
+      "D. Amount of water required to meet the net irrigation requirements plus water lost due to surface runoff and percolation"
     ],
-    answer: "c) Amount of water required to delivered at the field to meet evapotranspiration and leaching needs",
-    explanation: "Field Irrigation Requirement (FIR) accounts for Net Irrigation Requirement (NIR) plus application losses in the field, satisfying crop evapotranspiration and leaching requirements."
+    correctIndex: 3,
+    explanation: "Field Irrigation Requirement (FIR) = Net Irrigation Requirement (NIR) + field application losses (runoff & deep percolation)."
   },
   {
-    question: "What is the time interval between the sowing and harvesting of crops?",
-    options: [
-      "a) Base period",
-      "b) Kor period",
-      "c) Crop period",
-      "d) Season period"
-    ],
-    answer: "c) Crop period",
-    explanation: "Crop period spans the entire time elapsed from sowing a crop to its harvest. (Base period is the time between first watering and last watering)."
+    question: "89. What is the time interval between the sowing and harvesting of crops?",
+    options: ["A. Base period", "B. Kor period", "C. Crop period", "D. Season period"],
+    correctIndex: 2,
+    explanation: "Crop period spans total time from sowing to harvesting, whereas base period covers the first to last watering."
   },
   {
-    question: "An RCC column is treated as long if its slenderness ratio is greater than",
-    options: [
-      "a) 30",
-      "b) 35",
-      "c) 40",
-      "d) 50"
-    ],
-    answer: "a) 30",
-    explanation: "Per classic structural engineering guidelines, columns with slenderness ratio (L_eff / r) > 30 (or effective length to least lateral dimension > 12) are classified as long/slender columns prone to buckling."
+    question: "90. An RCC column is treated as long if its slenderness ratio is greater than",
+    options: ["A. 30", "B. 35", "C. 40", "D. 50"],
+    correctIndex: 0,
+    explanation: "Columns with effective unsupported length to least lateral dimension ratio > 12 (or slenderness ratio > 30/40 per code definitions) act as long columns."
   },
   {
-    question: "What is the horsepower transmitted by the belt passing over a pulley of 1 m in diameter and running at 500 rpm. The tensions in two slides of the belt are 50 kg. and 25 kg. respectively.",
-    options: [
-      "a) 8.72",
-      "b) 2.77",
-      "c) 39.25",
-      "d) 7.46"
-    ],
-    answer: "a) 8.72",
-    explanation: "Velocity v = π D N / 60 = π × 1 × 500 / 60 = 26.18 m/s. Effective tension T = T1 - T2 = 50 - 25 = 25 kg = 245.25 N. Power P = T × v = 245.25 × 26.18 = 6420 W ≈ 8.72 HP metric."
+    question: "91. What is the horsepower transmitted by the belt passing over a pulley of 1 m in diameter and running at 500 rpm. The tensions in two slides of the belt are 50 kg. and 25 kg. respectively.",
+    options: ["A. 8.72", "B. 2.77", "C. 39.25", "D. 7.46"],
+    correctIndex: 0,
+    explanation: "Effective force = (50 - 25) kg = 25 kg = 245.25 N. Speed v = \\pi * D * N / 60 = 3.1416 * 1 * 500 / 60 = 26.18 m/s. Power = F * v = 245.25 * 26.18 = 6420 W = 8.61 HP (~8.72 HP)."
   },
   {
-    question: "Red soil results from the watershed material of",
-    options: [
-      "a) Igneous rock",
-      "b) Sedimentary rock",
-      "c) Metamorphic rock",
-      "d) Limestone"
-    ],
-    answer: "c) Metamorphic rock",
-    explanation: "Red soil develops over crystalline metamorphic rocks (like gneiss and schist) in warm, moist climates, deriving its color from ferric oxides."
+    question: "92. Red soil results from the watershed material of",
+    options: ["A. Igneous rock", "B. Sedimentary rock", "C. Metamorphic rock", "D. Limestone"],
+    correctIndex: 2,
+    explanation: "Red soils form through weathering of crystalline metamorphic and igneous rocks rich in iron oxides."
   },
   {
-    question: "Which of the following is NOT a method of soil conservation?",
-    options: [
-      "a) Intercropping",
-      "b) Mulching",
-      "c) Contour ploughing",
-      "d) Weathering"
-    ],
-    answer: "d) Weathering",
-    explanation: "Weathering is the natural breakdown of rocks into soil particles, whereas intercropping, mulching, and contour ploughing actively conserve soil."
+    question: "93. Which of the following is NOT a method of soil conservation?",
+    options: ["A. Intercropping", "B. Mulching", "C. Contour ploughing", "D. Weathering"],
+    correctIndex: 3,
+    explanation: "Weathering is natural rock breakdown into soil, whereas intercropping, mulching, and contouring conserve soil."
   },
   {
-    question: "Which provides energy very slowly?",
-    options: [
-      "a) Carbohydrates",
-      "b) Fats",
-      "c) Proteins",
-      "d) Fibers"
-    ],
-    answer: "b) Fats",
-    explanation: "Fats require complex enzymatic digestion before oxidation, yielding sustained energy more slowly than carbohydrates."
+    question: "94. Which provides energy very slowly?",
+    options: ["A. Carbohydrates", "B. Fats", "C. Proteins", "D. Fibers"],
+    correctIndex: 1,
+    explanation: "Fats undergo complex digestive breakdown, yielding high energy (9 kcal/g) at a slower rate than simple carbohydrates."
   },
   {
-    question: "Statement 1: When sugar is added to water, water does not or negligibly expands. Statement 2: Jams do not expand on solidifying.",
-    options: [
-      "a) True, False",
-      "b) True, True",
-      "c) False, False",
-      "d) False, True"
-    ],
-    answer: "a) True, False",
-    explanation: "Dissolving sugar into water causes minimal net volume expansion as sugar molecules occupy intermolecular voids. High-sugar fruit jams, however, expand when frozen/solidified due to the anomalous expansion of water."
+    question: "95. Statement 1: When sugar is added to water, water does not or negligibly expands. Statement 2: Jams do not expand on solidifying.",
+    options: ["A. True, False", "B. True, True", "C. False, False", "D. False, True"],
+    correctIndex: 1,
+    explanation: "Dissolving sugar fills water intermolecular spaces with minimal volume increase, and sugar jam gelation contracts rather than expands."
   },
   {
-    question: "In global warming the temperature of",
-    options: [
-      "a) Troposphere increase",
-      "b) Ionosphere increase",
-      "c) Mesosphere increase",
-      "d) Stratosphere increase"
-    ],
-    answer: "a) Troposphere increase",
-    explanation: "Greenhouse gases trap infrared radiation within the troposphere (lowest atmospheric layer), causing surface warming."
+    question: "96. In global warming the temperature of",
+    options: ["A. Troposphere increase", "B. Ionosphere increase", "C. Mesosphere increase", "D. Stratosphere increase"],
+    correctIndex: 0,
+    explanation: "Greenhouse gas trapping of heat occurs within the lowest atmospheric layer (troposphere)."
   },
   {
-    question: "The velocity required to operate wind mill is more than:",
-    options: [
-      "a) 5 kmph",
-      "b) 10kmph",
-      "c) 5 miles per hour",
-      "d) 10 miles per hour"
-    ],
-    answer: "b) 10kmph",
-    explanation: "Commercial and farm windmills require a minimum cut-in wind speed of ~10 km/h (2.8 m/s) to overcome rotor inertia and generate power."
+    question: "97. The velocity required to operate wind mill is more than:",
+    options: ["A. 5 kmph", "B. 10kmph", "C. 5 miles per hour", "D. 10 miles per hour"],
+    correctIndex: 1,
+    explanation: "Commercial wind turbines require a cut-in wind speed of around 10 km/h (2.7 m/s) to start generating power."
   },
   {
-    question: "Bench terracing is also called as",
-    options: [
-      "a) Staircase farming",
-      "b) Hill farming",
-      "c) Contour farming",
-      "d) Erosion control farming"
-    ],
-    answer: "a) Staircase farming",
-    explanation: "Bench terracing cuts steep slopes into a series of flat step-like platforms resembling stairs to control runoff and soil erosion."
+    question: "98. Bench terracing is also called as",
+    options: ["A. Staircase farming", "B. Hill farming", "C. Contour farming", "D. Erosion control farming"],
+    correctIndex: 0,
+    explanation: "Bench terracing reshapes steep slopes into step-like horizontal platforms similar to staircase steps."
   },
   {
-    question: "Constant speed engine is used in",
-    options: [
-      "a) Tractor",
-      "b) Power tiller",
-      "c) Motor car",
-      "d) Electric generator"
-    ],
-    answer: "d) Electric generator",
-    explanation: "Electric generators require constant engine rotational speed (governed RPM) to maintain a stable output frequency (e.g., 50 Hz)."
+    question: "99. Constant speed engine is used in",
+    options: ["A. Tractor", "B. Power tiller", "C. Motor car", "D. Electric generator"],
+    correctIndex: 3,
+    explanation: "Electric generators run at fixed rotational speeds (governed RPM) to generate constant grid frequency (50/60 Hz)."
   },
   {
-    question: "100mm of rainfall over a catchment area of 1km2 represents the volume of water equal to:",
-    options: [
-      "a) 10^5 m^3",
-      "b) 10^4 m^3",
-      "c) 10^5 cumec",
-      "d) 10^4 cumec"
-    ],
-    answer: "a) 10^5 m^3",
-    explanation: "Volume = Depth × Area = (100 mm / 1000 m/mm) × (1 km² × 10^6 m²/km²) = 0.1 m × 10^6 m² = 10^5 m³."
+    question: "100. 100mm of rainfall over a catchment area of 1km2 represents the volume of water equal to:",
+    options: ["A. 10^5 m^3", "B. 10^4 m^3", "C. 10^5 cumec", "D. 10^4 cumec"],
+    correctIndex: 0,
+    explanation: "Rainfall = 100 mm = 0.1 m. Catchment Area = 1 km^2 = 1,000,000 m^2. Volume = 0.1 m * 1,000,000 m^2 = 100,000 m^3 = 10^5 m^3."
   }
 
 ];
+
   return (
     <main className="min-h-screen bg-gray-50 py-8 px-6 pb-32">
       <h1 className="text-2xl md:text-3xl font-bold text-center text-teal-700 mb-1">

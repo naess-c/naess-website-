@@ -1,76 +1,138 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
+function ScaleInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        visible
+          ? "opacity-100 scale-100 translate-y-0"
+          : "opacity-0 scale-90 translate-y-8"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function FadeInCard({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [delay]);
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function NotesPage() {
+  const syllabusLinks = [
+    {
+      title: "Notes & Study Materials",
+      description:
+        "Notes, Syllabus, Manuals and Past Questions for Old and New Courses",
+      link: "/notes",
+      icon: "📖",
+    },
+    {
+      title: "NEC License Syllabus",
+      description:
+        "Nepal Engineering Council License Examination Syllabus",
+      link: "/nec",
+      icon: "📝",
+    },
+    {
+      title: "NEC License Prepration Questions",
+      description:
+        "Previous License Examination Questions and Resources",
+      link: "/license-questions",
+      icon: "📋",
+    },
+    {
+      title: "Working Areas",
+      description:
+        "Career Opportunities and Professional Fields for Agricultural Engineers",
+      link: "/career",
+      icon: "🚜",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-gray-50">
 
-      {/* Header */}
-      <section className="bg-gradient-to-r from-teal-700 to-green-700 text-white py-16">
-        <div className="max-w-6xl mx-auto text-center px-6">
-          <h1 className="text-5xl font-bold mb-4">
-            Notes Repository
-          </h1>
+      {/* Syllabus Hub Links */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
 
-          <p className="text-xl">
-            Access Agricultural Engineering Study Materials
-          </p>
-        </div>
-      </section>
+        <FadeInCard delay={0}>
+          <h2 className="text-3xl font-bold text-center text-teal-700 mb-10">
+            Academic Resources
+          </h2>
+        </FadeInCard>
 
-      {/* Notes Cards */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {syllabusLinks.map((item, index) => (
+            <ScaleInCard key={index} delay={index * 120}>
+              
+              <a  href={item.link}
+                className="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-8"
+              >
 
-        <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-5xl mb-5 group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-300">
+                  {item.icon}
+                </div>
 
-          {/* New Course */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition">
+                <h2 className="text-2xl font-bold text-teal-700 mb-3 group-hover:text-teal-800 transition-colors">
+                  {item.title}
+                </h2>
 
-            <div className="text-6xl mb-4">
-              📚
-            </div>
+                <p className="text-gray-600">
+                  {item.description}
+                </p>
 
-            <h2 className="text-2xl font-bold text-teal-700 mb-4">
-              New Course Notes
-            </h2>
-
-            <p className="text-gray-600 mb-6">
-              Notes, manuals, reports and study materials based on the current Agricultural Engineering curriculum.
-            </p>
-
-            <a
-              href="https://drive.google.com/drive/u/0/folders/1953UlYRdugtsrWFcciTOQjuGbG0BwZyI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-teal-700 text-white px-6 py-3 rounded-lg hover:bg-teal-800"
-            >
-              Open Drive Folder
-            </a>
-
-          </div>
-
-          {/* Old Course */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition">
-
-            <div className="text-6xl mb-4">
-              📖
-            </div>
-
-            <h2 className="text-2xl font-bold text-teal-700 mb-4">
-              Old Course Notes
-            </h2>
-
-            <p className="text-gray-600 mb-6">
-              Archived notes and resources based on the previous Agricultural Engineering curriculum.
-            </p>
-
-            <a
-              href="https://drive.google.com/drive/u/0/folders/1MJpO3sDsTrTD4iIyfT_nCs9IJKCdlFig"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-teal-700 text-white px-6 py-3 rounded-lg hover:bg-teal-800"
-            >
-              Open Drive Folder
-            </a>
-
-          </div>
+              </a>
+            </ScaleInCard>
+          ))}
 
         </div>
 
