@@ -270,7 +270,11 @@ students' Society
       className={`text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md ${
         mounted ? "animate-fade-up" : "opacity-0"
       }`}
+<<<<<<< HEAD
       style={{ animationDelay: "1s" }}
+=======
+      style={{ animationDelay: "3s" }}
+>>>>>>> 2ae3f5e8805a3ef6885a97bc0996a685134c5713
     >
       Empowering Future Agricultural Engineers of Nepal through
       Innovation, Research, Leadership and Sustainable Development
@@ -280,7 +284,11 @@ students' Society
       className={`w-40 h-1 bg-gradient-to-r from-teal-400 to-green-400 mx-auto mt-8 rounded-full ${
         mounted ? "animate-fade-up" : "opacity-0"
       }`}
+<<<<<<< HEAD
       style={{ animationDelay: "2s" }}
+=======
+      style={{ animationDelay: "3.3s" }}
+>>>>>>> 2ae3f5e8805a3ef6885a97bc0996a685134c5713
     ></div>
 
   </div>
@@ -302,9 +310,15 @@ students' Society
         </p>
       </div>
       <div className="text-center border-l border-white/20">
+<<<<<<< HEAD
         <AnimatedCounter target={500} suffix="+" />
         <p className="text-xs md:text-base text-teal-100">
           Members
+=======
+        <AnimatedCounter target={8} />
+        <p className="text-xs md:text-base text-teal-100">
+          Agrineer Volumes
+>>>>>>> 2ae3f5e8805a3ef6885a97bc0996a685134c5713
         </p>
       </div>
       <div className="text-center border-l border-white/20">
@@ -314,9 +328,15 @@ students' Society
         </p>
       </div>
       <div className="text-center border-l border-white/20">
+<<<<<<< HEAD
         <AnimatedCounter target={8} />
         <p className="text-xs md:text-base text-teal-100">
           Agrineer Volumes
+=======
+        <AnimatedCounter target={2} suffix="+" />
+        <p className="text-xs md:text-base text-teal-100">
+          AgriMech Events
+>>>>>>> 2ae3f5e8805a3ef6885a97bc0996a685134c5713
         </p>
       </div>
     </div>

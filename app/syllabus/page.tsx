@@ -15,7 +15,11 @@ const resources = [
     icon: "📝",
   },
   {
+<<<<<<< HEAD
     title: "NEC License Prepration Questions",
+=======
+    title: "NEC License Questions",
+>>>>>>> 2ae3f5e8805a3ef6885a97bc0996a685134c5713
     description:
       "Previous License Examination Questions and Resources",
     link: "/license-questions",
