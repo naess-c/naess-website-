@@ -72,7 +72,7 @@ export default function NotesPage() {
       title: "Notes & Study Materials",
       description:
         "Notes, Syllabus, Manuals and Past Questions for Old and New Courses",
-      link: "/notes",
+      link: "/notes/materials",
       icon: "📖",
     },
     {
@@ -114,7 +114,7 @@ export default function NotesPage() {
           {syllabusLinks.map((item, index) => (
             <ScaleInCard key={index} delay={index * 120}>
               
-              <a  href={item.link}
+               <a href={item.link}
                 className="group block bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 p-8"
               >
 

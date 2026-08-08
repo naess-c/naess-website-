@@ -4,7 +4,7 @@ export default function SyllabusPage() {
       title: "Notes & Study Materials",
       description:
         "Notes, Syllabus, Manuals and Past Questions for Old and New Courses",
-      link: "/notes",
+      link: "/notes/materials",
       icon: "📖",
     },
     {
