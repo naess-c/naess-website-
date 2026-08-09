@@ -46,6 +46,13 @@ export default function AlumniPage() {
       image: "/alumni/alumni1.jpg",
     },
     {
+      name: "Er. Gaurav Dulal",
+      position: "Head of Farm Mechanization",
+      organization: "Muktinath Krishi Company ltd.",
+      batch: "",
+      image: "/alumni/gaurav.png",
+    },
+    {
       name: "Er. Aditya Dhakal",
       position: "Asst. Campus Chief (Planning & Resources Management)",
       organization: "Purwanchal Campus",
@@ -75,10 +82,46 @@ export default function AlumniPage() {
     },
     {
       name: "Er. Samir Sakhya",
-      position: "professor",
-      organization: "purwanchal campus",
+      position: "Faculty Member (Agricultural Engineering)",
+      organization: "Purwanchal Campus",
       batch: "",
       image: "/alumni/alumni6.jpg",
+    },
+     {
+      name: "Er. Padam Prasad Paudel",
+      position: "Agricultural Engineering Instructor",
+      organization: "Agriculture and Forestry University-AFU",
+      batch: "",
+      image: "/alumni/padam.jpg",
+    },
+     {
+      name: "Er. Kishor j. Dhami",
+      position: "Agricultural Engineering Instructor, HOD",
+      organization: "Tikapur Polytechnic Institute, Tikapur Kailali, CTEVT",
+      batch: "2071 Batch",
+      image: "/alumni/kishor.jpg",
+    },
+    {
+      name: "Er. Bijay Acharya",
+      position: "Agricultural Engineering Instructor",
+      organization: "Tikapur Polytechnic Institute, Tikapur Kailali, CTEVT",
+      batch: "2072 Batch",
+      image: "/alumni/bijay.jpg",
+    },
+    
+    {
+      name: "Er. Animesh khadka",
+      position: "Assistant Professor",
+      organization: "Purwanchal University",
+      batch: "",
+      image: "/alumni/animesh.jpg",
+    },
+    {
+      name: "Er. Amrit Bohara",
+      position: "Manager",
+      organization: "Nepal Agricultural Machinery Entrepreneurs' Association (NAMEA)",
+      batch: "2074 Batch",
+      image: "/alumni/amrit.png",
     },
     {
       name: "Er. Dipendra P Kurmi",
@@ -88,12 +131,13 @@ export default function AlumniPage() {
       image: "/alumni/alumni7.jpeg",
     },
     {
-      name: "Er. Animesh khadka",
-      position: "Assistant Professor",
-      organization: "Purwanchal University",
-      batch: "",
-      image: "/alumni/animesh.jpg",
+      name: "Er. Ladli Rauniyar",
+      position: "Agricultural Engineer",
+      organization: "Alternative Energy Promotion Centre",
+      batch: "2073 Batch",
+      image: "/alumni/ladli.jpg",
     },
+    
     {
       name: "Er. Balgopal Sigdel",
       position: "Agricultural Engineer",
@@ -159,13 +203,28 @@ export default function AlumniPage() {
       batch: "",
       image: "/alumni/anupam.jpg",
     },
-     {
-      name: "Er. Kishor j. Dhami",
-      position: "Agricultural Engineering Instructor, HOD",
-      organization: "Tikapur Polytechnic Institute, Tikapur Kailali, CTEVT",
-      batch: "2071 Batch",
-      image: "/alumni/kishor.jpg",
+    {
+      name: "Er. Sujan Khadka",
+      position: "Agricultural Engineer",
+      organization: "Agricultural Development Office, Sindhuli",
+      batch: "",
+      image: "/alumni/sujan.jpg",
     },
+     {
+      name: "Er. Subash Adhikari",
+      position: "Agricultural Mechanization Engineer",
+      organization: "CIMMYT/CSISA",
+      batch: "",
+      image: "/alumni/subash.jpg",
+    },
+    {
+      name: "Er. Anish Shrestha",
+      position: "Agricultural Engineer",
+      organization: "National Agricultural Modernization Program(NAMP)",
+      batch: "",
+      image: "/alumni/anish.jpg",
+    },
+    
    
   ];
 
