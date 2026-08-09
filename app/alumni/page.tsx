@@ -87,6 +87,85 @@ export default function AlumniPage() {
       batch: "2075 Batch",
       image: "/alumni/alumni7.jpeg",
     },
+    {
+      name: "Er. Animesh khadka",
+      position: "Assistant Professor",
+      organization: "Purwanchal University",
+      batch: "",
+      image: "/alumni/animesh.jpg",
+    },
+    {
+      name: "Er. Balgopal Sigdel",
+      position: "Agricultural Engineer",
+      organization: "Heifer International Nepal",
+      batch: "",
+      image: "/alumni/balgopal.jpg",
+    },
+   
+    {
+      name: "Er. Shekhar Poudel",
+      position: "Agricultural Engineer",
+      organization: "Agriculture knowledge center, Nawalparasi",
+      batch: "",
+      image: "/alumni/shekhar.jpg",
+    },
+    {
+      name: "Er. Ravi P Chaudhary",
+      position: "Agricultural Engineer",
+      organization: "Agricultural Development office, Lalitpur",
+      batch: "",
+      image: "/alumni/ravi.jpg",
+    },
+     {
+      name: "Er. Manoj Joshi",
+      position: "Agricultural Engineer",
+      organization: "Directorate of Agricultural Research, Koshi Province",
+      batch: "",
+      image: "/alumni/manoj.jpg",
+    },
+    {
+      name: "Er. Sandesh Poudel",
+      position: "Graduate Reasearch Assistant",
+      organization: "University of Illinois Urbana-Champaign",
+      batch: "",
+      image: "/alumni/sandesh.jpg",
+    },
+    {
+      name: "Er. Pravesh Yadav",
+      position: "Sub Engineer",
+      organization: "Ministry of Water Supply, Irrigation and Energy, Koshi Province",
+      batch: "2075 Batch",
+      image: "/alumni/pravesh.jpeg",
+    },
+     
+    {
+      name: "Er. Sanam Karki",
+      position: "Agricultural Engineer",
+      organization: "Water resources and irrigation division taplejung",
+      batch: "2075 Batch",
+      image: "/alumni/sanam.jpg",
+    },
+     {
+      name: "Er. Shrijana Lamichane ",
+      position: "Agricultural Engineer",
+      organization: "Ministry of Agriculture and Livestock Development",
+      batch: "",
+      image: "/alumni/shrijhana.jpg",
+    },
+    {
+      name: "Er. Anupam Subedi",
+      position: "Enterpeneur",
+      organization: "Kisan Machinery & Equipment Pvt. Ltd.",
+      batch: "",
+      image: "/alumni/anupam.jpg",
+    },
+     {
+      name: "Er. Kishor j. Dhami",
+      position: "Agricultural Engineering Instructor, HOD",
+      organization: "Tikapur Polytechnic Institute, Tikapur Kailali, CTEVT",
+      batch: "2071 Batch",
+      image: "/alumni/kishor.jpg",
+    },
    
   ];
 
