@@ -142,7 +142,7 @@ export default function AlumniPage() {
       position: "Agricultural Engineer",
       organization: "Alternative Energy Promotion Centre",
       batch: "2073 Batch",
-      image: "/alumni/ladli.jpg",
+      image: "/alumni/ladli.jpeg",
     },
     
     {
@@ -237,6 +237,28 @@ export default function AlumniPage() {
       organization: "District Agriculture Development Office, Nuwakot",
       batch: "",
       image: "/alumni/Bibhushan.jpg",
+    },
+    {
+      name: "Er. Kul Raj Chalise",
+      position: "Senior Divisional Engineer",
+      organization: "Ministry of Water Supply, Energy and Irrigation, Government of Bagmati Province",
+      batch: "2063 Batch",
+      image: "/alumni/kulraj.jpg",
+    },
+    
+    {
+      name: "Er. Rupesh Acharya",
+      position: "Research Assistant",
+      organization: "University of Saskatchewan, Canada",
+      batch: "2073 Batch",
+      image: "/alumni/rupesh.jpeg",
+    },
+     {
+      name: "Er. Ram Adhikari",
+      position: "Agricultural Engineer",
+      organization: "Agriculture Development Office, Kavreplanchowk",
+      batch: "2076 Batch",
+      image: "/alumni/ram.jpg",
     },
     
    
