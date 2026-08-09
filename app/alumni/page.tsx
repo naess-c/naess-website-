@@ -236,7 +236,7 @@ export default function AlumniPage() {
       position: "Agricultural Engineer",
       organization: "District Agriculture Development Office, Nuwakot",
       batch: "",
-      image: "/alumni/Bibhusan.jpg",
+      image: "/alumni/Bibhushan.jpg",
     },
     
    
