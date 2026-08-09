@@ -832,7 +832,7 @@ useEffect(() => {
               </h3>
 
               <p className="text-gray-600 text-sm font-medium">
-                President
+                President,5th Executive Committee
               </p>
 
               <p className="text-gray-500 text-xs">

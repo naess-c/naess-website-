@@ -231,6 +231,13 @@ export default function AlumniPage() {
       batch: "",
       image: "/alumni/anish.jpg",
     },
+    {
+      name: "Er. Bibhushan Subedi",
+      position: "Agricultural Engineer",
+      organization: "District Agriculture Development Office, Nuwakot",
+      batch: "",
+      image: "/alumni/Bibhusan.jpg",
+    },
     
    
   ];
