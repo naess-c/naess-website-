@@ -42,7 +42,7 @@ export default function AlumniPage() {
       name: "Dr. Er. Jeet B Chand",
       position: "Senior Agricultural Engineer",
       organization: "Government of Nepal",
-      batch: "2058 Batch",
+      batch: "",
       image: "/alumni/alumni1.jpg",
     },
     {
@@ -70,7 +70,7 @@ export default function AlumniPage() {
       name: "Er. Yam Kumar Rai",
       position: "Head of Department (Agricultural Engineering)",
       organization: "Purwanchal Campus",
-      batch: "2058 Batch",
+      batch: "",
       image: "/alumni/alumni4.jpg",
     },
     {
