@@ -143,12 +143,12 @@ function TypewriterText({ text, delay = 0, speed = 50 }: { text: string; delay?:
   return <span>{displayedText}</span>;
 }
 
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [showAllFields, setShowAllFields] = useState(false);
+  const [showFullMessage, setShowFullMessage] = useState(false);
   const pathname = usePathname();
 
 const isActive = (path: string) => pathname === path;
@@ -757,22 +757,21 @@ useEffect(() => {
 
   </div>
 </section>
+{/* President's Message */}
+<section className="py-16 bg-gray-50">
 
-    {/* President's Message */}
-<section className="py-24 bg-gray-50">
-
-  <div className="max-w-7xl mx-auto px-6">
+  <div className="max-w-6xl mx-auto px-6">
 
     <FadeInCard delay={0}>
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-teal-700 mb-16">
+      <h2 className="text-2xl md:text-3xl font-bold text-center text-teal-700 mb-10">
         Message from the President
       </h2>
     </FadeInCard>
 
     <ScaleInCard delay={200}>
-      <div className="bg-white rounded-3xl shadow-xl p-6 md:p-10 hover:shadow-2xl transition-shadow duration-500">
+      <div className="bg-white rounded-2xl shadow-lg p-5 md:p-8 hover:shadow-xl transition-shadow duration-500">
 
-        <div className="flex flex-row items-start gap-6 md:gap-10">
+        <div className="flex flex-row items-start gap-4 md:gap-6">
 
           {/* President Photo */}
           <div className="flex-shrink-0">
@@ -780,9 +779,9 @@ useEffect(() => {
             <Image
               src="/committee/dipendra.jpg"
               alt="Dipendra Kumar Sah"
-              width={180}
-              height={220}
-              className="rounded-2xl object-cover shadow-lg w-28 h-36 md:w-44 md:h-56 hover:scale-105 transition-transform duration-500"
+              width={140}
+              height={170}
+              className="rounded-xl object-cover shadow-md w-20 h-24 md:w-32 md:h-40 hover:scale-105 transition-transform duration-500"
             />
 
           </div>
@@ -790,40 +789,53 @@ useEffect(() => {
           {/* Message */}
           <div className="flex-1">
 
-            <div className="text-5xl text-teal-600 leading-none mb-3">
+            <div className="text-3xl md:text-4xl text-teal-600 leading-none mb-1">
               "
             </div>
 
-            <p className="text-gray-700 leading-7 md:leading-8 text-sm md:text-lg">
+            <p className="text-gray-700 leading-6 md:leading-7 text-xs md:text-base">
               Welcome to the official website of the National Agricultural
               Engineering Students' Society (NAESS).
-
-              <br /><br />
-
-              NAESS is dedicated to strengthening the academic, technical
-              and professional capabilities of Agricultural Engineering
-              students across Nepal through trainings, research,
-              publications, networking and leadership development.
-
-              <br /><br />
-
-              Together, we strive to create opportunities for innovation,
-              practical learning and collaboration while contributing to
-              the advancement of Agricultural Engineering and sustainable
-              development in Nepal.
             </p>
 
-            <div className="mt-8 border-t pt-5">
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                showFullMessage ? "max-h-[400px] opacity-100 mt-3" : "max-h-0 opacity-0"
+              }`}
+            >
+              <p className="text-gray-700 leading-6 md:leading-7 text-xs md:text-base">
+                NAESS is dedicated to strengthening the academic, technical
+                and professional capabilities of Agricultural Engineering
+                students across Nepal through trainings, research,
+                publications, networking and leadership development.
+              </p>
 
-              <h3 className="text-xl md:text-2xl font-bold text-teal-700">
+              <p className="text-gray-700 leading-6 md:leading-7 text-xs md:text-base mt-3">
+                Together, we strive to create opportunities for innovation,
+                practical learning and collaboration while contributing to
+                the advancement of Agricultural Engineering and sustainable
+                development in Nepal.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setShowFullMessage(!showFullMessage)}
+              className="mt-2 text-teal-700 text-sm font-semibold hover:text-teal-900 transition"
+            >
+              {showFullMessage ? "See Less ↑" : "See More ↓"}
+            </button>
+
+            <div className="mt-4 border-t pt-3">
+
+              <h3 className="text-base md:text-lg font-bold text-teal-700">
                 Dipendra Kumar Sah
               </h3>
 
-              <p className="text-gray-600 font-medium">
+              <p className="text-gray-600 text-sm font-medium">
                 President
               </p>
 
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 text-xs">
                 National Agricultural Engineering Students' Society (NAESS)
               </p>
 
@@ -839,6 +851,7 @@ useEffect(() => {
   </div>
 
 </section>
+  
       {/* Footer */}
 <footer className="bg-gray-900 text-gray-300">
 
