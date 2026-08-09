@@ -266,7 +266,7 @@ useEffect(() => {
       className={`text-lg sm:text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed drop-shadow-md ${
         mounted ? "animate-fade-up" : "opacity-0"
       }`}
-      style={{ animationDelay: "2s" }}
+      style={{ animationDelay: "1s" }}
     >
       Empowering Future Agricultural Engineers of Nepal through
       Innovation, Research, Leadership and Sustainable Development
@@ -276,7 +276,7 @@ useEffect(() => {
       className={`w-40 h-1 bg-gradient-to-r from-teal-400 to-green-400 mx-auto mt-8 rounded-full ${
         mounted ? "animate-fade-up" : "opacity-0"
       }`}
-      style={{ animationDelay: "2.3s" }}
+      style={{ animationDelay: "1s" }}
     ></div>
 
   </div>
