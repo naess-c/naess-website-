@@ -94,6 +94,13 @@ export default function AlumniPage() {
       batch: "",
       image: "/alumni/padam.jpg",
     },
+    {
+      name: "Er. Sameer Shrestha",
+      position: "Agricultural Engineer",
+      organization: "Government of Nepal, Ministry of Agriculture, Forest and Environment, NAMP",
+      batch: "",
+      image: "/alumni/sameer.jpg",
+    },
      {
       name: "Er. Kishor j. Dhami",
       position: "Agricultural Engineering Instructor, HOD",
