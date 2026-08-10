@@ -278,7 +278,7 @@ export default function AlumniPage() {
       name: "Er. Prajwal Bhandari",
       position: "Agricultural Engineer",
       organization: "Muktinath Krishi Company Limited, Ktm",
-      batch: "2077 Batch",
+      batch: "2074 Batch",
       image: "/alumni/prajwal.png",
     },
     
