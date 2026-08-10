@@ -69,7 +69,7 @@ export default function CommitteePage() {
       name: "Anurag Sampang Rai",
       position: "Vice Secretary",
       batch: "Batch 2081",
-      image: "/committee/anurag.jpg",
+      image: "/committee/anurag.jpeg",
     },
     {
       name: "Sitara Kumari Jaisawal",
@@ -87,13 +87,13 @@ export default function CommitteePage() {
       name: "Aditya",
       position: "Executive Member",
       batch: "Batch 2081",
-      image: "/committee/aditya.png",
+      image: "/committee/aditya.jpeg",
     },
     {
       name: "Krish Adhikari",
       position: "Executive Member",
       batch: "Batch 2081",
-      image: "/committee/krish.png",
+      image: "/committee/krish.jpeg",
     },
     {
       name: "Ratish Ghimire",

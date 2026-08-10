@@ -281,7 +281,13 @@ export default function AlumniPage() {
       batch: "2074 Batch",
       image: "/alumni/prajwal.png",
     },
-    
+     {
+      name: "Er. Prazwal Upadhayaya Timilsina",
+      position: "Officer, Agricultural Engineer",
+      organization: "Muktinath Krishi Company Limited, Ktm",
+      batch: "2070 Batch",
+      image: "/alumni/prazwal.jpeg",
+    },
    
   ];
 
