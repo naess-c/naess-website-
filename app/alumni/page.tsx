@@ -260,6 +260,27 @@ export default function AlumniPage() {
       batch: "2076 Batch",
       image: "/alumni/ram.jpg",
     },
+     {
+      name: "Er. Sachin Mishra",
+      position: "Senior Officer (Expert in Farm Mechinery)",
+      organization: "Muktinath Krishi Company Limited, Ktm",
+      batch: "2070 Batch",
+      image: "/alumni/sachin.jpg",
+    },
+     {
+      name: "Er. Raj Kumar Adhikari",
+      position: "Agricultural Engineer",
+      organization: "Muktinath Krishi Company Limited, Ktm",
+      batch: "2077 Batch",
+      image: "/alumni/raj.jpeg",
+    },
+    {
+      name: "Er. Prajwal Bhandari",
+      position: "Agricultural Engineer",
+      organization: "Muktinath Krishi Company Limited, Ktm",
+      batch: "2077 Batch",
+      image: "/alumni/prajwal.png",
+    },
     
    
   ];
