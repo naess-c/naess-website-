@@ -183,7 +183,7 @@ export default function AlumniPage() {
     },
     {
       name: "Er. Pravesh Yadav",
-      position: "Sub Engineer",
+      position: "Agricultural Engineer",
       organization: "Ministry of Water Supply, Irrigation and Energy, Koshi Province",
       batch: "2075 Batch",
       image: "/alumni/pravesh.jpeg",
@@ -193,7 +193,7 @@ export default function AlumniPage() {
       name: "Er. Sanam Karki",
       position: "Agricultural Engineer",
       organization: "Water resources and irrigation division taplejung",
-      batch: "2075 Batch",
+      batch: "2073 Batch",
       image: "/alumni/sanam.jpg",
     },
      {
